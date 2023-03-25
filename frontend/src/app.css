@@ -1,2 +1,13 @@
 @import "bootstrap";
 @import '../node_modules/bootstrap-icons/font/bootstrap-icons.css';
+*{
+    --white:#ffffff;
+    --rich_black:#00171F;
+    --prussian_blue:#003459;
+    --indigo_blue:#00476D;
+    --lapis_lazuli:#005980;
+    --cerulean:#007EA7;
+    --blue:#0093C8;
+    --celestial_blue:#009ED8;
+    --picton_blue:#00A8E8;
+}
