@@ -1,5 +1,4 @@
 <script lang="ts">
-import Menu from "./components/Menu.svelte";
+import Index from "./views/Index.svelte";
 </script>
-
-<Menu/>
+<Index/>

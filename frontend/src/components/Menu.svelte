@@ -1,8 +1,7 @@
 <style> 
 nav *{
-    background-color: var(--kek8);
-    text-shadow: 2px 2px var(--kek2);
-    color: white;
+    background-color: #C0E7F6;
+    color: var(--kek1);
 }
 img{
     height: 60px;
