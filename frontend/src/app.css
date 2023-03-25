@@ -1,0 +1,13 @@
+@import "bootstrap";
+@import '../node_modules/bootstrap-icons/font/bootstrap-icons.css';
+*{
+    --kek1:#00171F;
+    --kek2:#003459;
+    --kek3:#00476D;
+    --kek4:#005980;
+    --kek5:#007EA7;
+    --kek6:#0093C8;
+    --kek7:#009ED8;
+    --kek8:#00A8E8;
+    --piros1:#c71e22;
+}
