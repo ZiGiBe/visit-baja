@@ -16,6 +16,12 @@
         transform: translateY(8px);
     }
 
+    .card img{
+        object-fit: cover;
+        width: 320px;
+        height: 230px;
+    }
+
     .card h3{
         font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     }
@@ -43,9 +49,9 @@
 
 <!-- Card -->
 <div>
-    <div class="card m-3 p-3">
+    <div class="card m-3 p-3 d-flex flex-column align-items-center">
         <h3 class="m-auto mt-3">Title example</h3>
-        <img src="/kep_normal.jpg" class="card-img-top rounded mt-3" alt="...">
+        <img src="/kep_wide.jfif" class="card-img-top rounded mt-3" alt="...">
         <div class="card-body d-flex flex-column align-items-center">
             <p class="card-text text-center p-2">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi harum possimus quos, expedita, tempora nesciunt laudantium sapiente ipsa.
