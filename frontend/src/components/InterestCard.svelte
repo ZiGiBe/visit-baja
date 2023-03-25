@@ -8,6 +8,7 @@
         border-radius: 30px;
         box-shadow: 10px 10px 8px #888888;
         transition: 0.3s;
+        height: 600px;
     }
 
     .card:hover{
@@ -32,14 +33,16 @@
         font-family: 'Times New Roman', Times, serif;
     }
 
-    .card button{
+    .card a{
         font-size: large;
         background-color: var(--kek6);
         transition: 0.2s;
         border-color: var(--kek8);
+        position: relative;
+        bottom: 20px;
     }
 
-    .card button:active{
+    .card a:active{
         background-color: var(--kek8);
     }
 
@@ -56,9 +59,9 @@
             <p class="card-text text-center p-2">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi harum possimus quos, expedita, tempora nesciunt laudantium sapiente ipsa.
             </p>
-            <button type="button" class="btn btn-primary pl-3 pr-3">
-                Tovább
-            </button>
         </div>
+        <a href="/" class="btn btn-primary pl-3 pr-3">
+            Tovább
+        </a>
       </div>
 </div>
