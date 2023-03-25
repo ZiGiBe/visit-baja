@@ -14,7 +14,7 @@ hr{
 }
 </style>
 
-<nav class="navbar p-0 navbar-expand-lg bg-body-tertiary">
+<nav class="navbar fixed-top p-0  navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
       <a class="navbar-brand" href="/"><img src="/logo.png" alt=""></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
