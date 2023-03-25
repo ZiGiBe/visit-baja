@@ -4,7 +4,7 @@
 
 <style>
 footer{
-    background-color: var(--kek6);
+    background-color: var(--kek8);
     color: white;
     text-shadow: 2px 2px var(--kek2);
     box-shadow: 0 0 10px var(--kek1);

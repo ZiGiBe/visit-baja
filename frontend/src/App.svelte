@@ -1,9 +1,4 @@
 <script lang="ts">
-    import InterestCard from "./components/InterestCard.svelte";
-    import ProgramCard from "./components/ProgramCard.svelte";
+import Index from "./views/Index.svelte";
 </script>
-
-<div class="d-flex justify-content-center">
-    <InterestCard />
-    <ProgramCard />
-</div>
+<Index/>
