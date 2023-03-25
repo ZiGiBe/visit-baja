@@ -8,6 +8,8 @@ footer{
     color: white;
     text-shadow: 2px 2px var(--kek2);
     box-shadow: 0 0 10px var(--kek1);
+    position: relative;
+    bottom: 0;
 }
 a{
     color:white;
