@@ -10,10 +10,12 @@
         margin-bottom: 15vh;
     }
     .logo{
-        height: 30vh;
+        width: clamp(0px 30vh 60vw);
+        max-width: 70vw;
         position: absolute;
         top: 40vh;
         left: 20%;
+        object-fit: cover;
     }
     .darkness{
         background: linear-gradient(90deg, rgba(0,0,0,0.7413340336134453) 0%, rgba(255,0,0,0) 100%);

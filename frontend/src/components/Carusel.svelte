@@ -1,11 +1,12 @@
 <script lang="ts">
   import { Swiper, SwiperSlide } from 'svelte-swiper';
   const options = {
-    slidesPerView: 3,
+    slidesPerView: 1,
     loop:true,
     autoplay: {
         delay: 2500,
         disableOnInteraction: false,
+        pauseOnMouseEnter: true
       },
     spaceBetween: 30,
     freeMode: true,
@@ -30,5 +31,4 @@
 </div>
 
 <style>
-
 </style>

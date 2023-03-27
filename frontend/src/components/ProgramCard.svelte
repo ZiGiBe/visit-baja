@@ -3,19 +3,44 @@
 </script>
 
 <style>
+    /* Small */
+    @media only screen and (max-width: 577px) {
+        *{
+            --cardwidth: 85vw;
+            --cardheight: 480px;
+            --fontsize: 18px;
+        }
+    }
+    /* Medium */
+    @media only screen and (min-width: 577px) and (max-width: 769px){
+        *{
+            --cardwidth: 320px;
+            --cardheight: 500px;
+            --fontsize: 20px;
+        }
+    }
+    /* Large */
+    @media only screen and (min-width: 769px) {
+        *{
+            --cardwidth: 330px;
+            --cardheight: 500px;
+            --fontsize: 22px;
+        }
+    }
+
     .card{
-        width: 380px;
+        width: var(--cardwidth);
+        height: var(--cardheight);
         border-radius: 30px;
         box-shadow: 10px 10px 8px #888888;
         transition: 0.3s;
-        height: 600px;
-        overflow: hidden;   
+        overflow: hidden;
     }
 
     .card img{
+        width: var(--cardwidth);
+        height: var(--cardheight);
         object-fit: cover;
-        width: 380px;
-        height: 600px;
         z-index: 1;
         border-radius: 30px;
     }
@@ -26,34 +51,55 @@
     }
 
     .card-body{
-        border-radius: 5px 5px 30px 30px;
-        width:380px;
+        width: var(--cardwidth);
+        height: calc((var(--cardheight) / 3) * 2);
+
         position: absolute;
-        height: 400px;
-        top: 520px;
-        left: 0px;
+        top: calc(var(--cardheight) - 70px);
+
+        border-radius: 5px 5px 30px 30px;
+        background-color: white;
+
         z-index: 2;
         transition: 1s;
-        background-color: white;
     }
 
-    .card-body:hover, .card-body:active{
-        top:220px;
+    #darkness{
+        width: var(--cardwidth);
+        height: calc((var(--cardheight) / 3) + 5px);
+        background-color: rgba(0, 0, 0, 0.5);
+        position: absolute;
+        top: calc(0px - (var(--cardheight) / 3) - 5px);
+        z-index: 2;
+        transition: 1s;
+    }
+
+    #darkness p{
+        color: white;
+        font-size: var(--fontsize);
+    }
+
+    .card:hover .card-body, .card:active .card-body{
+        top:calc(var(--cardheight)/3);
+    }
+
+    .card:hover #darkness, .card:active #darkness{
+        top: 0px;
     }
 
     .card p{
         color: var(--kek1);
-        font-size: x-large;
+        font-size: var(--fontsize);
         font-family: 'Times New Roman', Times, serif;
     }
 
     .card a{
-        font-size: large;
+        font-size: var(--fontsize) !important;
         background-color: var(--kek6);
         transition: 0.2s;
         border-color: var(--kek8);
         position: absolute;
-        bottom: 60px;
+        bottom: 10px;
     }
 
     .card a:active{
@@ -62,8 +108,10 @@
 
     .line{
         border: 2px solid var(--kek1);
-        width: 300px;
+        width: calc((var(--cardwidth)/3)*2);
     }
+
+
 
 </style>
 
@@ -71,6 +119,11 @@
 <div>
     <div class="card m-3">
         <img src="/kep_wide.jfif" class="card-img-top" alt="...">
+        <div class="d-flex align-items-center justify-content-center" id="darkness">
+            <p>
+                from - to
+            </p>
+        </div>
         <div class="card-body d-flex flex-column align-items-center">
             <h3 class="card-title text-center">Example title</h3>
             <hr class="line">
