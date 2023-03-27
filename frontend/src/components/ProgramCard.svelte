@@ -117,7 +117,7 @@
 
 <!-- Card -->
 <div>
-    <div class="card m-3">
+    <div class="card m-3 mx-auto">
         <img src="/kep_wide.jfif" class="card-img-top" alt="...">
         <div class="d-flex align-items-center justify-content-center" id="darkness">
             <p>

@@ -23,7 +23,7 @@ p{
 <footer class="d-flex justify-content-around container-fluid">
     <h3 class="my-auto mx-3">Elérhetőségeink</h3>
     <div class="py-3">
-        <p class="fw-Bold">
+        <p class="fw-bold">
             Bajai Turisztikai Nonprofit Kft
         </p>
         <p class="fw-medium">
