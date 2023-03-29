@@ -5,6 +5,9 @@
     import ProgramCard from "../components/ProgramCard.svelte";
     import InterestCard from "../components/InterestCard.svelte";
     import Carusel from "../components/Carusel.svelte";
+    import DesignElement from "../components/DesignElement.svelte";
+    
+
 </script>
 
 <style>
@@ -15,5 +18,6 @@
 <main>
     <Wallapper/>
     <Carusel/>
+    <DesignElement/>
     <Footer/>
 </main>
