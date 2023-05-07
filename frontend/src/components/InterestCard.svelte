@@ -51,8 +51,8 @@
 </style>
 
 <!-- Card -->
-<div>
-    <div class="card m-3 p-3 d-flex flex-column align-items-center">
+<div >
+    <div class="card m-3 p-3 d-flex flex-column align-items-center mx-auto">
         <h3 class="m-auto mt-3">Title example</h3>
         <img src="/kep_wide.jfif" class="card-img-top rounded mt-3" alt="...">
         <div class="card-body d-flex flex-column align-items-center">
