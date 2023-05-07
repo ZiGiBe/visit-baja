@@ -1,17 +1,28 @@
 <script lang="ts">
   import { Swiper, SwiperSlide } from 'svelte-swiper';
-  const options = {
-    slidesPerView: 3,
+  var options = {
+    slidesPerView: 1,
     loop:true,
     autoplay: {
-        disableOnInteraction: false,
+        disableOnInteraction: true,
         pauseOnMouseEnter: true,
         delay: 10000,
       },
     spaceBetween: 30,
     freeMode: true,
+    breakpoints: {
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 30
+      },
+      1100: {
+        slidesPerView: 3,
+        spaceBetween: 30
+      }
+    }
   };
-  import ProgramCard from './ProgramCard.svelte';
+
+import ProgramCard from './ProgramCard.svelte';
 </script>
 <div class="my-3"> 
 
@@ -27,8 +38,7 @@
     <SwiperSlide><ProgramCard/></SwiperSlide>
     <SwiperSlide><ProgramCard/></SwiperSlide>
   </Swiper>
-  
-</div>
 
+</div>
 <style>
 </style>
