@@ -8,11 +8,7 @@ app.use('/uploads',  express.static(path.join(__dirname, './upload')))
 
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
-app.use(cors({
-    allowedHeaders: ['Authorization', 'Content-Type'],
-    methods: ['GET', 'POST', 'PATCH', 'DELETE'],
-    origin: ['localhost:5173']
-}));
+app.use(cors());
 
 app.use('/file', require('./files'));
 app.use('/api', require('./db'));
