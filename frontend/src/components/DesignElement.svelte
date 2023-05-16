@@ -22,7 +22,7 @@
     width: 100%;
     background-image: url("/hatter.jpg");
     background-attachment: fixed;
-    background-size: cover;
+    background-size:cover;
     border-top: 10px solid var(--kek5);
     border-bottom: 10px solid var(--kek5);
     margin: 30px 0 30px 0;
@@ -61,6 +61,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+}
+
+.link{
+    background-color: var(--kek6);
+    border-color: var(--kek8);
 }
 
 
@@ -78,6 +84,9 @@
                 <h1 class="title">
                     Title example
                 </h1>
+                <a href="/" class="btn btn-primary m-3 link">
+                    <h3>Tovább</h3>
+                </a>
             </div>
         </div>
     </div>

@@ -82,7 +82,7 @@
         <img src="/kep_wide.jfif" class="card-img-top rounded mt-3" alt="example">
         <div class="card-body d-flex flex-column align-items-center">
             <p class="card-text text-center p-2">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi harum possimus quos, expedita, tempora nesciunt laudantium sapiente ipsa.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi harum possimus quos, expedita.
             </p>
         </div>
         <a href="/" class="btn btn-primary pl-3 pr-3">

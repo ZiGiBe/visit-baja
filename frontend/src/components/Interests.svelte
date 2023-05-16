@@ -21,7 +21,6 @@
     }
   };
 
-import ProgramCard from './ProgramCard.svelte';
 import InterestCard from './InterestCard.svelte';
 </script>
 <div class="my-3"> 
