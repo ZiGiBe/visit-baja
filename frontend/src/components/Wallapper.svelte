@@ -1,13 +1,27 @@
-<script>
-
+<script lang="ts">
+    import { Swiper, SwiperSlide } from 'svelte-swiper';
+    var options = {
+        slidesPerView: 1,
+        loop:true,
+        effect: 'fade',
+        speed:1000,
+        autoplay: {
+            disableOnInteraction: false,
+            pauseOnMouseEnter: false,
+            delay: 5000,
+        },
+    };
 </script>
 
 <style>
-    .background{
+    .image{
         width: 100%;
         height: 100vh;
         object-fit: cover;
         margin-bottom: 15vh;
+    }
+    .background{
+        z-index: 1;
     }
     .logo{
         width: clamp(0px 30vh 60vw);
@@ -16,6 +30,7 @@
         top: 40vh;
         left: 20%;
         object-fit: cover;
+        z-index: 4;
     }
     .darkness{
         background: linear-gradient(90deg, rgba(0,0,0,0.7413340336134453) 0%, rgba(255,0,0,0) 100%);
@@ -23,7 +38,8 @@
         height: 100vh;
         position: absolute;
         top: 0;
-        left: 0;        
+        left: 0;
+        z-index: 2;
     }
 
     .wave{
@@ -31,13 +47,26 @@
         height: 25vh;
         position: absolute;
         top: 86vh;
+        z-index: 3;
     }
+
+    @media screen and (max-width: 768px) {
+        .wave{
+           object-fit: cover;
+        }
+    }
+
 
 </style>
 
 <div>
     <div class="darkness"></div>
-    <img src="/logo.png" class="logo">
-    <img src="/wave.png" class="wave">
-    <img src="/hatter.jpg" class="background">
+    <img src="/logo.png" alt="Logó" class="logo">
+    <img src="/wave.png" alt="wave" class="wave">
+    <div class="background">
+        <Swiper {options}>
+            <SwiperSlide><img src="/hatter.jpg" alt="Háttér" class="image"></SwiperSlide>
+            <SwiperSlide><img src="/kep_normal.jpg" alt="Háttér" class="image"></SwiperSlide>
+        </Swiper>
+    </div>
 </div>

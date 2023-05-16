@@ -2,9 +2,8 @@
     import Footer from "../components/Footer.svelte";
     import Menu from "../components/Menu.svelte";
     import Wallapper from "../components/Wallapper.svelte";
-    import ProgramCard from "../components/ProgramCard.svelte";
-    import InterestCard from "../components/InterestCard.svelte";
-    import Carusel from "../components/Carusel.svelte";
+    import Interests from "../components/Interests.svelte";
+    import Programs from "../components/Programs.svelte";
     import DesignElement from "../components/DesignElement.svelte";
     
 
@@ -17,7 +16,8 @@
 <Menu/>
 <main>
     <Wallapper/>
-    <Carusel/>
+    <Interests/>
     <DesignElement/>
+    <Programs/>
     <Footer/>
 </main>
