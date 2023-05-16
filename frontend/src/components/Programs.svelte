@@ -23,7 +23,13 @@
 
 import ProgramCard from './ProgramCard.svelte';
 </script>
-<div class="my-3"> 
+<div class="my-3">
+
+  <h2 class="title">
+    <span class="text">
+      Nálunk mindig történik valami!
+    </span>
+  </h2>
 
   <Swiper {options}>
     <SwiperSlide><ProgramCard/></SwiperSlide>
@@ -36,4 +42,39 @@ import ProgramCard from './ProgramCard.svelte';
 
 </div>
 <style>
+
+.title{
+  margin: 60px 0 60px 0;  
+}
+
+.text{
+  padding: 20px;
+  border-bottom: 0.3rem solid var(--kek3);
+  border-radius: 0 60px 60px 0;
+  background-color: var(--kek7);
+  box-shadow: -20px 15px 20px gray;
+  transition: 0.5s;
+  color: white;
+}
+
+
+  /* Small */
+  @media only screen and (max-width: 577px) {
+      *{
+          --fontsize: 18px;
+      }
+  }
+  /* Medium */
+  @media only screen and (min-width: 577px) and (max-width: 769px){
+      *{
+          --fontsize: 20px;
+      }
+  }
+  /* Large */
+  @media only screen and (min-width: 769px) {
+      *{
+          --fontsize: 22px;
+      }
+  }
+  
 </style>
