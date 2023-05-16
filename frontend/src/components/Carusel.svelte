@@ -9,7 +9,6 @@
         delay: 10000,
       },
     spaceBetween: 30,
-    freeMode: true,
     breakpoints: {
       768: {
         slidesPerView: 2,
@@ -23,20 +22,18 @@
   };
 
 import ProgramCard from './ProgramCard.svelte';
+import InterestCard from './InterestCard.svelte';
 </script>
 <div class="my-3"> 
 
   <Swiper {options}>
-    <SwiperSlide><ProgramCard/></SwiperSlide>
-    <SwiperSlide><ProgramCard/></SwiperSlide>
-    <SwiperSlide><ProgramCard/></SwiperSlide>
-    <SwiperSlide><ProgramCard/></SwiperSlide>
-    <SwiperSlide><ProgramCard/></SwiperSlide>
-    <SwiperSlide><ProgramCard/></SwiperSlide>
-    <SwiperSlide><ProgramCard/></SwiperSlide>
-    <SwiperSlide><ProgramCard/></SwiperSlide>
-    <SwiperSlide><ProgramCard/></SwiperSlide>
-    <SwiperSlide><ProgramCard/></SwiperSlide>
+    <SwiperSlide><InterestCard/></SwiperSlide>
+    <SwiperSlide><InterestCard/></SwiperSlide>
+    <SwiperSlide><InterestCard/></SwiperSlide>
+    <SwiperSlide><InterestCard/></SwiperSlide>
+    <SwiperSlide><InterestCard/></SwiperSlide>
+    <SwiperSlide><InterestCard/></SwiperSlide>
+    <SwiperSlide><InterestCard/></SwiperSlide>
   </Swiper>
 
 </div>

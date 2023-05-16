@@ -11,6 +11,13 @@
 
 <style>
 
+/* Medium */
+@media only screen and (max-width: 768px) {
+    #slider{
+        display: none;
+    }
+}
+
 .lane{
     width: 100%;
     background-image: url("/hatter.jpg");
@@ -25,6 +32,8 @@
     width: 100%;
     height: fit-content;
     background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
 }
 
 
@@ -41,14 +50,34 @@
     background-color: rgba(255, 255, 255, 0.5);
 }
 
+.title{
+    color: white;
+    font-family:cursive;
+}
+
+.titleBox{
+    min-height: 25vh;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
 </style>
 
 
-<div id="he">
+<div>
     <div class="lane">
         <div class="darkness">
-            <div data-aos="slide-right" data-aos-duration="1500" data-aos-easing="ease-in-out">
-                <img src="/logo.png" alt="..." id="icon">
+            <div data-aos="slide-right" data-aos-duration="1500" data-aos-easing="ease-in-out" id="slider">
+                <img src="/logo.png" alt="logó" id="icon">
+            </div>
+            <div class="titleBox">
+                <h1 class="title">
+                    Title example
+                </h1>
             </div>
         </div>
     </div>
