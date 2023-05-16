@@ -1,4 +1,4 @@
 <script lang="ts">
-import Index from "./views/Index.svelte";
+import Routes from "./routes.svelte";
 </script>
-<Index/>
+<Routes/>
