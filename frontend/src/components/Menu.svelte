@@ -26,11 +26,11 @@ hr{
           </li>
           <hr class="d-lg-none">
           <li class="fs-5 text-center fw-medium nav-item">
-            <a class="nav-link" href="/">Szállások</a>
+            <a class="nav-link" href="/szallasok">Szállások</a>
           </li>
           <hr class=" d-lg-none">
           <li class="fs-5 text-center fw-medium nav-item">
-            <a class="nav-link" href="/">Vendéglátóhelyek</a>
+            <a class="nav-link" href="/ettermek">Vendéglátóhelyek</a>
           </li>
         </ul>
       </div>
