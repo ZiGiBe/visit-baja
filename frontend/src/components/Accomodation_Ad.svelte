@@ -25,6 +25,10 @@
     flex-direction: column;
 }
 
+.lane div:nth-child(2){
+    width: 40vw;
+}
+
 .image{
     width: 60vw;
     height: 50vh;
@@ -60,6 +64,10 @@
         margin: 0 5vw 0 5vw;
         border-radius: 10px;
     }
+
+    .lane div:nth-child(2){
+    width: unset;
+}
 }
 
 

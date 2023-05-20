@@ -10,7 +10,7 @@
         <h2>
             Töltsd meg nálunk a bendőd!
         </h2>
-        <a href="/" class="btn btn-secondary">
+        <a href="/" class="btn btn-secondary m-3">
             <h4>Éttermek</h4>
         </a>
     </div>
@@ -32,16 +32,22 @@
     justify-content: space-between;
 }
 
+.lane div:nth-child(2){
+    width: 50vw;
+}
+
 .containerBox{
+    background-image: url('/kaja.png');
+    background-size:contain;
+    background-position: bottom;
+    background-repeat: no-repeat;
     display: flex;
-    justify-content: space-around;
     align-items: center;
     flex-direction: column;
-    margin-right: auto;
-    margin-left: auto;
-    padding-left: 30px;
+    padding-top: 10vh;
     border-left: 9px solid var(--kek7);
-    border-radius: 40px
+    border-radius: 40px;
+    text-align: center;
 }
 
 /* Medium */
@@ -60,6 +66,12 @@
 
     .containerBox{
         border: unset;
+        padding-top: unset;
+        background-image: unset;
+    }
+
+    .lane div:nth-child(2){
+        width: unset;
     }
 }
 
