@@ -22,6 +22,9 @@
     }
     .background{
         z-index: 1;
+        overflow: hidden;
+        height: calc(100vh - 70px);
+        margin-bottom: 150px;
     }
     .logo{
         width: clamp(0px 30vh 60vw);
