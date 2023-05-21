@@ -4,6 +4,7 @@
     import EditorJs from "../components/Admin/Modal/EditorJS.svelte";
     import Modal from "../components/Admin/Modal/Modal.svelte";
     import db from "../services/DB";
+    import { Upload } from "../services/File";
     let tabindex = 0;
     let categories = [
         {
@@ -27,8 +28,9 @@
     ];
     let SightEditor: EditorJs;
     let newSight: any = {};
-    let newProgram;
-    let newService;
+    let SightImages: FileList;
+    let newProgram: any = {};
+    let newService: any = {};
 
     //TODO: Input validation
     async function submitSight() {
@@ -94,6 +96,7 @@
                         title="Rövid leírás"
                         bind:value={newSight.shortdesc}
                     />
+                    <Input type="file" name="images" bind:files={SightImages} title="Kép(ek)"/>
                     <EditorJs id={"newSightContent"} bind:this={SightEditor} />
                     <Input
                         type="text"
@@ -105,7 +108,9 @@
                         <i class="bi bi-check" />
                     </button>
                 </div>
-                <div class="tab-pane p-3 fade" id="servicestab" />
+                <div class="tab-pane p-3 fade" id="servicestab">
+                    <Input name="name" type="text" bind:value={}
+                </div>
                 <div class="tab-pane p-3 fade" id="accomodationstab" />
             </div>
         </div>
