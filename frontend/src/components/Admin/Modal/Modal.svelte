@@ -2,7 +2,6 @@
     import ModalBodyItem from "./ModalBodyItem.svelte";
     export let title = "";
     export let id = "";
-    export let addTarget = "";
     export let promise;
 </script>
 
@@ -10,7 +9,6 @@
     class="modal fade"
     {id}
     tabindex="-1"
-    aria-labelledby="exampleModalLabel"
     aria-hidden="true"
 >
     <div class="modal-dialog modal-dialog-centered">
@@ -45,9 +43,6 @@
                     </tbody>
                 </table>
                 {/await}
-            </div>
-            <div class="modal-footer">
-                <button class="btn-primary btn" data-bs-target={addTarget}><i class="bi bi-plus"></i></button>
             </div>
         </div>
     </div>
