@@ -2,28 +2,8 @@
 import InterestCard from './InterestCard.svelte';
 import { register } from 'swiper/element/bundle';
 //ezt a hibát ne vedd figyelembe attól még működik
-
 register();
-  // var options = {
-  //   slidesPerView: 1,
-  //   loop:true,
-  //   autoplay: {
-  //       disableOnInteraction: true,
-  //       pauseOnMouseEnter: true,
-  //       delay: 10000,
-  //     },
-  //   spaceBetween: 30,
-  //   breakpoints: {
-  //     768: {
-  //       slidesPerView: 2,
-  //       spaceBetween: 30
-  //     },
-  //     1100: {
-  //       slidesPerView: 3,
-  //       spaceBetween: 30
-  //     }
-  //   }
-  // };
+
 
 </script>
 

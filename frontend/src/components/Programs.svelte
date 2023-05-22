@@ -1,5 +1,8 @@
 <script lang="ts">
-  import { Swiper, SwiperSlide } from 'svelte-swiper';
+  import { register } from 'swiper/element/bundle';
+  //ezt a hibát ne vedd figyelembe attól még működik
+  register();
+
   var options = {
     slidesPerView: 1,
     loop:true,
@@ -31,14 +34,41 @@ import ProgramCard from './ProgramCard.svelte';
     </span>
   </h2>
 
-  <Swiper {options}>
-    <SwiperSlide><ProgramCard/></SwiperSlide>
-    <SwiperSlide><ProgramCard/></SwiperSlide>
-    <SwiperSlide><ProgramCard/></SwiperSlide>
-    <SwiperSlide><ProgramCard/></SwiperSlide>
-    <SwiperSlide><ProgramCard/></SwiperSlide>
-    <SwiperSlide><ProgramCard/></SwiperSlide>
-  </Swiper>
+  <swiper-container
+  loop={true}
+  slides-per-view={1}
+  space-between={30}
+  grab-cursor="true"
+  autoplay={{
+          disableOnInteraction:true,
+          pauseOnMouseEnter: true,
+          delay: 5000,
+        }}
+  breakpoints={{
+    768: {
+      slidesPerView: 2,
+      spaceBetween: 30
+    },
+    1100: {
+      slidesPerView: 3,
+      spaceBetween: 30
+    }
+  }}
+>
+  <swiper-slide><ProgramCard/></swiper-slide>
+  <swiper-slide><ProgramCard/></swiper-slide>
+  <swiper-slide><ProgramCard/></swiper-slide>
+  <swiper-slide><ProgramCard/></swiper-slide>
+  <swiper-slide><ProgramCard/></swiper-slide>
+  <swiper-slide><ProgramCard/></swiper-slide>
+  <swiper-slide><ProgramCard/></swiper-slide>
+  <swiper-slide><ProgramCard/></swiper-slide>
+  <swiper-slide><ProgramCard/></swiper-slide>
+  <swiper-slide><ProgramCard/></swiper-slide>
+  <swiper-slide><ProgramCard/></swiper-slide>
+  <swiper-slide><ProgramCard/></swiper-slide>
+  
+</swiper-container>
 
 </div>
 <style>

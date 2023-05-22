@@ -1,5 +1,8 @@
 <script lang="ts">
-    import { Swiper, SwiperSlide } from 'svelte-swiper';
+    import { register } from 'swiper/element/bundle';
+    //ezt a hibát ne vedd figyelembe attól még működik
+    register();
+
     var options = {
         slidesPerView: 1,
         loop:true,
@@ -67,9 +70,19 @@
     <img src="/logo.png" alt="Logó" class="logo">
     <img src="/wave.png" alt="wave" class="wave">
     <div class="background">
-        <Swiper {options}>
-            <SwiperSlide><img src="/hatter.jpg" alt="Háttér" class="image"></SwiperSlide>
-            <SwiperSlide><img src="/kep_normal.jpg" alt="Háttér" class="image"></SwiperSlide>
-        </Swiper>
+        <swiper-container
+        loop={true}
+        effect={"fade"}
+        slides-per-view={1}
+        speed={1000}
+        autoplay= {{
+            disableOnInteraction: false,
+            pauseOnMouseEnter: false,
+            delay: 5000,
+        }}
+      >
+        <swiper-slide><img src="/hatter.jpg" alt="Háttér" class="image"></swiper-slide>
+        <swiper-slide><img src="/kep_normal.jpg" alt="Háttér" class="image"></swiper-slide>
+      </swiper-container> 
     </div>
 </div>
