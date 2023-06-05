@@ -1,17 +1,8 @@
 <script lang="ts">
-  import emblaCarouselSvelte from 'embla-carousel-svelte'
-  import Autoplay from 'embla-carousel-autoplay'
-
-  import InterestCard from './InterestCard.svelte';
-  let options={
-    loop:false,
-    slidesToScroll:1,
-    breakpoints:{
-      '(min-width: 768px)': { slidesToScroll:2 },
-      '(min-width: 1100px)': { slidesToScroll:3 }
-    }
-  }
-  let plugins=[Autoplay()]
+import InterestCard from './InterestCard.svelte';
+import { register } from 'swiper/element/bundle';
+//ezt a hibát ne vedd figyelembe attól még működik
+register();
 
 
 </script>
@@ -24,18 +15,41 @@
     </span>
   </h2>
 
-  <div class="embla" use:emblaCarouselSvelte="{{options,plugins}}" >
-    <div class="embla__container">
-      <div class="embla__slide"><InterestCard/></div>
-      <div class="embla__slide"><InterestCard/></div>
-      <div class="embla__slide"><InterestCard/></div>
-      <div class="embla__slide"><InterestCard/></div>
-      <div class="embla__slide"><InterestCard/></div>
-      <div class="embla__slide"><InterestCard/></div>
-      <div class="embla__slide"><InterestCard/></div>
-    </div>
-  </div>
-
+  <swiper-container
+  loop={true}
+  slides-per-view={1}
+  space-between={30}
+  grab-cursor="true"
+  autoplay={{
+          disableOnInteraction:true,
+          pauseOnMouseEnter: true,
+          delay: 5000,
+        }}
+  breakpoints={{
+    768: {
+      slidesPerView: 2,
+      spaceBetween: 30
+    },
+    1100: {
+      slidesPerView: 3,
+      spaceBetween: 30
+    }
+  }}
+>
+  <swiper-slide><InterestCard/></swiper-slide>
+  <swiper-slide><InterestCard/></swiper-slide>
+  <swiper-slide><InterestCard/></swiper-slide>
+  <swiper-slide><InterestCard/></swiper-slide>
+  <swiper-slide><InterestCard/></swiper-slide>
+  <swiper-slide><InterestCard/></swiper-slide>
+  <swiper-slide><InterestCard/></swiper-slide>
+  <swiper-slide><InterestCard/></swiper-slide>
+  <swiper-slide><InterestCard/></swiper-slide>
+  <swiper-slide><InterestCard/></swiper-slide>
+  <swiper-slide><InterestCard/></swiper-slide>
+  <swiper-slide><InterestCard/></swiper-slide>
+  
+</swiper-container>
 
 </div>
 
