@@ -1,5 +1,6 @@
 <script lang="ts">
-    import Input from "../components/Admin/Input.svelte";
+    import { object_without_properties, validate_component } from "svelte/internal";
+import Input from "../components/Admin/Input.svelte";
     import MainCard from "../components/Admin/MainCard.svelte";
     import EditorJs from "../components/Admin/Modal/EditorJS.svelte";
     import Modal from "../components/Admin/Modal/Modal.svelte";
@@ -12,25 +13,37 @@
             name: "Látnivalók",
             target: "sights",
             promise: db.Get("Sights"),
+            type: "Sights"
         },
         {
             icon: "wallet2",
             name: "Szolgáltatások/Éttermek",
             target: "services",
             promise: db.Get("Services"),
+            type: "Services"
         },
         {
             icon: "house",
             name: "Szállások",
             target: "accomodations",
-            promise: db.Get("Sights"),
+            promise: db.Get("Accomodations"),
+            type: "Accomodations"
         },
     ];
     let SightEditor: EditorJs;
-    let newSight: any = {};
+    let ServiceEditor: EditorJs;
+    let ProgramEditor: EditorJs;
+    let AccomodationEditor: EditorJs;
+
     let SightImages: FileList;
+    let ServiceImages: FileList;
+    let AccomodationImages: FileList;
+    let ProgramImage: FileList;
+    
+    let newSight: any = {};
     let newProgram: any = {};
     let newService: any = {};
+    let newAccomodation: any = {};
 
     //TODO: Input validation
     async function submitSight() {
@@ -45,10 +58,20 @@
             await db
                 .Post("Sights", body)
                 .then((res) => {
-                    categories[0].promise = db.Get("Services");
+                    categories[0].promise = db.Get("Sights");
                 })
                 .catch((err) => {});
         }
+    }
+    async function submitService(){
+        let body = {
+            ...newService,
+            description: JSON.stringify(await ServiceEditor.getData())
+        }
+        if (Object.values(body).map((e) => (typeof e == "string" ? e.trim() : e)).includes("")){
+
+        }
+        else await db.Post("Services", body).then(res=>categories[1].promise = db.Get("Services")).catch(err=>{});
     }
 </script>
 
@@ -109,7 +132,14 @@
                     </button>
                 </div>
                 <div class="tab-pane p-3 fade" id="servicestab">
-                    <Input name="name" type="text" bind:value={}
+                    <Input name="name" title="Név" type="text" bind:value={newService.name} />
+                    <Input name="address" title="Cím" type="text" bind:value={newService.address} />
+                    <EditorJs id={"newServiceContent"} bind:this={ServiceEditor} />
+                    <Input name="href" title="Weboldal" type="text" bind:value={newService.href} />
+                    <Input name="isRestaurant" title="Étterem?" type="check" bind:checked={newService.isRestaurant} />
+                    <button class="btn btn-success" on:click={submitService}>
+                        <i class="bi bi-check" />
+                    </button>
                 </div>
                 <div class="tab-pane p-3 fade" id="accomodationstab" />
             </div>
@@ -120,6 +150,7 @@
             id={category.target}
             title={category.name}
             promise={category.promise}
+            type={category.type}
         />
     {/each}
 </main>

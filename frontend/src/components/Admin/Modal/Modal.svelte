@@ -3,6 +3,7 @@
     export let title = "";
     export let id = "";
     export let promise;
+    export let type = "";
 </script>
 
 <div
@@ -38,7 +39,7 @@
                     </thead>
                     <tbody>
                         {#each data as item, i}
-                            <ModalBodyItem {i} {item} />
+                            <ModalBodyItem {i} {item} on:deletion={(event)=>promise = event.detail.promise} {type} />
                         {/each}
                     </tbody>
                 </table>
