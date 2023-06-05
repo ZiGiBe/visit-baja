@@ -7,12 +7,18 @@
 
 </style>
 <Menu/>
-<main>
-  <h1>
-    {#if isRestaurant==true}
-        Éttermek
-    {:else}
-        Szálláshelyek
-    {/if}
-  </h1>  
-</main>
+
+<div>
+  <header>
+    <h1>
+      {#if isRestaurant==true}
+      Éttermek
+      {:else}
+      Szálláshelyek
+      {/if}
+    </h1>  
+  </header>
+  <main>
+    
+  </main>
+</div>
