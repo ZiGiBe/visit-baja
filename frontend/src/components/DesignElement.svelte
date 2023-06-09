@@ -77,7 +77,7 @@
 <div>
     <div class="lane">
         <div class="darkness">
-            <div data-aos="slide-right" data-aos-duration="1500" data-aos-easing="ease-in-out" id="slider">
+            <div data-aos="slide-right" data-aos-duration="1500" data-aos-easing="ease-in-out" data-aos-once='true' id="slider">
                 <img src="/logo.png" alt="logó" id="icon">
             </div>
             <div class="titleBox">
