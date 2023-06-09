@@ -15,9 +15,6 @@ footer{
 a{
     color:white;
 }
-p{
-    margin:0;
-}
 .row{
     width: inherit;
 }
