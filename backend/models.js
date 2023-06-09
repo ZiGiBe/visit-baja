@@ -62,7 +62,8 @@ const Programs = sequelize.define('Programs', {
         type: DataTypes.STRING
     },
     start: {
-        type: DataTypes.DATE
+        type: DataTypes.DATE,
+
     },
     end: {
         type: DataTypes.DATE,

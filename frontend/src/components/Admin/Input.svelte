@@ -15,7 +15,7 @@
 <div class:form-floating={type!="file"&&type!="check"} class="mb-3">
     {#if type=='file'}
     <label for="floatingInput">{title}</label>
-    <input type="file" class="form-control" {name} bind:files>
+    <input type="file" class="form-control" multiple accept="image/*" {name} bind:files>
     {:else if type=='check'}
     <input type="checkbox" bind:checked {name} class="form-check-input">
     <label for="floatingInput" class="form-check-label">{title}</label>

@@ -1,16 +1,23 @@
 let sequelize = require('./models').sequelize;
+let TokenCheck = require('./modules/tokens').tokenCheck;
 let router = require('express').Router();
 
 (async ()=>{
     await sequelize.sync();
 
-    router.get('/:type', async(req,res)=>{
+    router.get('/:type', TokenCheck,async(req,res)=>{
         if (sequelize.models[req.params.type]){
             try{
-                let data = req.query.id ? await sequelize.models[req.params.type].findOne({where: {
-                    id: req.query.id
-                }}) : await sequelize.models[req.params.type].findAll();
-                res.status(200).send(data);
+                if (req.query.field && req.query.value){
+                    let data = await sequelize.models[req.params.type].findAll({where: JSON.parse(`{"${req.query.field}": "${req.query.value}"}`)})
+                    res.status(200).send(data)
+                }
+                else{
+                    let data = req.query.id ? await sequelize.models[req.params.type].findOne({where: {
+                        id: req.query.id
+                    }}) : await sequelize.models[req.params.type].findAll();
+                    res.status(200).send(data);
+                }
             }
             catch(err){
                 res.status(500).send(err);

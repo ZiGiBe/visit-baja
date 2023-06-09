@@ -24,6 +24,9 @@ let db = {
     },
     Delete: (model:string, id:number)=>{
         return axios.delete(backendUrl+model, {params:{id:id}}).then(res=>res.data as ExecAnswer).catch(err=>err);
+    },
+    Login: (userdata: {username:string, password:string})=>{
+        return axios.post(backendUrl+'login');
     }
 }
 

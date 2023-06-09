@@ -1,7 +1,7 @@
 require('dotenv').config();
 const jose = require('jose');
 const {createSecretKey} = require('crypto')
-tokenCheck = async (req, res, next) => {
+const tokenCheck = async (req, res, next) => {
 
     if (req.headers.authorization) {
         const secret = createSecretKey(process.env.JWTSECRET, 'utf-8');
@@ -17,10 +17,25 @@ tokenCheck = async (req, res, next) => {
             res.status(403).send(error);
         }
     }
-    else res.status(500).json({
-        error: "err_no_token",
-        message: "No token was given!"
-    })
+    else 
+    {
+        if (req.method == "GET"){
+            if (req.params.type == "Users" || req.params.type == "Blacklist"){
+                res.status(401).json({
+                    error: 'err_unauthorized',
+                    message: 'You are not permitted to access this resource!'
+                })
+            }
+            else
+            next();
+        }
+        else res.status(401).json({
+            error: "err_no_token",
+            message: "No token was given!"
+        })
+    }
+    
+    
     
 }
 async function GiveToken() {
