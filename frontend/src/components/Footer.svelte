@@ -91,7 +91,7 @@ img{
             </ul>
         </div>
         <div class="col-md-6 col-lg-3 col-12">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d670.9986890462972!2d18.95064868085488!3d46.1777882569457!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47431ff30888f1d3%3A0x891b6ee22d926bbd!2zQmFqYSwgU3plbnRow6Fyb21zw6FnIHTDqXIgMTEsIDY1MDA!5e0!3m2!1shu!2shu!4v1686314012380!5m2!1shu!2shu" title="térkép" width="300" height="250" style="border:0;" loading="lazy"   referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d365.8633684443083!2d18.950963729880147!3d46.177978922880584!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47431ff3a7ff5399%3A0x42040f0744cb9638!2sBajai%20Turisztikai%20Nonprofit%20Kft.!5e0!3m2!1shu!2shu!4v1686317272605!5m2!1shu!2shu" title="térkép" width="300" height="250" style="border:0;" loading="lazy"   referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
     </div>
 </footer>
