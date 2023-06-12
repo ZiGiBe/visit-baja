@@ -12,15 +12,6 @@ const SightsGallery = sequelize.define('SightsGallery', {
         defaultValue: false
     }
 }, {timestamps: false});
-const ServicesGallery = sequelize.define('ServicesGallery', {
-    image: {
-        type: DataTypes.TEXT
-    },
-    preview:{
-        type: DataTypes.BOOLEAN,
-        defaultValue: false
-    }
-}, {timestamps: false});
 //Models
 const Services = sequelize.define('Services', {
     name: {
@@ -28,6 +19,12 @@ const Services = sequelize.define('Services', {
     },
     address: {
         type: DataTypes.STRING,
+    },
+    phone: {
+        type: DataTypes.STRING
+    },
+    email: {
+        type: DataTypes.STRING
     },
     description: {
         type: DataTypes.TEXT
@@ -37,6 +34,9 @@ const Services = sequelize.define('Services', {
     },
     isRestaurant:{
         type: DataTypes.BOOLEAN
+    },
+    image: {
+        type: DataTypes.TEXT
     }
 })
 const Sights = sequelize.define('Sights', {
@@ -54,11 +54,15 @@ const Sights = sequelize.define('Sights', {
     },
     href: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: false,
+        unique: true
     },
 });
 const Programs = sequelize.define('Programs', {
     title: {
+        type: DataTypes.STRING
+    },
+    address: {
         type: DataTypes.STRING
     },
     start: {
@@ -72,26 +76,22 @@ const Programs = sequelize.define('Programs', {
     desc: {
         type: DataTypes.TEXT
     },
-    image:{
-        type: DataTypes.STRING
-    }
-})
-const Accomodations = sequelize.define('Accomodations', {
-    name: {
-        type: DataTypes.STRING,
-    },
-    address: {
-        type: DataTypes.STRING
-    },
-    desc:{
+    href: {
         type: DataTypes.TEXT
     },
-    href: {
-        type: DataTypes.STRING
+    image: {
+        type: DataTypes.TEXT
+    }
+})
+const Users = sequelize.define('Users', {
+    username: {
+        type: DataTypes.STRING,
+    },
+    password: {
+        type: DataTypes.STRING,
     }
 })
 SightsGallery.belongsTo(Sights, {foreignKey: "itemID"});
-ServicesGallery.belongsTo(Services, {foreignKey: "itemID"});
 
 
-module.exports = {sequelize, Sights, Services, Programs, SightsGallery, ServicesGallery, Accomodations};
+module.exports = {sequelize, Users, Sights, Services, Programs, SightsGallery};
