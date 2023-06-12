@@ -23,22 +23,36 @@
                 Bajai Csodálatos messzire néző Türr kilátó
             </div>
         </div>
-        <div class="col-12 p-3 mt-3 mt-sm-3 mt-md-3 mt-lg-0 text-end">
-            <ul class="list-unstyled contacts">
-                <li>Baja Bácska tér 1 <img src="/map_pictogram.png" alt="map" class="icon"></li>
-                <li>30/362 7236 <img src="/phone_pictogram.png" alt="phone" class="icon"></li>
-                <li>visitbaja@gmail.com <img src="/email_pictogram.png" alt="email" class="icon"></li>
-            </ul>
+        <div class="col-12 p-3 mt-3 mt-sm-3 mt-md-3 mt-lg-0 row align-items-center">
+            <div class="col-3">
+                <a target="_blank" href="https://www.google.com/maps/place/Baja,+B%C3%A1cska+t%C3%A9r+1,+6500/@46.1855546,18.9516508,17z/data=!3m1!4b1!4m6!3m5!1s0x47431febf5f57d55:0x44a34c330ddbd8a9!8m2!3d46.1855509!4d18.9542311!16s%2Fg%2F11csjp9br7?entry=ttu">
+                    <img src="/map_icon.png" alt="map" class="btn button_image">
+                </a>
+            </div>
+            <div class="col-9 text-end">
+                <ul class="list-unstyled contacts">
+                    <li>Baja Bácska tér 1 <img src="/map_pictogram.png" alt="map" class="icon"></li>
+                    <li>30/362 7236 <img src="/phone_pictogram.png" alt="phone" class="icon"></li>
+                    <li>visitbaja@gmail.com <img src="/email_pictogram.png" alt="email" class="icon"></li>
+                </ul>
+            </div>
         </div>
         <div class="text-center">
             <a href="/" class="button btn">
-                Érdekel
+                Érdekel 
             </a>
         </div>
     </div>
 </div>
 
 <style>
+
+    .button_image{
+        height: 60px;
+        padding: 0px;
+        box-shadow: 0px 2px 5px gray;
+    }
+
     .contacts{
         font-size: large;
     }
