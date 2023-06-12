@@ -36,6 +36,10 @@ hr{
           <li class="fs-5 text-center fw-medium nav-item">
             <a class="nav-link" href="/tourinform">Tourinform Iroda</a>
           </li>
+          <hr class=" d-lg-none">
+          <li class="fs-5 text-center fw-medium nav-item">
+            <a class="nav-link" href="/kiadvanyok">Kiadványaink</a>
+          </li>
         </ul>
       </div>
     </div>
