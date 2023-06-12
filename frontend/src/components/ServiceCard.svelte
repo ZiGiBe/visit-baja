@@ -16,10 +16,10 @@
     </div>
     <div class="col-12 col-sm-12 col-md-12 col-lg-7 ms-0 d-flex justify-content-between flex-column ps-0 z-1 cover">
         <div class="col-12 ps-0">
-            <div class="serviceNameWideScreen" data-aos="slide-right" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-once="true">
+            <div class="serviceNameWideScreen mb-3" data-aos="slide-right" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-once="true">
                 Bajai Csodálatos messzire néző Türr kilátó
             </div>
-            <div class="serviceNameThinScreen">
+            <div class="serviceNameThinScreen mb-3">
                 Bajai Csodálatos messzire néző Türr kilátó
             </div>
         </div>
