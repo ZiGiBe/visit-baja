@@ -44,6 +44,7 @@
     }
 
   .divider{
+    width: 90%;
     border-width: 3px;
     border-radius: 50%;
     margin-top: 3vh;
@@ -66,27 +67,38 @@
     </div>
     <img src="/wave.png" alt="wave" class="wave">
   </header>
-  <main class="col-12 offset-md-2 col-md-8 offset-lg-2 col-lg-8 p-3 d-flex flex-column">
-    <div>
-      <ServiceCard />
-      <hr class="divider">
+  <main class="col-12 offset-md-2 col-md-8 offset-lg-0 col-lg-12 offset-xl-1 col-xl-10 p-3 d-flex flex-wrap justify-content-around">
+    <div class="col-12 col-lg-5 col-xl-5">
+      <ServiceCard>
+
+      </ServiceCard>
     </div>
-    <div>
-      <ServiceCard />
-      <hr class="divider">
+    <hr class="divider d-lg-none">
+    <div class="col-12 col-lg-5 col-xl-5">
+      <ServiceCard>
+
+      </ServiceCard>
     </div>
-    <div>
-      <ServiceCard />
-      <hr class="divider">
+    <hr class="divider">
+    <div class="col-12 col-lg-5 col-xl-5">
+      <ServiceCard>
+
+      </ServiceCard>
     </div>
-    <div>
-      <ServiceCard />
-      <hr class="divider">
+    <hr class="divider  d-lg-none">
+    <div class="col-12 col-lg-5 col-xl-5">
+      <ServiceCard>
+
+      </ServiceCard>
     </div>
-    <div>
-      <ServiceCard />
-      <hr class="divider">
+    <hr class="divider">
+    <div class="col-12 col-lg-5 col-xl-5">
+      <ServiceCard>
+
+      </ServiceCard>
     </div>
+    
+    
     
   </main>
 </div>
