@@ -13,6 +13,6 @@ app.use(cors());
 app.use('/admin', require('./users'));
 app.use('/file', require('./files'));
 app.use('/api', require('./db'));
-app.use('/media', express.static('/uploads'))
+app.use('/media', express.static(path.join(__dirname, '/uploads')))
 
 app.listen(process.env.PORT);

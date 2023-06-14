@@ -8,7 +8,7 @@ async function Upload(files:FileList){
         formdata.append('images', files[i]);
     }
 
-    axios.post('http://localhost:8080/file/new', formdata).then(res=>console.log(res)).catch(err=>console.log(err));
+    return await axios.post('http://localhost:8080/file/new', formdata).then(res=>{return {status: res.status, data: res.data}}).catch(err=>{return {status: err.response.status, data: err.response.data}});
 }
 
 

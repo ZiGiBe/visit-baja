@@ -4,7 +4,7 @@ let fs = require('fs');
 
 let storage = require('multer').diskStorage({
     filename: (req, file, cb)=>{
-        cb(null, `${file.filename}-${new Date().getTime()}`);
+        cb(null, `${new Date().getTime()}-${file.originalname}`);
     },
     destination: path.join(__dirname, './uploads'),
 })
@@ -12,11 +12,11 @@ let storage = require('multer').diskStorage({
 const multer = require('multer')({
     storage: storage,
     fileFilter: (req, file, cb)=>{
-        if (file.mimetype.includes('image/')){
+        if (file.mimetype.startsWith('image/')){
             cb(null, true)
         }
         else{
-            cb(new Error('The file isn\'t an image!'), true);
+            cb(new Error('The file isn\'t an image!'), false);
         }
     }
 });
@@ -25,10 +25,17 @@ const multer = require('multer')({
 
 router.post('/new', (req,res)=>{
     try {
-        res.status(200).send(multer.array('images'));
+        console.log(req.body);
+        multer.any('images')(req,res, (err)=>{
+            if (err) res.status(500).send(err);
+            else {
+                res.status(200).send(req.files);
+            }
+        })
     }
     catch (err){
         res.status(400).send(err);
+        throw err;
     }
 });
 router.delete('/image', (req,res)=>{
