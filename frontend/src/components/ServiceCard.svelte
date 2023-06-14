@@ -39,7 +39,7 @@
             </div>
         </div>
         <div class="text-center">
-            <a href="/" class="button btn">
+            <a href="{ServiceData.href}" class="button btn">
                 Érdekel 
             </a>
         </div>
