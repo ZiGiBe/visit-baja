@@ -56,17 +56,6 @@ register();
 <style>
 
 
-.embla {
-    overflow: hidden;
-  }
-  .embla__container {
-    display: flex;
-  }
-  .embla__slide {
-    flex: 0 0 100%;
-    min-width: 0;
-  }
-
 
 .title{
   margin: 0 0 40px 40px;  
@@ -81,8 +70,6 @@ register();
   transition: 0.5s;
   color: white;
 }
-
-
 
 
   /* Small */
