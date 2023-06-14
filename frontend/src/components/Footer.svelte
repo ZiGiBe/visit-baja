@@ -1,10 +1,5 @@
-<script lang="ts">
-
-</script>
-
 <style>
 footer{
-    
     background-color: var(--kek8);
     color: white;
     text-shadow: 2px 2px var(--kek2);
@@ -53,7 +48,7 @@ img{
 <footer class="d-flex justify-content-around container-fluid ">
     <div class="row my-3">
         <div class="col-md-6 col-lg-3 col-12" >
-            <img src="logo.png" class="centerifsmall" alt="Szeretlek Baja">
+            <img src="/logo.png" class="centerifsmall" alt="Szeretlek Baja">
         </div>
         <div class="col-md-6 col-lg-3 col-12">
             <h2>Menü</h2>
