@@ -1,5 +1,6 @@
 <script lang="ts">
-
+    import type { Sight } from "../interfaces/Sights";
+    export let SightData:Sight;
 </script>
 
 <style>
@@ -78,14 +79,14 @@
 <!-- Card -->
 <div >
     <div class="card m-3 p-3 d-flex flex-column align-items-center mx-auto">
-        <h3 class="m-auto mt-3">Title example</h3>
-        <img src="/kep_wide.jfif" class="card-img-top rounded mt-3" alt="example">
+        <h3 class="m-auto mt-3">{SightData.name}</h3>
+        <img src="http://localhost:8080/media/{SightData.gallery.find(x=>x.preview).image}" class="card-img-top rounded mt-3" alt="example">
         <div class="card-body d-flex flex-column align-items-center">
             <p class="card-text text-center p-2">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi harum possimus quos, expedita.
+                {SightData.shortdesc}
             </p>
         </div>
-        <a href="/" class="btn btn-primary pl-3 pr-3">
+        <a href="/latvanyossagok/{SightData.href}" class="btn btn-primary pl-3 pr-3">
             Tovább
         </a>
       </div>

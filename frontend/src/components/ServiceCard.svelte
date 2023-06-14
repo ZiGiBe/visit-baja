@@ -2,25 +2,26 @@
     import AOS from "aos";
     import 'aos/dist/aos.css'
     import { onMount } from "svelte";
-
+    import type { Service } from "../interfaces/Service";
     onMount(()=> {
         AOS.init();
     })
 
+    export let ServiceData:Service;
 
 </script>
 
 <div class="serviceCard row">
     <div class="col-12 col-sm-12 col-md-12 col-lg-5 me-0 p-0 z-2">
-        <img src="/kep_normal.jpg" alt="thumbnail" class="thumbnail">
+        <img src="http://localhost:8080/media/{ServiceData.image}" alt="thumbnail" class="thumbnail">
     </div>
     <div class="col-12 col-sm-12 col-md-12 col-lg-7 ms-0 d-flex justify-content-between flex-column ps-0 z-1 cover">
         <div class="col-12 ps-0">
             <div class="serviceNameWideScreen mb-3" data-aos="slide-right" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-once="true">
-                Bajai Csodálatos messzire néző Türr kilátó
+                {ServiceData.name}
             </div>
             <div class="serviceNameThinScreen mb-3">
-                Bajai Csodálatos messzire néző Türr kilátó
+                {ServiceData.name}
             </div>
         </div>
         <div class="col-12 p-3 mt-3 mt-sm-3 mt-md-3 mt-lg-0 row align-items-center">
@@ -31,9 +32,9 @@
             </div>
             <div class="col-9 text-end">
                 <ul class="list-unstyled contacts">
-                    <li>Baja Bácska tér 1 <img src="/map_pictogram.png" alt="map" class="icon"></li>
-                    <li>30/362 7236 <img src="/phone_pictogram.png" alt="phone" class="icon"></li>
-                    <li>visitbaja@gmail.com <img src="/email_pictogram.png" alt="email" class="icon"></li>
+                    <li>{ServiceData.address}<img src="/map_pictogram.png" alt="map" class="icon"></li>
+                    <li>{ServiceData.phone}<img src="/phone_pictogram.png" alt="phone" class="icon"></li>
+                    <li>{ServiceData.email}<img src="/email_pictogram.png" alt="email" class="icon"></li>
                 </ul>
             </div>
         </div>

@@ -1,5 +1,9 @@
 <script lang="ts">
 
+    import type { Program } from "../interfaces/Programs";
+
+    export let ProgramData:Program;
+
 </script>
 
 <style>
@@ -118,19 +122,19 @@
 <!-- Card -->
 <div>
     <div class="card m-3 mx-auto">
-        <img src="/kep_wide.jfif" class="card-img-top" alt="...">
+        <img src="http://localhost:8080/media/{ProgramData.image}" class="card-img-top" alt="...">
         <div class="d-flex align-items-center justify-content-center" id="darkness">
             <p>
-                from - to
+                {ProgramData.start} - {ProgramData.end}
             </p>
         </div>
         <div class="card-body d-flex flex-column align-items-center">
-            <h3 class="card-title text-center">Example title</h3>
+            <h3 class="card-title text-center">{ProgramData.title}</h3>
             <hr class="line">
             <p class="card-text text-center">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi harum possimus quos, expedita, tempora nesciunt laudantium sapiente ipsa.
+                {ProgramData.desc}
             </p>
-            <a href="/" class="btn btn-primary pl-3 pr-3">
+            <a href="{ProgramData.href}" class="btn btn-primary pl-3 pr-3">
                 Tovább
             </a>
         </div>
