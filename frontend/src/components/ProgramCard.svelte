@@ -122,7 +122,7 @@
 <!-- Card -->
 <div>
     <div class="card m-3 mx-auto">
-        <img src="http://localhost:8080/media/{ProgramData.image}" class="card-img-top" alt="...">
+        <img src="http://localhost:8080/uploads/{ProgramData.image}" class="card-img-top" alt="...">
         <div class="d-flex align-items-center justify-content-center" id="darkness">
             <p>
                 {ProgramData.start} - {ProgramData.end}
