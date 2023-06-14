@@ -13,7 +13,7 @@
 
 <div class="serviceCard row">
     <div class="col-12 col-sm-12 col-md-12 col-lg-5 me-0 p-0 z-2">
-        <img src="http://localhost:8080/uploads/{ServiceData.image}" alt="thumbnail" class="thumbnail">
+        <img src="http://localhost:8080/media/{ServiceData.image}" alt="thumbnail" class="thumbnail">
     </div>
     <div class="col-12 col-sm-12 col-md-12 col-lg-7 ms-0 d-flex justify-content-between flex-column ps-0 z-1 cover">
         <div class="col-12 ps-0">
@@ -26,7 +26,7 @@
         </div>
         <div class="col-12 p-3 mt-3 mt-sm-3 mt-md-3 mt-lg-0 row align-items-center">
             <div class="col-3">
-                <a target="_blank" href="https://www.google.com/maps/place/Baja, Bácska tér 1">
+                <a target="_blank" href="https://www.google.com/maps/place/{ServiceData.address}">
                     <img src="/map_icon.png" alt="map" class="btn button_image">
                 </a>
             </div>
