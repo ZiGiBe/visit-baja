@@ -1,7 +1,7 @@
 <script lang="ts">
     import Menu from "../components/Menu.svelte";
     import Wallapper from "../components/Wallapper.svelte";
-    import Interests from "../components/Interests.svelte";
+    import Sights from "../components/Sights.svelte";
     import DesignElement from "../components/DesignElement.svelte";
     import Restaurant_Ad from "../components/Restaurant_Ad.svelte";
     import Accomodation_Ad from "../components/Accomodation_Ad.svelte";
@@ -18,7 +18,7 @@
 <Menu/>
 <main>
     <Wallapper/>
-    <Interests/> 
+    <Sights/> 
     <DesignElement/>
     <Restaurant_Ad/>
     <Accomodation_Ad/>

@@ -1,7 +1,21 @@
 <script lang="ts">
   import { register } from 'swiper/element/bundle';
+  import type { Program } from '../interfaces/Programs';
   //ezt a hibát ne vedd figyelembe attól még működik
   register();
+
+    // Példa a kőködéshez
+
+    let example:Program = {
+      id: 0,
+      title: "Example Title",
+      start: new Date(),
+      end: new Date(),
+      desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      href: "https://visithajos.hu",
+      image: "kep_tall.jfif"
+    }
+    //-----------------------
 
   var options = {
     slidesPerView: 1,
@@ -55,18 +69,19 @@ import ProgramCard from './ProgramCard.svelte';
     }
   }}
 >
-  <swiper-slide><ProgramCard/></swiper-slide>
-  <swiper-slide><ProgramCard/></swiper-slide>
-  <swiper-slide><ProgramCard/></swiper-slide>
-  <swiper-slide><ProgramCard/></swiper-slide>
-  <swiper-slide><ProgramCard/></swiper-slide>
-  <swiper-slide><ProgramCard/></swiper-slide>
-  <swiper-slide><ProgramCard/></swiper-slide>
-  <swiper-slide><ProgramCard/></swiper-slide>
-  <swiper-slide><ProgramCard/></swiper-slide>
-  <swiper-slide><ProgramCard/></swiper-slide>
-  <swiper-slide><ProgramCard/></swiper-slide>
-  <swiper-slide><ProgramCard/></swiper-slide>
+  <swiper-slide><ProgramCard ProgramData={example}/></swiper-slide>
+  <swiper-slide><ProgramCard ProgramData={example}/></swiper-slide>
+  <swiper-slide><ProgramCard ProgramData={example}/></swiper-slide>
+  <swiper-slide><ProgramCard ProgramData={example}/></swiper-slide>
+  <swiper-slide><ProgramCard ProgramData={example}/></swiper-slide>
+  <swiper-slide><ProgramCard ProgramData={example}/></swiper-slide>
+  <swiper-slide><ProgramCard ProgramData={example}/></swiper-slide>
+  <swiper-slide><ProgramCard ProgramData={example}/></swiper-slide>
+  <swiper-slide><ProgramCard ProgramData={example}/></swiper-slide>
+  <swiper-slide><ProgramCard ProgramData={example}/></swiper-slide>
+  <swiper-slide><ProgramCard ProgramData={example}/></swiper-slide>
+  <swiper-slide><ProgramCard ProgramData={example}/></swiper-slide>
+
   
 </swiper-container>
 

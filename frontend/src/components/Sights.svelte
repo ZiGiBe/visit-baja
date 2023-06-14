@@ -1,8 +1,25 @@
 <script lang="ts">
-import InterestCard from './InterestCard.svelte';
+import SightCard from './SightCard.svelte';
 import { register } from 'swiper/element/bundle';
+import type { Sight } from '../interfaces/Sights';
+import type { Gallery } from '../interfaces/Gallery';
 //ezt a hibát ne vedd figyelembe attól még működik
 register();
+
+    // Példa a kőködéshez
+    let exampleGallery:Gallery ={
+      image:"kep_normal.jpg",
+      preview:true,
+    }
+
+    let example:Sight = {
+      name:"Example name",
+      shortdesc:"Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      fulldesc:"long",
+      href:"asd",
+      gallery:[exampleGallery]
+    }
+    //-----------------------
 
 
 </script>
@@ -36,18 +53,17 @@ register();
     }
   }}
 >
-  <swiper-slide><InterestCard/></swiper-slide>
-  <swiper-slide><InterestCard/></swiper-slide>
-  <swiper-slide><InterestCard/></swiper-slide>
-  <swiper-slide><InterestCard/></swiper-slide>
-  <swiper-slide><InterestCard/></swiper-slide>
-  <swiper-slide><InterestCard/></swiper-slide>
-  <swiper-slide><InterestCard/></swiper-slide>
-  <swiper-slide><InterestCard/></swiper-slide>
-  <swiper-slide><InterestCard/></swiper-slide>
-  <swiper-slide><InterestCard/></swiper-slide>
-  <swiper-slide><InterestCard/></swiper-slide>
-  <swiper-slide><InterestCard/></swiper-slide>
+  <swiper-slide><SightCard SightData={example}/></swiper-slide>
+  <swiper-slide><SightCard SightData={example}/></swiper-slide>
+  <swiper-slide><SightCard SightData={example}/></swiper-slide>
+  <swiper-slide><SightCard SightData={example}/></swiper-slide>
+  <swiper-slide><SightCard SightData={example}/></swiper-slide>
+  <swiper-slide><SightCard SightData={example}/></swiper-slide>
+  <swiper-slide><SightCard SightData={example}/></swiper-slide>
+  <swiper-slide><SightCard SightData={example}/></swiper-slide>
+  <swiper-slide><SightCard SightData={example}/></swiper-slide>
+
+
   
 </swiper-container>
 
