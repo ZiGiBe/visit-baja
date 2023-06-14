@@ -9,6 +9,7 @@
     let image: FileList;
     let isWholeDay = false;
 
+    //Uploading to the DB.
     async function SubmitEvent() {
         let errors = CheckForm();
         if (errors.length <= 0) {
@@ -27,6 +28,7 @@
         programalert(SetUpErrorData(errors));
     }
 
+    //Input validation bundled up.
     function CheckForm() {
         let errors: string[] = [];
         if (!DatesAreDates()) errors.push("A dátum(ok) nincs(enek) kitöltve!");
@@ -41,6 +43,7 @@
         return errors;
     }
 
+    //Input validation
     function SetUpErrorData(errors: string[]) {
         return {
             show: true,

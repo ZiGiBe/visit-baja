@@ -23,7 +23,9 @@
         message.reason = data.reason;
         message.reasondesc = data.reasondesc;
         message.errors = data.errors;
-        ScrollToElement();
+        setTimeout(() => {
+            ScrollToElement();
+        }, 100);
     }
 </script>
 

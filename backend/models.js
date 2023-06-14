@@ -49,7 +49,7 @@ const Sights = sequelize.define('Sights', {
         allowNull: false,
     },
     fulldesc: {
-        type: DataTypes.TEXT,
+        type: DataTypes.JSON,
         allowNull: false
     },
     href: {

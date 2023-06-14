@@ -16,6 +16,14 @@ let db = {
         }).then(res=>res.data).catch(err=>err) : 
         axios.get(backendUrl+model).then(res=>res.data).catch(err=>err);
     },
+    GetFieldValue: (model: string, field: string, value: string|number)=>{
+        return axios.get(backendUrl+model, {
+            params:{
+                field: field,
+                value: value
+            }
+        }).then(res=>res.data).catch(err=>err);
+    },
     Patch: (model:string, id:number, patchData:any)=>{
         return axios.patch(backendUrl+model, patchData, {params:{id:id}}).then(res=>res.data as ExecAnswer).catch(err=>err);
     },
