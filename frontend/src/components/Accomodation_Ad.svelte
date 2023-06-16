@@ -19,10 +19,15 @@
 <style>
 
 .containerBox{
+    background-image: url('/szallas.png');
+    background-size:contain;
+    background-position: bottom;
+    background-repeat: no-repeat;
     display: flex;
-    justify-content: space-around;
-    align-items: center;
+    align-items:center;
     flex-direction: column;
+    padding-top: 10vh;
+    text-align: center;
 }
 
 .lane div:nth-child(2){
@@ -55,6 +60,11 @@
 @media only screen and (max-width: 768px){
     .lane{
         flex-direction: column;
+    }
+
+    .containerBox{
+        padding-top: unset;
+        background-image: unset;
     }
 
     .image{
