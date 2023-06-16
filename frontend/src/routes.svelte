@@ -11,9 +11,9 @@
 
 <Route path="/"><Index/></Route>
 <Route path="/tourinform" ><Tourinform /></Route>
-<Route path="/vendeglatas/*">
+<Route path="/szolgaltatasok/*">
     <SubRoute />
-    <Route fallback redirect="/vendeglatas/ettermek" />
+    <Route fallback redirect="/szolgaltatasok/ettermek" />
 </Route>
 <Route path="/admin"><Admin/></Route>
 <Route path="/admin/login"><Login/></Route>
