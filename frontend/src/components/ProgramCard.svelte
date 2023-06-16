@@ -1,9 +1,10 @@
 <script lang="ts">
 
     import type { Program } from "../interfaces/Programs";
-    import { Format } from "../services/DateFormatter";
+    import { ProgramTime } from "../services/DateFormatter";
     export let ProgramData:Program;
 
+    let dates = ProgramTime(ProgramData.start,ProgramData.end)
 </script>
 
 <style>
@@ -124,9 +125,15 @@
     <div class="card m-3 mx-auto">
         <img src="http://localhost:8080/media/{ProgramData.image}" class="card-img-top" alt="...">
         <div class="d-flex align-items-center justify-content-center" id="darkness">
-            <p>
-                {Format(ProgramData.start)} - {ProgramData.end}
-            </p>
+           {#if dates.length==3}
+                <p>
+                    {dates[0]}<br>{dates[1]} - {dates[2]}
+                </p>
+            {:else}
+                <p>
+                    {dates[0]} - {dates[1]}
+                </p>
+           {/if}
         </div>
         <div class="card-body d-flex flex-column align-items-center">
             <h3 class="card-title text-center">{ProgramData.title}</h3>
