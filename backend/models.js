@@ -26,9 +26,6 @@ const Services = sequelize.define('Services', {
     email: {
         type: DataTypes.STRING
     },
-    description: {
-        type: DataTypes.TEXT
-    },
     href:{
         type: DataTypes.STRING
     },
