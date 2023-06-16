@@ -15,10 +15,9 @@
         if (errors.length<=0){
             newSight.fulldesc = await editor.getData();
             let uploadedSight = await db.Post('Sights', newSight);
-            if (await UploadFiles(uploadedSight.id)){
-
+            if (!await UploadFiles(uploadedSight.id)){
+                errors.push('Hiba a fájlfeltöltésben, kérem próbálja újra!');
             }
-            else errors.push('Hiba a fájlfeltöltésben, kérem próbálja újra!');
         }
         SetUpErrorData(errors);
     }
