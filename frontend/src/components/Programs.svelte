@@ -6,16 +6,18 @@
 
     // Példa a kőködéshez
 
+    
     let example:Program = {
       id: 0,
       title: "Example Title",
-      start: new Date(),
+      start: new Date("2020-01-01"),
       end: new Date(),
       desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
       href: "https://visithajos.hu",
       image: "kep_tall.jfif"
     }
     //-----------------------
+   let ProgramList:Program[]=[example,example,example,example,example,example]
 
   var options = {
     slidesPerView: 1,
@@ -47,44 +49,35 @@ import ProgramCard from './ProgramCard.svelte';
       Nálunk mindig történik valami!
     </span>
   </h2>
-
-  <swiper-container
-  loop={true}
-  slides-per-view={1}
-  space-between={30}
-  grab-cursor="true"
-  autoplay={{
-          disableOnInteraction:true,
-          pauseOnMouseEnter: true,
-          delay: 5000,
-        }}
-  breakpoints={{
-    768: {
-      slidesPerView: 2,
-      spaceBetween: 30
-    },
-    1100: {
-      slidesPerView: 3,
-      spaceBetween: 30
-    }
-  }}
->
-  <swiper-slide><ProgramCard ProgramData={example}/></swiper-slide>
-  <swiper-slide><ProgramCard ProgramData={example}/></swiper-slide>
-  <swiper-slide><ProgramCard ProgramData={example}/></swiper-slide>
-  <swiper-slide><ProgramCard ProgramData={example}/></swiper-slide>
-  <swiper-slide><ProgramCard ProgramData={example}/></swiper-slide>
-  <swiper-slide><ProgramCard ProgramData={example}/></swiper-slide>
-  <swiper-slide><ProgramCard ProgramData={example}/></swiper-slide>
-  <swiper-slide><ProgramCard ProgramData={example}/></swiper-slide>
-  <swiper-slide><ProgramCard ProgramData={example}/></swiper-slide>
-  <swiper-slide><ProgramCard ProgramData={example}/></swiper-slide>
-  <swiper-slide><ProgramCard ProgramData={example}/></swiper-slide>
-  <swiper-slide><ProgramCard ProgramData={example}/></swiper-slide>
-
-  
-</swiper-container>
-
+  {#await ProgramList}
+    <div class="spinner-border"></div>
+  {:then Programs} 
+    <swiper-container
+      loop={true}
+      slides-per-view={1}
+      space-between={30}
+      grab-cursor="true"
+      autoplay={{
+              disableOnInteraction:true,
+              pauseOnMouseEnter: true,
+              delay: 5000,
+            }}
+      breakpoints={{
+        768: {
+          slidesPerView: 2>Programs.length-1?1:2,
+          spaceBetween: 30
+        },
+        1100: {
+          slidesPerView: 3>Programs.length-1?2>Programs.length-1?1:2:3,
+          spaceBetween: 30
+        }
+      }}
+    >
+      {#each Programs as Program}
+        <swiper-slide><ProgramCard ProgramData={Program}/></swiper-slide>
+      {/each}
+    </swiper-container>
+  {/await}
 </div>
 <style>
 

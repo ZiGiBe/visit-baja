@@ -5,9 +5,11 @@
 <header>
     <h1 class="offset-3 col-6">
         {#if meta().url.includes("ettermek")}
-        Éttermek
+            Éttermek
+        {:else if meta().url.includes("szallasok")}
+            Szálláshelyek
         {:else}
-        Szálláshelyek
+            Tourinform iroda
         {/if}
     </h1>
     <div class="fade-effect"></div>

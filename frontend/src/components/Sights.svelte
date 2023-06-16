@@ -3,6 +3,7 @@ import SightCard from './SightCard.svelte';
 import { register } from 'swiper/element/bundle';
 import type { Sight } from '../interfaces/Sights';
 import type { Gallery } from '../interfaces/Gallery';
+    import Sight from './Admin/Modal/Mod/Sight.svelte';
 //ezt a hibát ne vedd figyelembe attól még működik
 register();
 
@@ -21,6 +22,7 @@ register();
     }
     //-----------------------
 
+  let SightList:Sight[]=[example,example,example,example,example,example]
 
 </script>
 
@@ -32,41 +34,35 @@ register();
     </span>
   </h2>
 
-  <swiper-container
-  loop={true}
-  slides-per-view={1}
-  space-between={30}
-  grab-cursor="true"
-  autoplay={{
-          disableOnInteraction:true,
-          pauseOnMouseEnter: true,
-          delay: 5000,
-        }}
-  breakpoints={{
-    768: {
-      slidesPerView: 2,
-      spaceBetween: 30
-    },
-    1100: {
-      slidesPerView: 3,
-      spaceBetween: 30
-    }
-  }}
->
-  <swiper-slide><SightCard SightData={example}/></swiper-slide>
-  <swiper-slide><SightCard SightData={example}/></swiper-slide>
-  <swiper-slide><SightCard SightData={example}/></swiper-slide>
-  <swiper-slide><SightCard SightData={example}/></swiper-slide>
-  <swiper-slide><SightCard SightData={example}/></swiper-slide>
-  <swiper-slide><SightCard SightData={example}/></swiper-slide>
-  <swiper-slide><SightCard SightData={example}/></swiper-slide>
-  <swiper-slide><SightCard SightData={example}/></swiper-slide>
-  <swiper-slide><SightCard SightData={example}/></swiper-slide>
-
-
-  
-</swiper-container>
-
+  {#await SightList}
+    <div class="spinner-border"></div>
+  {:then Sights} 
+    <swiper-container
+      loop={true}
+      slides-per-view={1}
+      space-between={30}
+      grab-cursor="true"
+      autoplay={{
+              disableOnInteraction:true,
+              pauseOnMouseEnter: true,
+              delay: 5000,
+            }}
+      breakpoints={{
+        768: {
+          slidesPerView: 2>Sights.length-1?1:2,
+          spaceBetween: 30
+        },
+        1100: {
+          slidesPerView: 3>Sights.length-1?2>Sights.length-1?1:2:3,
+          spaceBetween: 30
+        }
+      }}
+    >
+      {#each Sights as Sight}
+        <swiper-slide><SightCard SightData={Sight}/></swiper-slide>
+      {/each}
+    </swiper-container>
+  {/await}
 </div>
 
 <style>

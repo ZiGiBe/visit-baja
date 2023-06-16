@@ -26,19 +26,19 @@ hr{
           </li>
           <hr class="d-lg-none">
           <li class="fs-5 text-center fw-medium nav-item">
-            <a class="nav-link" href="/vendeglatas/szallasok">Szállások</a>
+            <a class="nav-link" href="/szolgaltatasok/szallasok">Szállások</a>
           </li>
           <hr class=" d-lg-none">
           <li class="fs-5 text-center fw-medium nav-item">
-            <a class="nav-link" href="/vendeglatas/ettermek">Vendéglátóhelyek</a>
+            <a class="nav-link" href="/szolgaltatasok/ettermek">Vendéglátóhelyek</a>
           </li>
           <hr class=" d-lg-none">
           <li class="fs-5 text-center fw-medium nav-item">
-            <a class="nav-link" href="/tourinform">Tourinform Iroda</a>
+            <a class="nav-link" href="/szolgaltatasok/tourinform">Tourinform Iroda</a>
           </li>
           <hr class=" d-lg-none">
           <li class="fs-5 text-center fw-medium nav-item">
-            <a class="nav-link" href="/tourinform#kiadvanyok">Kiadványaink</a>
+            <a class="nav-link" href="/szolgaltatasok/tourinform#kiadvanyok">Kiadványaink</a>
           </li>
         </ul>
       </div>
