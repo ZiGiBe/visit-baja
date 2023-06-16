@@ -1,7 +1,7 @@
 <script lang="ts">
 
     import type { Program } from "../interfaces/Programs";
-
+    import { Format } from "../services/DateFormatter";
     export let ProgramData:Program;
 
 </script>
@@ -125,7 +125,7 @@
         <img src="http://localhost:8080/media/{ProgramData.image}" class="card-img-top" alt="...">
         <div class="d-flex align-items-center justify-content-center" id="darkness">
             <p>
-                {ProgramData.start} - {ProgramData.end}
+                {Format(ProgramData.start)} - {ProgramData.end}
             </p>
         </div>
         <div class="card-body d-flex flex-column align-items-center">
