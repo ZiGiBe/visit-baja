@@ -2,6 +2,8 @@
     export let isRestaurant:boolean;
     import ServiceCard from "../components/ServiceCard.svelte";
     import type { Service } from "../interfaces/Service";
+    import { CheckSite } from "../services/ActualSite";
+    CheckSite();
 
 
     // Példa a kőködéshez
