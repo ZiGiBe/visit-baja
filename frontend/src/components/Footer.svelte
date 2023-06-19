@@ -54,10 +54,10 @@ img{
             <h2>Menü</h2>
             <ul>
                 <li> <a href="/">Kezdőlap</a></li>
-                <li> <a href="/szallasok">Szállások</a></li>
-                <li> <a href="/ettermek">Vendéglátóhelyek</a></li>
-                <li> <a href="/tourinform">Tourinform Iroda</a></li>
-                <li> <a href="/kiadvanyok">Kiadványaink</a></li>
+                <li> <a href="/szolgaltatasok/szallasok">Szállások</a></li>
+                <li> <a href="/szolgaltatasok/vendeglatohelyek">Vendéglátóhelyek</a></li>
+                <li> <a href="/szolgaltatasok/tourinform">Tourinform Iroda</a></li>
+                <li> <a href="/szolgaltatasok/tourinform#kiadvanyok">Kiadványaink</a></li>
             </ul>
         </div>
         <div class="col-md-6 col-lg-3 col-12">
