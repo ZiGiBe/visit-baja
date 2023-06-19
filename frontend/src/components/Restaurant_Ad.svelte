@@ -10,7 +10,7 @@
         <h2>
             Töltsd meg nálunk a bendőd!
         </h2>
-        <a href="/" class="btn btn-secondary m-3">
+        <a href="/szolgaltatasok/vendeglatohelyek" class="btn btn-secondary m-3">
             <h4>Éttermek</h4>
         </a>
     </div>

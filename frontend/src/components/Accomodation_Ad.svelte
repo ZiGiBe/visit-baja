@@ -10,7 +10,7 @@
         <h2>
             Aludj ma minálunk legyél a mi lányunk
         </h2>
-        <a href="/" class="btn btn-secondary">
+        <a href="/szolgaltatasok/szallasok" class="btn btn-secondary">
             <h4>Szállásaink</h4>
         </a>
     </div>

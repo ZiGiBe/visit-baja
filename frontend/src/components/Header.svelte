@@ -1,16 +1,10 @@
 <script>
-    import { meta } from 'tinro';
+    import { Site } from "../services/ActualSite";
 </script>
 
 <header>
     <h1 class="offset-3 col-6">
-        {#if meta().url.includes("ettermek")}
-            Éttermek
-        {:else if meta().url.includes("szallasok")}
-            Szálláshelyek
-        {:else}
-            Tourinform iroda
-        {/if}
+        {$Site}
     </h1>
     <div class="fade-effect"></div>
     <img src="/wave.png" alt="wave" class="wave">
