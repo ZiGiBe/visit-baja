@@ -1,46 +1,10 @@
 <script lang="ts">
   import { register } from 'swiper/element/bundle';
-  import type { Program } from '../interfaces/Programs';
+  import ProgramCard from './ProgramCard.svelte';
+  import db from '../services/DB';
+  let Programs = db.GetFieldValue('Programs', 'end', new Date().toISOString(), 'gte');
   //ezt a hibát ne vedd figyelembe attól még működik
   register();
-
-    // Példa a kőködéshez
-
-    
-    let example:Program = {
-      id: 0,
-      title: "Example Title",
-      start: new Date("2020-01-01"),
-      end: new Date(),
-      desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-      href: "https://visithajos.hu",
-      image: "kep_tall.jfif"
-    }
-    //-----------------------
-   let ProgramList:Program[]=[example,example,example,example,example,example]
-
-  var options = {
-    slidesPerView: 1,
-    loop:true,
-    autoplay: {
-        disableOnInteraction: true,
-        pauseOnMouseEnter: true,
-        delay: 10000,
-      },
-    spaceBetween: 30,
-    breakpoints: {
-      768: {
-        slidesPerView: 2,
-        spaceBetween: 30
-      },
-      1100: {
-        slidesPerView: 3,
-        spaceBetween: 30
-      }
-    }
-  };
-
-import ProgramCard from './ProgramCard.svelte';
 </script>
 <div class="my-3">
 
@@ -49,7 +13,7 @@ import ProgramCard from './ProgramCard.svelte';
       Nálunk mindig történik valami!
     </span>
   </h2>
-  {#await ProgramList}
+  {#await Programs}
     <div class="spinner-border"></div>
   {:then Programs} 
     <swiper-container

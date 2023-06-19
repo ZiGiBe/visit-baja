@@ -3,26 +3,22 @@ import SightCard from './SightCard.svelte';
 import { register } from 'swiper/element/bundle';
 import type { Sight } from '../interfaces/Sights';
 import type { Gallery } from '../interfaces/Gallery';
-    import Sight from './Admin/Modal/Mod/Sight.svelte';
+import db from '../services/DB';
+
+let SightsPromise = Promise.all([db.Get('Sights'), db.GetFieldValue('SightsGallery', 'preview', 1)]).then((Results)=>{
+  let sights = Results[0] as Sight[];
+  let images = Results[1] as Gallery[];
+  
+  return sights.map(e=>{return {
+    ...e,
+    gallery: images.filter(h=>h.itemID==e.id)
+  }
+})
+})
+
+
 //ezt a hibát ne vedd figyelembe attól még működik
 register();
-
-    // Példa a kőködéshez
-    let exampleGallery:Gallery ={
-      image:"kep_normal.jpg",
-      preview:true,
-    }
-
-    let example:Sight = {
-      name:"Example name",
-      shortdesc:"Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-      fulldesc:"long",
-      href:"asd",
-      gallery:[exampleGallery]
-    }
-    //-----------------------
-
-  let SightList:Sight[]=[example,example,example,example,example,example]
 
 </script>
 
@@ -34,7 +30,7 @@ register();
     </span>
   </h2>
 
-  {#await SightList}
+  {#await SightsPromise}
     <div class="spinner-border"></div>
   {:then Sights} 
     <swiper-container
