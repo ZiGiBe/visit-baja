@@ -30,7 +30,7 @@ hr{
           </li>
           <hr class=" d-lg-none">
           <li class="fs-5 text-center fw-medium nav-item">
-            <a class="nav-link" href="/szolgaltatasok/ettermek">Vendéglátóhelyek</a>
+            <a class="nav-link" href="/szolgaltatasok/vendeglatohelyek">Vendéglátóhelyek</a>
           </li>
           <hr class=" d-lg-none">
           <li class="fs-5 text-center fw-medium nav-item">

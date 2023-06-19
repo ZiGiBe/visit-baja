@@ -4,7 +4,7 @@
     import { ProgramTime } from "../services/DateFormatter";
     export let ProgramData:Program;
 
-    let dates = ProgramTime(ProgramData.start,ProgramData.end)
+    let dates = ProgramTime(ProgramData.start,ProgramData.end)  
 </script>
 
 <style>
@@ -129,9 +129,13 @@
                 <p>
                     {dates[0]}<br>{dates[1]} - {dates[2]}
                 </p>
-            {:else}
+            {:else if dates.length==2}
                 <p>
                     {dates[0]} - {dates[1]}
+                </p>
+            {:else}
+                <p>
+                    {dates[0]}
                 </p>
            {/if}
         </div>

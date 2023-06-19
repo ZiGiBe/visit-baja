@@ -10,7 +10,7 @@
 
 <Menu/>
 <Header />
-<Route path="/ettermek" ><Services isRestaurant={true} /></Route>
+<Route path="/vendeglatohelyek" ><Services isRestaurant={true} /></Route>
 <Route path="/szallasok" ><Services isRestaurant={false} /></Route>
 <Route path="/tourinform" ><Tourinform /></Route>
 <Footer />

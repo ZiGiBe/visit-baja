@@ -3,6 +3,8 @@
     import ServiceCard from "../components/ServiceCard.svelte";
     import type { Service } from "../interfaces/Service";
     import db from "../services/DB";
+    import { CheckSite } from "../services/ActualSite";
+    CheckSite();
 
     let Services = db.GetFieldValue('Services', 'isRestaurant', isRestaurant ? 1 : 0);
 

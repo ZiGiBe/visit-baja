@@ -1,6 +1,3 @@
-function FormatShort(date){
-    return new Intl.DateTimeFormat('hu-HU',{dateStyle:"short"}).format(new Date(date))
-}
 
 function FormatMedium(date){
     return new Intl.DateTimeFormat('hu-HU',{dateStyle:"medium"}).format(new Date(date))
@@ -13,7 +10,11 @@ function FormatTime(date){
 
 export function ProgramTime(start:Date, end:Date){
    
-    if (FormatShort(start)==FormatShort(end)) {
+    if(start==end)
+    {
+        return [FormatMedium(start)]
+    } 
+    else if (FormatMedium(start)==FormatMedium(end)) {
         return [FormatMedium(start),FormatTime(start),FormatTime(end)]
     }
     else{

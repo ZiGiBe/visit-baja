@@ -14,7 +14,7 @@
 <Route path="/tourinform" ><Tourinform /></Route>
 <Route path="/szolgaltatasok/*">
     <SubRoute />
-    <Route fallback redirect="/szolgaltatasok/ettermek" />
+    <Route fallback redirect="/szolgaltatasok/vendeglatohelyek" />
 </Route>
 <Route path="/latnivalok/:sighthref"><Sight/></Route>
 <Route path="/admin"><Admin/></Route>
