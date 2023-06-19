@@ -6,11 +6,10 @@
 
     // Példa a kőködéshez
 
-    
     let example:Program = {
       id: 0,
       title: "Example Title",
-      start: new Date("2020-01-01"),
+      start: new Date(),
       end: new Date(),
       desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
       href: "https://visithajos.hu",
