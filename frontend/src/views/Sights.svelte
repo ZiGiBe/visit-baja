@@ -22,11 +22,11 @@
     {#await SightsPromise}
         <div class="spinner-border"></div>
     {:then Sights} 
-        <div class="d-flex justify-content-around row">
+        <div class="row justify-content-around" >
             {#each Sights as Sight}
-                <div class="col-sm-1 col-md-2 col-lg-3">
-                    <SightCard SightData={Sight}/>
-                </div>
+            <div class="col-lg-3 col-md-5 col-sm-10 mb-3">
+                <SightCard SightData={Sight} />
+            </div>
             {/each}
         </div>
     {/await}
