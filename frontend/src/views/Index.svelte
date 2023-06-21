@@ -1,11 +1,11 @@
 <script lang="ts">
     import Menu from "../components/Menu.svelte";
     import Wallapper from "../components/Wallapper.svelte";
-    import Sights from "../components/Sights.svelte";
+    import SightSlider from "../components/SightSlider.svelte";
     import DesignElement from "../components/DesignElement.svelte";
     import Restaurant_Ad from "../components/Restaurant_Ad.svelte";
     import Accomodation_Ad from "../components/Accomodation_Ad.svelte";
-    import Programs from "../components/Programs.svelte";
+    import ProgramSlider from "../components/ProgramSlider.svelte";
     import Footer from "../components/Footer.svelte";
     
 
@@ -18,10 +18,10 @@
 <Menu/>
 <main>
     <Wallapper/>
-    <Sights/> 
+    <SightSlider/> 
     <DesignElement/>
     <Restaurant_Ad/>
     <Accomodation_Ad/>
-    <Programs/> 
+    <ProgramSlider/> 
     <Footer/> 
 </main>

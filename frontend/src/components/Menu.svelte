@@ -1,3 +1,6 @@
+<script>
+  import { Routes } from "../services/ActualSite";
+</script>
 <style> 
 nav *{
     background-color: #C0E7F6;
@@ -21,25 +24,12 @@ hr{
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
-          <li class="fs-5 text-center fw-medium nav-item">
-            <a class="nav-link" href="/">Kezdőlap</a>
-          </li>
-          <hr class="d-lg-none">
-          <li class="fs-5 text-center fw-medium nav-item">
-            <a class="nav-link" href="/szolgaltatasok/szallasok">Szállások</a>
-          </li>
-          <hr class=" d-lg-none">
-          <li class="fs-5 text-center fw-medium nav-item">
-            <a class="nav-link" href="/szolgaltatasok/vendeglatohelyek">Vendéglátóhelyek</a>
-          </li>
-          <hr class=" d-lg-none">
-          <li class="fs-5 text-center fw-medium nav-item">
-            <a class="nav-link" href="/szolgaltatasok/tourinform">Tourinform Iroda</a>
-          </li>
-          <hr class=" d-lg-none">
-          <li class="fs-5 text-center fw-medium nav-item">
-            <a class="nav-link" href="/szolgaltatasok/tourinform#kiadvanyok">Kiadványaink</a>
-          </li>
+          {#each $Routes as route}
+            <li class="fs-5 text-center fw-medium nav-item">
+              <a class="nav-link" href="{route.route}">{route.name}</a>
+            </li>
+            <hr class="d-lg-none">
+          {/each}
         </ul>
       </div>
     </div>

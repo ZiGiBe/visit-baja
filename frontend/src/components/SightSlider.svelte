@@ -1,9 +1,10 @@
 <script lang="ts">
-import SightCard from './SightCard.svelte';
-import { register } from 'swiper/element/bundle';
-import type { Sight } from '../interfaces/Sights';
-import type { Gallery } from '../interfaces/Gallery';
-import db from '../services/DB';
+  import { register } from 'swiper/element/bundle';
+  register();
+  import SightCard from './SightCard.svelte';
+  import type { Sight } from '../interfaces/Sights';
+  import type { Gallery } from '../interfaces/Gallery';
+  import db from '../services/DB';
 
 let SightsPromise = Promise.all([db.Get('Sights'), db.GetFieldValue('SightsGallery', 'preview', 1)]).then((Results)=>{
   let sights = Results[0] as Sight[];
@@ -15,10 +16,6 @@ let SightsPromise = Promise.all([db.Get('Sights'), db.GetFieldValue('SightsGalle
   }
 })
 })
-
-
-//ezt a hibát ne vedd figyelembe attól még működik
-register();
 
 </script>
 
