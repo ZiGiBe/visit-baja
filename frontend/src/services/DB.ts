@@ -16,11 +16,12 @@ let db = {
         }).then(res=>res.data).catch(err=>err) : 
         axios.get(backendUrl+model).then(res=>res.data).catch(err=>err);
     },
-    GetFieldValue: (model: string, field: string, value: string|number)=>{
+    GetFieldValue: (model: string, field: string, value: string|number, operator: string = "eq")=>{
         return axios.get(backendUrl+model, {
             params:{
                 field: field,
-                value: value
+                value: value,
+                operator: operator
             }
         }).then(res=>res.data).catch(err=>err);
     },

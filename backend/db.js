@@ -1,3 +1,4 @@
+const {Op} = require('sequelize')
 let sequelize = require('./models').sequelize;
 let TokenCheck = require('./modules/tokens').tokenCheck;
 let router = require('express').Router();
@@ -9,7 +10,18 @@ let router = require('express').Router();
         if (sequelize.models[req.params.type]){
             try{
                 if (req.query.field && req.query.value){
-                    let data = await sequelize.models[req.params.type].findAll({where: JSON.parse(`{"${req.query.field}": "${req.query.value}"}`)})
+                    let data;
+                    let whereclause = {};
+                    
+                    if (req.query.operator){
+                        whereclause[req.query.field]= {
+                            [Op[req.query.operator]]: req.query.value
+                        };
+                    }
+                    else{
+                        whereclause[req.query.field] = req.query.value;
+                    }
+                    data = await sequelize.models[req.params.type].findAll({where: whereclause})
                     res.status(200).send(data)
                 }
                 else{
@@ -21,6 +33,7 @@ let router = require('express').Router();
             }
             catch(err){
                 res.status(500).send(err);
+                console.log(err);
             }
             
         }

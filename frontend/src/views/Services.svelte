@@ -2,24 +2,11 @@
     export let isRestaurant:boolean;
     import ServiceCard from "../components/ServiceCard.svelte";
     import type { Service } from "../interfaces/Service";
+    import db from "../services/DB";
     import { CheckSite } from "../services/ActualSite";
     CheckSite();
 
-
-    // Példa a kőködéshez
-    let example:Service = {
-      id:0,
-      name: "Bajai Csodálatos messzire néző Türr kilátó",
-      address: "Baja Bácska tér 1",
-      phone: "06708767563",
-      email: "teszt@teszt.com",
-      description: "string",
-      href: "https://visithajos.hu",
-      isRestaurant: true,
-      image: "kep_normal.jpg",
-    }
-    //-----------------------
-    let ServiceList:Service[]=[example,example,example,example,example,example]
+    let Services = db.GetFieldValue('Services', 'isRestaurant', isRestaurant ? 1 : 0);
 
 </script>
 
@@ -36,7 +23,7 @@
 
 <div>
   <main class="col-12 offset-md-2 col-md-8 offset-lg-0 col-lg-12 offset-xl-1 col-xl-10 p-3 d-flex flex-wrap justify-content-around">
-    {#await ServiceList}
+    {#await Services}
       <div class="spinner-border"></div>
     {:then Services} 
       {#each Services as Service,i}

@@ -33,8 +33,8 @@
             <div class="col-12 col-sm-9 col-md-9 col-lg-12">
                 <ul class="list-unstyled contacts">
                     <li>{ServiceData.address} <img src="/map_pictogram.png" alt="map" class="icon"></li>
-                    <li>{ServiceData.phone} <img src="/phone_pictogram.png" alt="phone" class="icon"></li>
-                    <li>{ServiceData.email} <img src="/email_pictogram.png" alt="email" class="icon"></li>
+                    <li><a href={"tel:"+ServiceData.phone} class="link-primary">{ServiceData.phone}</a><img src="/phone_pictogram.png" alt="phone" class="icon"></li>
+                    <li><a href={"mailto:"+ServiceData.email} class="link-primary">{ServiceData.email}</a><img src="/email_pictogram.png" alt="email" class="icon"></li>
                 </ul>
             </div>
         </div>

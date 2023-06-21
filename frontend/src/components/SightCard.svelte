@@ -86,7 +86,7 @@
                 {SightData.shortdesc}
             </p>
         </div>
-        <a href="/latvanyossagok/{SightData.href}" class="btn btn-primary pl-3 pr-3">
+        <a href="/latnivalok/{SightData.href}" class="btn btn-primary pl-3 pr-3">
             Tovább
         </a>
       </div>

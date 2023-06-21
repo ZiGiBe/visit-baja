@@ -11,9 +11,16 @@ import Marker from '@editorjs/marker';
 import Underline from '@editorjs/underline';
 import TextVariantTune from '@editorjs/text-variant-tune';
 import Hyperlink from 'editorjs-hyperlink';
+import AttachesTool from '@editorjs/attaches';
 
 export const EditorJSTools = readable({
     header: Header,
+    attaches: {
+        class: AttachesTool,
+        config: {
+            endpoint: 'http://localhost:8080/file/tourinform/new'
+        }
+    },
     list: List,
     delimiter: Delimiter,
     quote:{
