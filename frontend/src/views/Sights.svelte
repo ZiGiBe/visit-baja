@@ -23,11 +23,22 @@
         <div class="spinner-border"></div>
     {:then Sights} 
         <div class="row justify-content-around" >
-            {#each Sights as Sight}
-            <div class="col-lg-3 col-md-5 col-sm-10 mb-3">
+            {#each Sights as Sight, i}
+            <div class="col-xl-3 col-lg-5 col-md-5 col-sm-10 mx-1">
                 <SightCard SightData={Sight} />
             </div>
+            <hr class:d-md-none={(i+1)%3!=0} class:d-lg-none={(i+1)%3==0} class="divider">
             {/each}
         </div>
     {/await}
 </div>
+
+<style>
+    .divider{
+    width: 90%;
+    border-width: 3px;
+    border-radius: 50%;
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+}
+</style>
