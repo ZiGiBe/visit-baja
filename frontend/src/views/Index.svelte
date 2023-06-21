@@ -18,7 +18,7 @@
 <Menu/>
 <main>
     <Wallapper/>
-    <Sights/> 
+    <SightSlider/> 
     <DesignElement/>
     <Restaurant_Ad/>
     <Accomodation_Ad/>
