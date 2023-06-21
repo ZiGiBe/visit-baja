@@ -23,6 +23,9 @@
 .details{
     font-size: 0.75rem;
 }
+.quoter::before{
+    content: '~';
+}
 blockquote::before, .citation::before{
     content: '„';
     
@@ -33,7 +36,4 @@ blockquote::after, .citation::after{
 blockquote::after, blockquote::before, .quoter::before{
     font-weight: bold;
     font-size: 1.25rem;
-}
-.quoter::before{
-    content: '~';
 }

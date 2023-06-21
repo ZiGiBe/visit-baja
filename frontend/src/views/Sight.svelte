@@ -2,7 +2,7 @@
     import { meta, router } from "tinro";
     import db from "../services/DB";
     import Menu from "../components/Menu.svelte";
-    import { Converter } from "../services/EditorJSConverter";
+    import EditorJsConverter from "../services/EditorJSConverter.svelte";
     let sightHref = meta().params.sighthref;
     let sight = db.GetFieldValue('Sights', 'href', sightHref);
 </script>
@@ -123,7 +123,7 @@
                 
                 <div class="description">
                     {#each JSON.parse(sgt.fulldesc).blocks as block}
-                        {@html Converter(block)}
+                        <EditorJsConverter {block} />
                     {/each}
                 </div>
             </div>

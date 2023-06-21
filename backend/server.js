@@ -10,6 +10,7 @@ app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 app.use(cors());
 
+app.use('/editor', require('./editorJSLoad'));
 app.use('/admin', require('./users'));
 app.use('/file', require('./files'));
 app.use('/api', require('./db'));

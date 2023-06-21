@@ -12,11 +12,16 @@
     export async function getData(){
         return await editor.save().then(data=>data);
     }
+    export async function loadData(data){
+        return await editor.blocks.render(data);
+    }
 </script>
 
 
 <div class="mb-3">
+    {#if type!="Tourinform"}
     <h3>{type} teljes leírása</h3>
+    {/if}
     <div {id}></div>
     <hr>
 </div>
