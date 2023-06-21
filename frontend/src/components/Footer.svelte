@@ -1,3 +1,7 @@
+<script>
+        import { Routes } from "../services/ActualSite";
+</script>
+
 <style>
 footer{
     background-color: var(--kek8);
@@ -53,11 +57,9 @@ img{
         <div class="col-md-6 col-lg-3 col-12">
             <h2>Menü</h2>
             <ul>
-                <li> <a href="/">Kezdőlap</a></li>
-                <li> <a href="/szolgaltatasok/szallasok">Szállások</a></li>
-                <li> <a href="/szolgaltatasok/vendeglatohelyek">Vendéglátóhelyek</a></li>
-                <li> <a href="/szolgaltatasok/tourinform">Tourinform Iroda</a></li>
-                <li> <a href="/szolgaltatasok/tourinform#kiadvanyok">Kiadványaink</a></li>
+                {#each $Routes as route}
+                    <li> <a href="{route.route}">{route.name}</a></li>
+                {/each}
             </ul>
         </div>
         <div class="col-md-6 col-lg-3 col-12">

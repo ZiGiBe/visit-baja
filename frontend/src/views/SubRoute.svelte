@@ -1,8 +1,9 @@
 <script>
-    import Menu from "../components/Menu.svelte";
     import Header from "../components/Header.svelte";
-    import Services from "./Services.svelte";
+    import Menu from "../components/Menu.svelte";
     import Footer from "../components/Footer.svelte";
+    import Services from "./Services.svelte";
+    import Sights from "./Sights.svelte";
     import Tourinform from "./Tourinform.svelte";
     import { Route } from 'tinro';
 </script>
@@ -12,5 +13,6 @@
 <Header />
 <Route path="/vendeglatohelyek" ><Services isRestaurant={true} /></Route>
 <Route path="/szallasok" ><Services isRestaurant={false} /></Route>
+<Route path="/latvanyossagok" ><Sights /></Route>
 <Route path="/tourinform" ><Tourinform /></Route>
 <Footer />
