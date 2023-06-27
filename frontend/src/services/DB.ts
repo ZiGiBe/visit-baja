@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { readable } from 'svelte/store';
 
-export const BackendUrl =readable("http://localhost:8080/")
+export const BackendUrl ="http://localhost:8080/"
 let backendUrl = BackendUrl+'api/';
 
 interface ExecAnswer{

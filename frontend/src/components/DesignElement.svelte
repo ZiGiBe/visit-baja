@@ -78,13 +78,13 @@
     <div class="lane">
         <div class="darkness">
             <div data-aos="slide-right" data-aos-duration="1500" data-aos-easing="ease-in-out" data-aos-once='true' id="slider">
-                <img src="/logo.png" alt="logó" id="icon">
+                <img src="/tourinform_logo.png" alt="logó" id="icon">
             </div>
             <div class="titleBox">
                 <h1 class="title">
-                    Title example
+                    Látogasson el a Tourinform Irodába is! 
                 </h1>
-                <a href="/" class="btn btn-primary m-3 link">
+                <a href="/szolgaltatasok/tourinform" class="btn btn-primary m-3 link">
                     <h3>Tovább</h3>
                 </a>
             </div>

@@ -123,7 +123,7 @@
 <!-- Card -->
 <div>
     <div class="card m-3 mx-auto">
-        <img src="{$BackendUrl}/media/{ProgramData.image}" class="card-img-top" alt="...">
+        <img src="{BackendUrl}media/{ProgramData.image}" class="card-img-top" alt="...">
         <div class="d-flex align-items-center justify-content-center" id="darkness">
            {#if dates.length==3}
                 <p>
