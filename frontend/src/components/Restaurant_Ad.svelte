@@ -37,8 +37,8 @@
 }
 
 .containerBox{
-    background-image: url('/kaja.png');
-    background-size:contain;
+    background-image: url('/kaja.jpg');
+    background-size:cover;
     background-position: bottom;
     background-repeat: no-repeat;
     display: flex;

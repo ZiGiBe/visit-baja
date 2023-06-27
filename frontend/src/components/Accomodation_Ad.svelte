@@ -20,7 +20,7 @@
 
 .containerBox{
     background-image: url('/szallas.png');
-    background-size:contain;
+    background-size:cover;
     background-position: bottom;
     background-repeat: no-repeat;
     display: flex;

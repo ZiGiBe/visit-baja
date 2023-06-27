@@ -1,5 +1,8 @@
 import axios from 'axios';
-let backendUrl = 'http://localhost:8080/api/';
+import { readable } from 'svelte/store';
+
+export const BackendUrl =readable("http://localhost:8080/")
+let backendUrl = BackendUrl+'api/';
 
 interface ExecAnswer{
     "fieldCount": number;
