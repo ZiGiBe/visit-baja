@@ -1,6 +1,6 @@
 import axios from 'axios';
-
-
+import { jwt } from '../components/Admin/stores';
+import { get } from 'svelte/store';
 async function Upload(files:FileList){
     let formdata = new FormData();
 
@@ -8,7 +8,11 @@ async function Upload(files:FileList){
         formdata.append('images', files[i]);
     }
 
-    return await axios.post('http://localhost:8080/file/new', formdata).then(res=>{return {status: res.status, data: res.data}}).catch(err=>{return {status: err.response.status, data: err.response.data}});
+    return await axios.post('http://localhost:8080/file/new', formdata, {
+        headers:{
+            Authorization: `JWT ${await get(jwt)}`
+        }
+    }).then(res=>{return {status: res.status, data: res.data}}).catch(err=>{return {status: err.response.status, data: err.response.data}});
 }
 
 

@@ -1,4 +1,4 @@
-import { readable } from "svelte/store";
+import { readable, writable } from "svelte/store";
 import Header from "@editorjs/header";
 import List from "@editorjs/list"
 import Delimiter from '@editorjs/delimiter';
@@ -12,6 +12,8 @@ import Underline from '@editorjs/underline';
 import TextVariantTune from '@editorjs/text-variant-tune';
 import Hyperlink from 'editorjs-hyperlink';
 import AttachesTool from '@editorjs/attaches';
+
+export let jwt = writable("");
 
 export const EditorJSTools = readable({
     header: Header,

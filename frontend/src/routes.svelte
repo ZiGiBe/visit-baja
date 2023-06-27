@@ -6,6 +6,7 @@
     import SubRoute from './views/SubRoute.svelte';
     import Tourinform from './views/Tourinform.svelte';
     import Sight from './views/Sight.svelte';
+    import { jwt } from './components/Admin/stores';
 </script>
 
 
@@ -17,7 +18,13 @@
     <Route fallback redirect="/szolgaltatasok/vendeglatohelyek" />
 </Route>
 <Route path="/latnivalok/:sighthref"><Sight/></Route>
+
+{#if $jwt != ""}
 <Route path="/admin"><Admin/></Route>
+{:else}
+<Route path="/admin" redirect="/admin/login"/>
+{/if}
+
 <Route path="/admin/login"><Login/></Route>
 
 <!-- Default path -->
