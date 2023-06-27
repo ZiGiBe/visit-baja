@@ -1,6 +1,7 @@
 const path = require('path');
 let router = require('express').Router();
 let fs = require('fs');
+let tokenChck = require('./modules/tokens').tokenCheck
 
 let storage = require('multer').diskStorage({
     filename: (req, file, cb)=>{
@@ -21,7 +22,7 @@ const multer = require('multer')({
     }
 });
 
-
+router.use(tokenChck);
 
 router.post('/new', (req,res)=>{
     try {
@@ -38,8 +39,16 @@ router.post('/new', (req,res)=>{
         throw err;
     }
 });
-router.delete('/image', (req,res)=>{
-
+router.delete('/delete', (req,res)=>{
+    try{
+        fs.rm(path.join(__dirname, './uploads/'+req.body.filename), (err)=>{
+            if (err) res.status(400).send(err);
+            else res.status(200).send({message: 'Sikeres törlés!'});
+        })
+    }
+    catch (err){
+        res.status(500).send(err);
+    }
 })
 
 

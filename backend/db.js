@@ -1,11 +1,12 @@
-const {Op} = require('sequelize')
+const {Op} = require('sequelize');
+const { tokenCheck } = require('./modules/tokens');
 let sequelize = require('./models').sequelize;
 let TokenCheck = require('./modules/tokens').tokenCheck;
 let router = require('express').Router();
 
 (async ()=>{
     await sequelize.sync();
-
+    router.use(tokenCheck);
     router.get('/:type', TokenCheck,async(req,res)=>{
         if (sequelize.models[req.params.type]){
             try{

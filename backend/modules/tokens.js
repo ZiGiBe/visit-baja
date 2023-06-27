@@ -1,21 +1,46 @@
 require('dotenv').config();
+let fs = require('fs');
+let path = require('path');
 const jose = require('jose');
 const {createSecretKey} = require('crypto')
+
+
+async function CheckBlacklist(token){
+    return await fs.readFileSync(path.join(__dirname, '../blacklist.json'), (err, data)=>{
+        if (err) return false;
+        else{
+            return JSON.parse(data).includes(token);
+        }
+
+    })
+}
+
+
 const tokenCheck = async (req, res, next) => {
 
     if (req.headers.authorization) {
-        const secret = createSecretKey(process.env.JWTSECRET, 'utf-8');
-        const jwt = req.headers.authorization.split(' ')[1];
-        try{
-            const { payload, protectedHeader } = await jose.jwtVerify(jwt, secret, {
-                issuer: process.env.JWTISSUER,
-                audience: process.env.JWTAUDIENCE
+        let tokens = JSON.parse(await CheckBlacklist()).toString();
+        if (tokens.includes(req.headers.authorization.split(' ')[1])){
+            res.status(403).send({
+                message: 'Your token is on the blacklist!',
+                error: 'err_token_used'
             })
-            next();
         }
-        catch (error){
-            res.status(403).send(error);
+        else{
+            const secret = createSecretKey(process.env.JWTSECRET, 'utf-8');
+            const jwt = req.headers.authorization.split(' ')[1];
+            try{
+                await jose.jwtVerify(jwt, secret, {
+                    issuer: process.env.JWTISSUER,
+                    audience: process.env.JWTAUDIENCE
+                })
+                next();
+            }
+            catch (error){
+                res.status(403).send(error);
+            }
         }
+        
     }
     else 
     {

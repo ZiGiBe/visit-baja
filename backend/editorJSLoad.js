@@ -1,10 +1,10 @@
 const { writeFile, readFile } = require('fs');
 const path = require('path');
-
+const tokenChck = require('./modules/tokens').tokenCheck;
 let router = require('express').Router();
 
 
-router.post('/save', async (req,res)=>{
+router.post('/save', tokenChck, async (req,res)=>{
     await writeFile(path.join(__dirname, './editorLatest.json'), JSON.stringify(req.body.editorjsoutput), (err)=>{
         if (err) res.status(500).send({message: 'Could not save the editor!'});
         else{
