@@ -5,7 +5,10 @@
     import NewProgram from "../components/Admin/forms/NewProgram.svelte";
     import NewSight from "../components/Admin/forms/NewSight.svelte";
     import NewService from "../components/Admin/forms/NewService.svelte";
+    import TourInformEditor from "../components/Admin/forms/TourInformEditor.svelte";
     let tabindex = 0;
+    let sync;
+
     let categories = [
         {
             icon: "eye",
@@ -88,8 +91,12 @@
                     </div>
                 </div>
             </div>
-            
-            
+            <div class="accordion-item">
+                <h3 class="accordion-header"><button on:click={sync} class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#editsubpage">Tourinform Iroda módosítása</button></h3>
+                <div class="accordion-collapse collapse" id="editsubpage">
+                    <TourInformEditor bind:Sync={sync} />
+                </div>
+            </div>
         </div>
     </div>
     {#each categories as category}

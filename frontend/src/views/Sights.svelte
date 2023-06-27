@@ -22,12 +22,24 @@
     {#await SightsPromise}
         <div class="spinner-border"></div>
     {:then Sights} 
-        <div class="row justify-content-around" >
-            {#each Sights as Sight}
-            <div class="col-lg-3 col-md-5 col-sm-10 mb-3">
+        <div class="row justify-content-around m-0">
+            {#each Sights as Sight, i}
+            <div class="col-xl-3 col-md-5 col-sm-10 mx-1" title="{(i+1).toString()}">
                 <SightCard SightData={Sight} />
             </div>
+            <!-- <hr class="divider mx-3"> -->
+
             {/each}
         </div>
     {/await}
 </div>
+
+<style>
+    .divider{
+    width: 90%;
+    border-width: 3px;
+    border-radius: 50%;
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+}
+</style>
