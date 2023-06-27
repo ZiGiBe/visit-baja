@@ -10,6 +10,7 @@
         })]));
         hidden.setAttribute('download', block.data.file.filename);
         hidden.click();
+        hidden = undefined;
     }
 </script>
 <div class="file">

@@ -26,14 +26,3 @@
 .quoter::before{
     content: '~';
 }
-blockquote::before, .citation::before{
-    content: '„';
-    
-}
-blockquote::after, .citation::after{
-    content: '”'
-}
-blockquote::after, blockquote::before, .quoter::before{
-    font-weight: bold;
-    font-size: 1.25rem;
-}
