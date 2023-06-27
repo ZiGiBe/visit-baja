@@ -81,7 +81,7 @@
                 <img src="/tourinform_logo.png" alt="logó" id="icon">
             </div>
             <div class="titleBox">
-                <h1 class="title">
+                <h1 class="title text-center">
                     Látogasson el a Tourinform Irodába is! 
                 </h1>
                 <a href="/szolgaltatasok/tourinform" class="btn btn-primary m-3 link">
