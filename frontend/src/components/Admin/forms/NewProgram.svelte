@@ -3,6 +3,7 @@
     import Alert from "../Alert.svelte";
     import db from "../../../services/DB";
     import { Upload } from "../../../services/File";
+    import { DateIsDate, Dates, FileInputHasFile, ValidForm, ValidPage } from "../../../services/FormValidation";
 
     let programalert;
     let newProgram = {} as any;
@@ -31,19 +32,19 @@
     //Input validation bundled up.
     function CheckForm() {
         let errors: string[] = [];
-        if (!DatesAreDates()) errors.push("A dátum(ok) nincs(enek) kitöltve!");
+        if (!DateIsDate(newProgram.start, newProgram.end, isWholeDay)) errors.push("A dátum(ok) nincs(enek) kitöltve!");
         else {
-            if (!DatesAreCorrect()) errors.push("A dátumok nem megfelelőek!");
+            if (Dates(newProgram.start, newProgram.end, isWholeDay)) errors.push("A dátumok nem megfelelőek!");
         }
-        if (!EverythingFilled()) errors.push("Nincs minden kitöltve!");
+        if (!ValidForm(newProgram)) errors.push("Nincs minden kitöltve!");
         else {
-            if (!ValidLink()) errors.push("A Link nem weboldal linkje!");
-            if (!FileSelected()) errors.push("Nincs kép feltölve!");
+            if (!ValidPage(newProgram.href)) errors.push("A Link nem weboldal linkje!");
+            if (!FileInputHasFile(image)) errors.push("Nincs kép feltölve!");
         }
         return errors;
     }
 
-    //Input validation
+    //Alert setup.
     function SetUpErrorData(errors: string[]) {
         return {
             show: true,
@@ -53,28 +54,6 @@
             reasondesc: errors.length > 0 ? "Kérem javítsd ki a hibákat:" : "",
             errors: errors,
         };
-    }
-    function FileSelected() {
-        return image ? image.length > 0 : false;
-    }
-    function ValidLink() {
-        return (
-            (newProgram.href as string).match(
-                /^https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*)$/
-            ) != null
-        );
-    }
-    function EverythingFilled() {
-        return !Object.values(newProgram).includes(0 || "");
-    }
-    function DatesAreDates() {
-        return newProgram.start != 0 && isWholeDay ? true : newProgram.end != 0;
-    }
-    function DatesAreCorrect() {
-        return !isWholeDay
-            ? new Date(newProgram.start) < new Date(newProgram.end) &&
-                  new Date(newProgram.start) > new Date()
-            : new Date(newProgram.start) > new Date();
     }
 </script>
 
