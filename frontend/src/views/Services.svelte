@@ -30,7 +30,6 @@
         <div class="col-12 col-lg-5 col-xl-5">
           <ServiceCard ServiceData={Service}/>
         </div>
-        <hr class:d-lg-none={i%2==0} class="divider">
       {/each}
     {/await}
   </main>

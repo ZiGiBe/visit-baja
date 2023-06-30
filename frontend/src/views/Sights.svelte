@@ -27,7 +27,7 @@
             <div class="col-xl-3 col-md-5 col-sm-10 mx-1" title="{(i+1).toString()}">
                 <SightCard SightData={Sight} />
             </div>
-            <!-- <hr class="divider mx-3"> -->
+            
 
             {/each}
         </div>
