@@ -81,6 +81,9 @@
         return errors;
     }
     async function DeleteImagesOnQueue(){
+        console.log(existingpreviewID);
+        console.log(existingImages);
+        
         deletionIDs.forEach(async (element, i) => {
             if (element == 1){
                 await Delete(existingImages[i].image);

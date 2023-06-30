@@ -18,8 +18,8 @@ let routes = [
         route: "/"
     },
     {
-        name: "Éttermek",
-        title: "Éttermek",
+        name: "Vendéglátóhelyek",
+        title: "Vendéglátóhelyek",
         route: "/szolgaltatasok/vendeglatohelyek"
     },
     {
@@ -28,9 +28,9 @@ let routes = [
         route: "/szolgaltatasok/szallasok"
     },
     {
-        name: "Látványosságok",
-        title: "Látványosságok",
-        route: "/szolgaltatasok/latvanyossagok"
+        name: "Látnivalók",
+        title: "Látnivalók",
+        route: "/szolgaltatasok/latnivalok"
     },
     {
         name: "Tourinform iroda",

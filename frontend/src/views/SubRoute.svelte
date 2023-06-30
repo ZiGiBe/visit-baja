@@ -13,6 +13,6 @@
 <Header />
 <Route path="/vendeglatohelyek" ><Services isRestaurant={true} /></Route>
 <Route path="/szallasok" ><Services isRestaurant={false} /></Route>
-<Route path="/latvanyossagok" ><Sights /></Route>
+<Route path="/latnivalok" ><Sights /></Route>
 <Route path="/tourinform" ><Tourinform /></Route>
 <Footer />
