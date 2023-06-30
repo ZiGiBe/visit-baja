@@ -27,6 +27,7 @@
         newIndex = -1;
         existingpreviewID = existingImages.find(e=>e.preview==true).id;
         deletionIDs = existingImages.map(e=>0);
+        await loadData(JSON.parse(modData.fulldesc));
     })
 
     async function LinkIsUnique(){
@@ -142,7 +143,7 @@
 <EditorJs id={"modsight"} type={"Látnivaló"} bind:this={editor} bind:loadData/>
 {@const load = setTimeout(() => {
     loadData(JSON.parse(modData.fulldesc))
-}, 1000)}
+}, 2000)}
 <Input name="images" type="file" title="Képek feltöltése" bind:files={newImages} />
 {#if newImages && newImages.length>0}
     <div class="previews">
