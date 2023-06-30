@@ -1,6 +1,11 @@
 import type EditorJs__SvelteComponent_ from "../components/Admin/EditorJS.svelte";
+import db from "./DB";
 
-
+export async function LinkUnique(link:string, model:string):Promise<boolean>{
+    let items = await db.GetFieldValue(model, 'href', link);
+    if (items[0]) return false;
+    else return true;
+}
 export function ValidEmail(email: string) {
     return email.match(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/) != null
 }
