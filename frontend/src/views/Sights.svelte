@@ -24,7 +24,7 @@
     {:then Sights} 
         <div class="row justify-content-around m-0">
             {#each Sights as Sight, i}
-            <div class="col-xl-3 col-md-5 col-sm-10 mx-1" title="{(i+1).toString()}">
+            <div class="col-xl-3 col-md-5 col-sm-10 mx-1">
                 <SightCard SightData={Sight} />
             </div>
             
@@ -35,11 +35,4 @@
 </div>
 
 <style>
-    .divider{
-    width: 90%;
-    border-width: 3px;
-    border-radius: 50%;
-    margin-top: 3vh;
-    margin-bottom: 3vh;
-}
 </style>

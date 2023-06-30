@@ -80,10 +80,10 @@
 <!-- Card -->
 <div >
     <div class="card m-3 p-3 d-flex flex-column align-items-center mx-auto">
-        <h3 class="m-auto mt-3">{SightData.name}</h3>
-        <img src="{BackendUrl}media/{SightData.gallery.find(x=>x.preview).image}" class="card-img-top rounded mt-3" alt="example">
+        <h3 class="text-center mt-3 w-100">{SightData.name}</h3>
+        <img src="{BackendUrl}media/{SightData.gallery.find(x=>x.preview).image}" class="card-img-top rounded mt-3" alt="kép">
         <div class="card-body d-flex flex-column align-items-center">
-            <p class="card-text text-center p-2">
+            <p class="text-center overflow-wrap w-100  p-2">
                 {SightData.shortdesc}
             </p>
         </div>
