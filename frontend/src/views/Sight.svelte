@@ -119,6 +119,13 @@
                     class="gallery"
                     thumbs-swiper={"#thumb"}
                     loop={true} 
+                    pagination={true}
+                    navigation={true}
+                    autoplay= {{
+                        disableOnInteraction: false,
+                        pauseOnMouseEnter: false,
+                        delay: 5000,
+                    }}
                     space-between={10} 
                     >
                     {#each images as image, i}
