@@ -1,4 +1,9 @@
 <script lang="ts">
+    import { register } from 'swiper/element/bundle';
+    //ezt a hibát ne vedd figyelembe attól még működik
+    register();
+
+
     import { meta, router } from "tinro";
     import db from "../services/DB";
     import Menu from "../components/Menu.svelte";
@@ -13,23 +18,7 @@
         min-height: 100vh;
         flex-flow: column;
     }
-    .carousel, .carousel-inner{
-        height: 300px;
-    }
-    .carousel-item, .carousel-item>img{
-        height: 100%;
-    }
-    .carousel-item{
-        background-color: black;
-    }
-    .carousel-item>img{
-        margin: auto;
-        max-width: 100%;
-        object-fit: scale-down;
-    }
-    .carousel>.placeholder-glow{
-        height: 240px;
-    }
+
     main{
         background-image: url('/wave.png');
         background-repeat: no-repeat;
@@ -65,6 +54,30 @@
     h1>a{
         margin-right: 0.5rem
     }
+
+
+
+  /* puruttya swiper css */
+
+    swiper-container {
+        background-color:#000;  
+        width: 100%;
+        height: 350px;
+    }
+
+    swiper-slide {
+        height: 100%;
+    }
+
+    swiper-slide img {
+        margin-top: auto;
+        margin-bottom: auto;
+        object-fit: contain;
+        width: 100%;
+        height: 100%;
+    }
+
+
 </style>
 <div id="page">
     <Menu/>
@@ -95,30 +108,27 @@
                 </h1>
                 <hr>
             </div>
-            <div class="carousel slide" data-bs-ride="carousel" id="sightImages">
-                {#await db.GetFieldValue('SightsGallery', 'itemID',sgt.id)}
-                    <p class="placeholder-glow col-12">
-                        <span class="placeholder col-11"/>
-                    </p>
-                {:then images} 
-                    <div class="carousel-inner">
-                        {#each images as image, i}
-                            <div class="carousel-item" class:active={i==0}>
-                                <img src={"http://localhost:8080/media/"+image.image} class="d-block" alt="">
-                            </div>
-                        {/each}
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#sightImages" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                      </button>
-                      <button class="carousel-control-next" type="button" data-bs-target="#sightImages" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                      </button>
-                    
-                {/await}
-            </div>
+
+
+            {#await db.GetFieldValue('SightsGallery', 'itemID',sgt.id)}
+            <p class="placeholder-glow col-12">
+                <span class="placeholder col-11"/>
+            </p>
+            {:then images} 
+                <swiper-container 
+                    class="gallery"
+                    thumbs-swiper={"#thumb"}
+                    loop={true} 
+                    space-between={10} 
+                    >
+                    {#each images as image, i}
+                        <swiper-slide>
+                            <img src={"http://localhost:8080/media/"+image.image}  alt="">
+                        </swiper-slide>
+                    {/each}
+                </swiper-container>
+            {/await}
+
             <div id="desc">
                 
                 <div class="description">
