@@ -39,7 +39,7 @@
 
 #icon{
     transform: rotate(-30deg);
-    max-height: 25vh;
+    max-height: 20vh;
     max-width: 60vw;
     margin: 8vh;
     padding: 20px;

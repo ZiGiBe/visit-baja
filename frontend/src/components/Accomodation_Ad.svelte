@@ -19,7 +19,9 @@
 <style>
 
 .containerBox{
+    background-color: rgba(0, 147, 200, 0.7);
     background-image: url('/szallas.png');
+    background-blend-mode: overlay;
     background-size:cover;
     background-position: bottom;
     background-repeat: no-repeat;
