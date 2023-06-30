@@ -7,6 +7,9 @@
     import Tourinform from './views/Tourinform.svelte';
     import Sight from './views/Sight.svelte';
     import { jwt } from './components/Admin/stores';
+    import ModSight from './components/Admin/Modal/Mod/ModSight.svelte';
+    import ModProgram from './components/Admin/Modal/Mod/ModProgram.svelte';
+    import ModService from './components/Admin/Modal/Mod/ModService.svelte';
 </script>
 
 
@@ -21,6 +24,15 @@
 
 {#if $jwt != ""}
 <Route path="/admin"><Admin/></Route>
+<Route path="/admin/mod/:type" let:meta>
+    {#if meta.params.type == "Sights"}
+    <ModSight />
+    {:else if meta.params.type == "Services"}
+    <ModService/>
+    {:else}
+    <ModProgram/>
+    {/if}
+</Route>
 {:else}
 <Route path="/admin" redirect="/admin/login"/>
 {/if}

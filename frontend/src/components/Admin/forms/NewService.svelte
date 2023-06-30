@@ -1,6 +1,7 @@
 <script lang="ts">
     import db from "../../../services/DB";
     import { Upload } from "../../../services/File";
+    import { FileInputHasFile, ValidEmail, ValidForm, ValidPage, ValidPhone } from "../../../services/FormValidation";
     import Alert from "../Alert.svelte";
     import Input from "../Input.svelte";
 
@@ -29,7 +30,6 @@
         AlertSetUp(errors);
     }
 
-    //
     function AlertSetUp(errors: string[]){
         alert({
             show: true,
@@ -44,55 +44,26 @@
     //Validation Bunching
     function GetErrors() {
         let errors: string[] = [];
-        if (!FilledForm()) {
+        if (!ValidForm(newService)) {
             errors.push('Az űrlapot nem töltötted ki!');
         }
         else {
-            if (!ValidPage()){
+            if (!ValidPage(newService.href)){
                 errors.push('A weboldal linkje nem jó! (pl.: http://weboldal.hu)');
             }
-            if (!ValidEmail()){
+            if (!ValidEmail(newService.email)){
                 errors.push('Az email-cím nem email-cím!');
             }
-            if (!ValidPhone()){
+            if (!ValidPhone(newService.phone)){
                 errors.push('A telefonszám nem telefonszám (elfogadott formátum: +36-70-1234567)')
             }
         }
-        if (!ImageSelected()) {
+        if (!FileInputHasFile(images)) {
             errors.push('Nincs kiválasztva kép!');
         }
         return errors;
     }
 
-    //Validation
-    function ImageSelected() {
-        return images && images.length > 0;
-    }
-    function ValidPhone() {
-        return (
-            newService.phone.match(
-                /^\+([0-9]{1,3})-([0-9]{1,2})-([0-9]{1,14})$/
-            ) != null
-        );
-    }
-    function ValidEmail() {
-        console.log(newService.email)
-        return (
-            newService.email.match(
-                /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/
-            ) != null
-        );
-    }
-    function ValidPage() {
-        return (
-            newService.href.match(
-                /^https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*)$/
-            ) != null
-        );
-    }
-    function FilledForm() {
-        return !Object.values(newService).includes(0 || "");
-    }
 </script>
 
 <Alert bind:SetAlert={alert} />

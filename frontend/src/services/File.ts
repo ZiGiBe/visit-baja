@@ -15,5 +15,14 @@ async function Upload(files:FileList){
     }).then(res=>{return {status: res.status, data: res.data}}).catch(err=>{return {status: err.response.status, data: err.response.data}});
 }
 
-
-export { Upload };
+async function Delete(name){
+    return await axios.delete('http://localhost:8080/file/delete', {
+        headers: {
+            Authorization: `JWT ${await get(jwt)}`
+        },
+        params: {
+            filename: name
+        }
+    }).then(res=>res.data).catch(err=>err.response)
+}
+export { Upload, Delete };

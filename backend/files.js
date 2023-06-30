@@ -41,7 +41,7 @@ router.post('/new', (req,res)=>{
 });
 router.delete('/delete', (req,res)=>{
     try{
-        fs.rm(path.join(__dirname, './uploads/'+req.body.filename), (err)=>{
+        fs.rm(path.join(__dirname, './uploads/'+req.query.filename), (err)=>{
             if (err) res.status(400).send(err);
             else res.status(200).send({message: 'Sikeres törlés!'});
         })

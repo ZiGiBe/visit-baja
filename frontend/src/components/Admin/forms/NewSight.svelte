@@ -1,6 +1,8 @@
 <script lang="ts">
+    //TODO: Test
     import db from "../../../services/DB";
     import { Upload } from "../../../services/File";
+    import { EditorHasBlocks, FileInputHasFile, ValidForm } from "../../../services/FormValidation";
     import Alert from "../Alert.svelte";
     import EditorJs from "../EditorJS.svelte";
     import Input from "../Input.svelte";
@@ -56,7 +58,7 @@
     async function GetErrors() {
         let errors: string[] = [];
 
-        if (!FilledForm()) errors.push("Nincs minden mező kitöltve!");
+        if (!ValidForm(newSight)) errors.push("Nincs minden mező kitöltve!");
         else {
             if (LinkRequirementsMet()) {
                 if (await HrefDuplicate())
@@ -64,10 +66,9 @@
             }
             else errors.push("Ez a Link nem felel meg a követelményeknek!");
         }
-        if (!FilesSelected()) errors.push("Nincs kép kiválasztva!");
-        if (!(await EditorUsed()))
+        if (!FileInputHasFile(images)) errors.push("Nincs kép kiválasztva!");
+        if (!(await EditorHasBlocks(editor)))
             errors.push("A szerkesztőben nincs tartalom!");
-
         return errors;
     }
     function SetUpErrorData(errors: string[]) {
@@ -80,17 +81,7 @@
             errors: errors,
         });
     }
-    //Input validation.
-    async function EditorUsed() {
-        let blocks = (await editor.getData()).blocks;
-        return blocks.length > 0;
-    }
-    function FilledForm() {
-        return !Object.values(newSight).includes(0 || "");
-    }
-    function FilesSelected() {
-        return images ? images.length > 0 : false;
-    }
+    //Unique input validation.
     function LinkRequirementsMet() {
         return (newSight.href as string).match(/^[0-z]([0-z]|-|_){1,}[0-z]$/) != null;
     }
