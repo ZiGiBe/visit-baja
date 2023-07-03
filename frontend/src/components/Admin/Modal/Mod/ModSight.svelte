@@ -109,10 +109,9 @@
     }
     async function Patch(){
         try{
-            await db.Patch('Sights', Number(m.query.id), {
-                ...modData,
-                fulldesc: await editor.getData()
-            })
+            let updatedata = {...modData, fulldesc: await editor.getData()};
+            updatedata.id = undefined;
+            await db.Patch('Sights', Number(m.query.id), updatedata)
             SetAlert({
                 show: true,
                 message: 'Sikeres módosítás!',
@@ -135,7 +134,6 @@
 </header>
 <hr>
 <Alert bind:SetAlert />
-<Input name="id" type="number" title="Azonosító" disabled={true} bind:value={modData.id} />
 <Input name="name" type="text" title="Név" bind:value={modData.name} />
 <Input name="shortdesc" type="text" title="Rövid leírás" bind:value={modData.shortdesc} />
 <Input name="href" type="text" title="Link" bind:value={modData.href} />
@@ -145,7 +143,9 @@
     loadData(JSON.parse(modData.fulldesc))
 }, 2000)}
 <Input name="images" type="file" title="Képek feltöltése" bind:files={newImages} />
+
 {#if newImages && newImages.length>0}
+    <h3>Új képek</h3>
     <div class="previews">
         {#each newImages as image, i}
         <div>
@@ -161,6 +161,7 @@
     </div>
 {/if}
 {#if existingImages && existingImages.length > 0}
+    <h3>Már feltöltött képek</h3>
     <div class="previews">
         {#each existingImages as image, i}
             <div>

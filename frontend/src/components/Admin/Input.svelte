@@ -3,7 +3,7 @@
     export let type;
     export let title = "";
     export let multiple = true;
-    export let value = type == "text" || type=="email" || type=="tel" ? "" : 0;
+    export let value = type == "text" || type=="email" || type=="tel" ? "" : type == "datetime-local" ? new Date() : 0;
     export let checked = false;
     export let disabled = false;
     export let files: FileList = {} as FileList;
