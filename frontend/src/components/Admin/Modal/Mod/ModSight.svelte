@@ -15,8 +15,8 @@
     let newImages;
     let existingImages = [];
 
-    let existingpreviewID;
-    let newIndex;
+    let existingpreviewID = -1;
+    let newIndex = -1;
 
     let deletionIDs = [];
     let m = meta();
@@ -27,6 +27,7 @@
         newIndex = -1;
         existingpreviewID = existingImages.find(e=>e.preview==true).id;
         deletionIDs = existingImages.map(e=>0);
+        await loadData(JSON.parse(modData.fulldesc));
     })
 
     async function LinkIsUnique(){
@@ -57,6 +58,7 @@
     }
 
     function PutOnDeleteQueue(image, i){
+        console.log(deletionIDs);
         if (deletionIDs[i]==1){
             deletionIDs[i] = 0;
         }
@@ -81,9 +83,6 @@
         return errors;
     }
     async function DeleteImagesOnQueue(){
-        console.log(existingpreviewID);
-        console.log(existingImages);
-        
         deletionIDs.forEach(async (element, i) => {
             if (element == 1){
                 await Delete(existingImages[i].image);
@@ -91,21 +90,22 @@
             }
         });
         if (existingpreviewID!=-1){
-            await db.Patch('SightsGallery', existingImages[existingpreviewID].id , {
+            await db.Patch('SightsGallery', existingImages.find(e=>e.id==existingpreviewID).id , {
                 preview: true
             })
         }
     }
     async function UploadImages(){
-        await db.Patch('SightsGallery', Number(existingImages.find(e=>e.preview==true).id), {
-            preview: false
-        });
-        let uploadsToDB = Promise.all((await Upload(newImages)).data.map((e, i)=>db.Post('SightsGallery', {
-            image: e.filename,
-            itemID: m.query.id,
-            preview: i == newIndex
-        })));
-        await uploadsToDB;
+        if (newImages.length>0){
+            await Promise.all(existingImages.filter(e=>e.preview==true).map(e=>db.Patch('SightsGallery', e.id, {preview: false})))
+            let uploadsToDB = Promise.all((await Upload(newImages)).data.map((e, i)=>db.Post('SightsGallery', {
+                image: e.filename,
+                itemID: m.query.id,
+                preview: i == newIndex
+            })));
+            await uploadsToDB;
+        }
+        
     }
     async function Patch(){
         try{
@@ -143,7 +143,7 @@
 <EditorJs id={"modsight"} type={"Látnivaló"} bind:this={editor} bind:loadData/>
 {@const load = setTimeout(() => {
     loadData(JSON.parse(modData.fulldesc))
-}, 1000)}
+}, 2000)}
 <Input name="images" type="file" title="Képek feltöltése" bind:files={newImages} />
 {#if newImages && newImages.length>0}
     <div class="previews">

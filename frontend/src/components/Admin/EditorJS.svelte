@@ -13,7 +13,14 @@
         return await editor.save().then(data=>data);
     }
     export async function loadData(data){
-        return await editor.blocks.render(data);
+        try{
+            if (Object.values(data).length>0){
+                editor.blocks.render(data);
+            }
+        }
+        catch (err){
+            console.log('bad')
+        }
     }
 </script>
 
