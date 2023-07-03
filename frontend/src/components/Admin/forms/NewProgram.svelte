@@ -34,7 +34,7 @@
         let errors: string[] = [];
         if (!DateIsDate(newProgram.start, newProgram.end, isWholeDay)) errors.push("A dátum(ok) nincs(enek) kitöltve!");
         else {
-            if (Dates(newProgram.start, newProgram.end, isWholeDay)) errors.push("A dátumok nem megfelelőek!");
+            if (!Dates(newProgram.start, newProgram.end, isWholeDay)) errors.push("A dátumok nem megfelelőek!");
         }
         if (!ValidForm(newProgram)) errors.push("Nincs minden kitöltve!");
         else {
