@@ -5,7 +5,7 @@
 
 
     import { meta, router } from "tinro";
-    import db from "../services/DB";
+    import db, { BackendUrl } from "../services/DB";
     import Menu from "../components/Menu.svelte";
     import EditorJsConverter from "../services/EditorJSConverter.svelte";
     let sightHref = meta().params.sighthref;
@@ -21,8 +21,9 @@
 
     main{
         background-image: url('/wave.png');
-        background-repeat: no-repeat;
+        background-repeat: repeat-x;
         background-position: center;
+        
         flex: 1 1 auto;
         display: flex;
         align-items: center;
@@ -33,8 +34,7 @@
         line-height: 1.6;
         background-color: white;
         border: 1px solid black;
-        border-radius: 0.25rem;
-        box-shadow: 3px 3px 3px gray;
+        box-shadow: 3px 3px 0 rgba(128, 128, 128, 0.5);
     }
     hr{
         color: var(--bs-primary);
@@ -43,16 +43,38 @@
     #desc{
         padding: 1rem;
     }
-    #header{
-        padding: 0.5rem
-    }
     h1{
         display: flex;
         align-items: center;
         margin-bottom: 0;
     }
     h1>a{
-        margin-right: 0.5rem
+        margin-right: 0.5rem;
+    }
+    #backgroundthumb{
+        position: absolute;
+        min-height: 100vh;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: -9;
+        /*fallback collossal fuckupnál*/
+        background-image: url('/kep_normal.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        backdrop-filter: blur(15px);
+        overflow: hidden;
+
+
+    }
+    
+    #backgroundthumb::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        min-height: 100vh;
+        backdrop-filter: blur(5px);
     }
 
 
@@ -79,9 +101,15 @@
 
 
 </style>
+{#await sight then sgt}
+{#await db.GetFieldValue('SightsGallery', 'itemID',sgt[0].id) then data}
+<div id="backgroundthumb" style:background-image={'url('+BackendUrl+'media/'+data.find(e=>e.preview).image+')'}></div>
+{/await}
+{/await}
 <div id="page">
     <Menu/>
     <main>
+        
         <div id="content">
             {#await sight}
             <div class="placeholderwidth">
@@ -101,12 +129,11 @@
             {:then data}
             {#if data[0]}
             {@const sgt = data[0]}
-            <div id="header" class="bg-primary bg-gradient text-light">
+            <div>
                 <h1>
-                    <a href="/" class="btn btn-dark my-auto"><i class="bi bi-arrow-left"></i></a>
+                    <a href="/" class="btn btn-dark rounded-0 my-0"><i class="bi bi-arrow-left"></i></a>
                     <span>{sgt.name}</span>
                 </h1>
-                <hr>
             </div>
 
 

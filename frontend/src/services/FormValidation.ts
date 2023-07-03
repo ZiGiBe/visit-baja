@@ -26,8 +26,8 @@ export async function EditorHasBlocks(editor: EditorJs__SvelteComponent_) {
 }
 export function Dates(start, end, wholeday: boolean) {
     return wholeday ?
-        new Date(start) > new Date() :
-        new Date(start) < new Date(end) && new Date(start) > new Date();
+        new Date(end) > new Date() :
+        new Date(start) < new Date(end) && new Date(end) > new Date();
             
 }
 

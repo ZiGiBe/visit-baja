@@ -5,6 +5,7 @@
     import Input from "../../Input.svelte";
     import { meta } from "tinro";
     import { DateIsDate, Dates, ValidForm, ValidPage } from "../../../../services/FormValidation";
+    import {Delete, Upload} from "../../../../services/File";
     let metadata = meta();
     let data;
     let SetAlert;
@@ -13,11 +14,13 @@
     let images: FileList;
     onMount(async()=>{
         data = await db.Get(metadata.params.type, Number(metadata.query.id));
-
-        title = data.title;
         wholeDay = data.start === data.end;
+        data.start = data.start.split('Z')[0];
+        data.end = data.end.split('Z')[0];
+        title = data.title;
+       
     })
-    function Mod(){
+    async function Mod(){
         let errors = GetErrors();
         if (errors.length>0){
             SetAlert({
@@ -30,8 +33,34 @@
             });
         }
         else{
-            console.log(data.start)
+            try{
+                if (images[0]){
+                    await Delete(data.image);
+                    data.image = (await Upload(images)).data[0].filename;
+                }
+                await db.Patch(metadata.params.type, Number(metadata.query.id), {...data, id: undefined});
+                SetAlert({
+                    show: true,
+                    type: 'success',
+                    message: 'Sikeres feltöltés!'
+                })
+            }
+            catch (err){
+                let originalimage = (await db.Get(metadata.params.type, Number(metadata.query.id))).image;
+                if (originalimage != data.image){
+                    await Delete(data.image);
+                }
+                ProgramDied();
+
+            }
         }
+    }
+    function ProgramDied(){
+        SetAlert({
+            show: true,
+            type: 'warning',
+            message: 'Szerverhiba történt! Kérem szóljon a fejlesztőknek'
+        })
     }
     function GetErrors(){
         let errors = [];
@@ -58,9 +87,9 @@
     <Input title="Név" name="title" type="text" bind:value={data.title} />
     <Input title="Cím" name="address" type="text" bind:value={data.address} />
     <Input title="Egész napos?" name="wholeday" type="check" bind:checked={wholeDay} />
-    <Input title="Kezdés" name="start" type="datetime-local" value={data.start.split('Z')[0]} />
+    <Input title="Kezdés" name="start" type="datetime-local" bind:value={data.start} />
     {#if !wholeDay}
-    <Input title="Vége" name="end" type="datetime-local" value={data.end} />
+    <Input title="Vége" name="end" type="datetime-local" bind:value={data.end} />
     {/if}
     <Input title="Leírás" name="desc" type="text" bind:value={data.desc}/>
     <Input title="Weboldal" name="href" type="text" bind:value={data.href}/>
