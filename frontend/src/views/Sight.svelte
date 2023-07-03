@@ -119,7 +119,6 @@
                     class="gallery"
                     thumbs-swiper={"#thumb"}
                     loop={true} 
-                    pagination={true}
                     navigation={true}
                     autoplay= {{
                         disableOnInteraction: false,

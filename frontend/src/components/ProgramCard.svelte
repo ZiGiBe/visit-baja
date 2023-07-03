@@ -35,7 +35,7 @@
 
     .card{
         width: var(--cardwidth);
-        height: var(--cardheight);
+        min-height: var(--cardheight);
         border-radius: 30px;
         box-shadow: 10px 10px 8px #888888;
         transition: 0.3s;
