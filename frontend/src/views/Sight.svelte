@@ -119,6 +119,7 @@
                     class="gallery"
                     thumbs-swiper={"#thumb"}
                     loop={true} 
+                    navigation={true}
                     autoplay= {{
                         disableOnInteraction: false,
                         pauseOnMouseEnter: false,
