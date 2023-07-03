@@ -35,7 +35,7 @@
         border-radius: 30px;
         box-shadow: 10px 10px 8px #888888;
         transition: 0.3s;
-        height: var(--cardheight);
+        min-height: var(--cardheight);
     }
 
     .card:hover{
