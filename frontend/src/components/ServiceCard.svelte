@@ -13,10 +13,10 @@
 </script>
 
 <div class="serviceCard row">
-    <div class="col-12 col-sm-12 col-md-12 col-lg-5 me-0 p-0 z-2">
+    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-5 me-0 p-0 z-2">
         <img src="{BackendUrl}media/{ServiceData.image}" alt="thumbnail" class="thumbnail">
     </div>
-    <div class="col-12 col-sm-12 col-md-12 col-lg-7 ms-0 d-flex justify-content-between flex-column ps-0 z-1 cover">
+    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-7 ms-0 d-flex justify-content-between flex-column ps-0 z-1 cover">
         <div class="col-12 ps-0">
             <div class="serviceNameWideScreen mb-3" data-aos="slide-right" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-once="true">
                 {ServiceData.name}
@@ -25,17 +25,17 @@
                 {ServiceData.name}
             </div>
         </div>
-        <div class="col-12 p-3 mt-3 mt-sm-3 mt-md-3 mt-lg-0 row align-items-center text-end">
-            <div class="col-0 col-sm-3 col-md-3 col-lg-0 d-lg-none">
+        <div class="col-12 p-3 mt-3 mt-sm-3 mt-md-3 mt-lg-3 mt-xl-0 row align-items-center text-end">
+            <div class="col-0 col-sm-3 col-md-3 col-lg-3 col-xl-0 d-xl-none">
                 <a target="_blank" href="https://www.google.com/maps/place/{ServiceData.address}">
                     <img src="/map_icon.png" alt="map" class="btn button_image">
                 </a>
             </div>
-            <div class="col-12 col-sm-9 col-md-9 col-lg-12">
+            <div class="col-12 col-sm-9 col-md-9 col-lg-9 col-xl-12">
                 <ul class="list-unstyled contacts">
                     <li>{ServiceData.address} <img src="/map_pictogram.png" alt="map" class="icon"></li>
-                    <li><a href={"tel:"+ServiceData.phone} class="link-primary">{ServiceData.phone}</a><img src="/phone_pictogram.png" alt="phone" class="icon"></li>
-                    <li><a href={"mailto:"+ServiceData.email} class="link-primary">{ServiceData.email}</a><img src="/email_pictogram.png" alt="email" class="icon"></li>
+                    <li><a href={"tel:"+ServiceData.phone} class="link-primary">{ServiceData.phone} </a><img src="/phone_pictogram.png" alt="phone" class="icon"></li>
+                    <li><a href={"mailto:"+ServiceData.email} class="link-primary">{ServiceData.email} </a><img src="/email_pictogram.png" alt="email" class="icon"></li>
                 </ul>
             </div>
         </div>
@@ -45,7 +45,7 @@
                     Érdekel 
                 </a>
             </div>
-            <div class="d-block d-sm-none d-md-none d-lg-block">
+            <div class="d-block d-sm-none d-md-none d-lg-none d-xl-block">
                 <a target="_blank" href="https://www.google.com/maps/place/{ServiceData.address}">
                     <img src="/map_icon.png" alt="map" class="btn button_image">
                 </a>
@@ -124,7 +124,7 @@
 
 
 
-    @media screen and (max-width: 992px) {
+    @media screen and (max-width: 1200px) {
         .serviceNameWideScreen{
             display: none;
         }
@@ -138,7 +138,7 @@
         }
     }
 
-    @media screen and (min-width: 992px) {
+    @media screen and (min-width: 1200px) {
         .cover{
             overflow-x: hidden;
         }

@@ -22,12 +22,12 @@
 
 
 <div>
-  <main class="col-12 offset-md-2 col-md-8 offset-lg-0 col-lg-12 offset-xl-1 col-xl-10 p-3 d-flex flex-wrap justify-content-around">
+  <main class="col-12 offset-md-2 col-md-8 offset-lg-0 col-lg-12  col-xl-12 p-3 d-flex flex-wrap justify-content-around">
     {#await Services}
       <div class="spinner-border"></div>
     {:then Services} 
       {#each Services as Service,i}
-        <div class="col-12 col-lg-5 col-xl-5">
+        <div class="col-12 col-lg-5 col-xl-5 mb-3">
           <ServiceCard ServiceData={Service}/>
         </div>
       {/each}
