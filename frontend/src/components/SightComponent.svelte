@@ -14,6 +14,7 @@
         margin: auto
         background-color: white
         z-index: 99
+        box-shadow: 2px 2px 1rem rgba(0,0,0,0.75)
     #images
         height: 250px
         width: 100%
