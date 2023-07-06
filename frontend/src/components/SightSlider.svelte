@@ -5,6 +5,7 @@
   import type { Sight } from '../interfaces/Sights';
   import type { Gallery } from '../interfaces/Gallery';
   import db from '../services/DB';
+    import Sights from '../views/Sights.svelte';
 
 let SightsPromise = Promise.all([db.Get('Sights'), db.GetFieldValue('SightsGallery', 'preview', 1)]).then((Results)=>{
   let sights = Results[0] as Sight[];
@@ -31,9 +32,9 @@ let SightsPromise = Promise.all([db.Get('Sights'), db.GetFieldValue('SightsGalle
     <div class="spinner-border"></div>
   {:then Sights} 
     <swiper-container
-      loop={true}
-      slides-per-view={1}
-      space-between={30}
+      loop="true"
+      slides-per-view=1
+      space-between=30
       grab-cursor="true"
       autoplay={{
               disableOnInteraction:true,
@@ -42,11 +43,11 @@ let SightsPromise = Promise.all([db.Get('Sights'), db.GetFieldValue('SightsGalle
             }}
       breakpoints={{
         768: {
-          slidesPerView: 2>Sights.length-1?1:2,
+          slidesPerView: Sights.length >= 4 ? 2 : 1,
           spaceBetween: 30
         },
         1100: {
-          slidesPerView: 3>Sights.length-1?2>Sights.length-1?1:2:3,
+          slidesPerView: Sights.length >= 6 ? 3 : Sights.length >= 4 ? 2 : 1,
           spaceBetween: 30
         }
       }}

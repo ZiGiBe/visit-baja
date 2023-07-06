@@ -28,11 +28,11 @@
             }}
       breakpoints={{
         768: {
-          slidesPerView: 2>Programs.length-1?1:2,
+          slidesPerView: Programs.length >= 4 ? 2 : 1,
           spaceBetween: 30
         },
         1100: {
-          slidesPerView: 3>Programs.length-1?2>Programs.length-1?1:2:3,
+          slidesPerView: Programs.length >= 6 ? 3 : Programs.length >= 4 ? 2 : 1,
           spaceBetween: 30
         }
       }}
