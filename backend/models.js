@@ -88,7 +88,12 @@ const Users = sequelize.define('Users', {
         type: DataTypes.STRING,
     }
 })
+const IndexSlideshow = sequelize.define('IndexSlideshow', {
+    filename: {
+        type: DataTypes.STRING
+    }
+})
 SightsGallery.belongsTo(Sights, {foreignKey: "itemID"});
 
 
-module.exports = {sequelize, Users, Sights, Services, Programs, SightsGallery};
+module.exports = {sequelize, Users, Sights, Services, Programs, SightsGallery, IndexSlideshow};

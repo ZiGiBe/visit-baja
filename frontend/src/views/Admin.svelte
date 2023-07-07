@@ -6,6 +6,7 @@
     import NewSight from "../components/Admin/forms/NewSight.svelte";
     import NewService from "../components/Admin/forms/NewService.svelte";
     import TourInformEditor from "../components/Admin/forms/TourInformEditor.svelte";
+    import SlideEdit from "../components/Admin/forms/SlideEdit.svelte";
     let tabindex = 0;
     let sync;
 
@@ -95,6 +96,12 @@
                 <h3 class="accordion-header"><button on:click={sync} class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#editsubpage">Tourinform Iroda módosítása</button></h3>
                 <div class="accordion-collapse collapse" id="editsubpage">
                     <TourInformEditor bind:Sync={sync} />
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h3 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#editslideshow">Indexoldal háttereinek módosítása</button></h3>
+                <div class="accordion-collapse collapse" id="editslideshow">
+                    <SlideEdit />
                 </div>
             </div>
         </div>

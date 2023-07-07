@@ -1,8 +1,14 @@
 <script lang="ts">
+    import { onMount } from 'svelte';
     import { register } from 'swiper/element/bundle';
+    import db, { BackendUrl } from '../services/DB';
     //ezt a hibát ne vedd figyelembe attól még működik
     register();
+    let images
 
+    onMount(async()=>{
+        images = await db.Get('IndexSlideshow');
+    })
     var options = {
         slidesPerView: 1,
         loop:true,
@@ -11,7 +17,7 @@
         autoplay: {
             disableOnInteraction: false,
             pauseOnMouseEnter: false,
-            delay: 5000,
+            delay: 3000,
         },
     };
 </script>
@@ -70,6 +76,7 @@
     <img src="/logo.png" alt="Logó" class="logo">
     <img src="/wave.png" alt="wave" class="wave">
     <div class="background">
+        {#if images}
         <swiper-container
         loop={true}
         effect={"fade"}
@@ -78,11 +85,16 @@
         autoplay= {{
             disableOnInteraction: false,
             pauseOnMouseEnter: false,
-            delay: 5000,
+            delay: 2000,
         }}
       >
-        <swiper-slide><img src="/hatter.jpg" alt="Háttér" class="image"></swiper-slide>
+        {#each images as image}
+            <swiper-slide><img src={BackendUrl + 'media/' + image.filename} alt="Háttér" class="image"></swiper-slide>
+        {/each}
+        {#if images.length < 1}
         <swiper-slide><img src="/kep_normal.jpg" alt="Háttér" class="image"></swiper-slide>
+        {/if}
       </swiper-container> 
+      {/if}
     </div>
 </div>
