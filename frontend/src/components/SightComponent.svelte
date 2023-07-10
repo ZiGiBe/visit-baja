@@ -4,7 +4,8 @@
     import EditorJsConverter from "../services/EditorJSConverter.svelte";
 
     export let sightData: Sight;
-
+    import { register } from 'swiper/element/bundle';
+    register();
     console.log(sightData);
 </script>
 <style lang="sass">
@@ -15,15 +16,21 @@
         background-color: white
         z-index: 99
         box-shadow: 2px 2px 1rem rgba(0,0,0,0.75)
-    #images
-        height: 250px
-        width: 100%
-        background-color: gray
     header>h1
         margin-bottom: 0
         padding: 0.5rem 1rem
     article
         padding: 1rem
+    swiper-container
+        height: 400px
+        swiper-slide
+            background-color: #000
+            div
+                height: 400px
+                img
+                    height: 100%
+                    margin: auto
+
     @media screen and (min-width: 1010px)
         #content
             max-height: calc(95vh - 70px)
@@ -44,7 +51,29 @@
     </header>
     <div id="contentcontainer">
          <!--Swipert valahova ide-->
-        <div id="images"></div>
+       
+            
+            <swiper-container
+            loop={true}
+            slides-per-view={1}
+            grab-cursor={true}
+            navigation= {true}
+            autoplay= {{
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true,
+                delay: 4000
+            }}
+            >
+            {#each sightData.gallery as image}
+                <swiper-slide>
+                    <div class="w-100 d-flex justify-content-center">
+                        <img src={BackendUrl + 'media/' + image.image} alt="kép" class="image">
+                    </div>
+                </swiper-slide>
+            {/each}
+            </swiper-container> 
+
+
         <article>
             {#each sightData.fulldesc.blocks as block}
                 <EditorJsConverter {block} />
