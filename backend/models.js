@@ -93,7 +93,28 @@ const IndexSlideshow = sequelize.define('IndexSlideshow', {
         type: DataTypes.STRING
     }
 })
+const Translations = sequelize.define('Translations', {
+    lang: {
+        type: DataTypes.STRING
+    },
+    name: {
+        type: DataTypes.STRING
+    },
+    description: {
+        type: DataTypes.STRING,
+    },
+    fulldesc: {
+        type: DataTypes.JSON,
+        allowNull: true
+    },
+    model: {
+        type: DataTypes.STRING
+    },
+    itemId: {
+        type: DataTypes.INTEGER
+    }
+})
+//Foreign Keys
 SightsGallery.belongsTo(Sights, {foreignKey: "itemID"});
 
-
-module.exports = {sequelize, Users, Sights, Services, Programs, SightsGallery, IndexSlideshow};
+module.exports = {sequelize, Users, Sights, Services, Programs, SightsGallery, IndexSlideshow, Translations};

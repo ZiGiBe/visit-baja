@@ -10,6 +10,8 @@
     import ModSight from './components/Admin/Modal/Mod/ModSight.svelte';
     import ModProgram from './components/Admin/Modal/Mod/ModProgram.svelte';
     import ModService from './components/Admin/Modal/Mod/ModService.svelte';
+    import Translation from './components/Admin/forms/Translation.svelte';
+    import db from './services/DB';
 </script>
 
 
@@ -32,6 +34,9 @@
     {:else}
     <ModProgram/>
     {/if}
+</Route>
+<Route path="/admin/translate/:type" let:meta>
+    <Translation dataPromise={db.Get(meta.params.type, Number(meta.query.id))} />
 </Route>
 {:else}
 <Route path="/admin" redirect="/admin/login"/>
