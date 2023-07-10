@@ -23,6 +23,7 @@
         padding: 1rem
     swiper-container
         height: 400px
+        background-color: #000
         swiper-slide
             background-color: #000
             div
