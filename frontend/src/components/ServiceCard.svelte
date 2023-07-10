@@ -26,7 +26,7 @@
             </div>
         </div>
         <div class="col-12 p-3 mt-3 mt-sm-3 mt-md-3 mt-lg-3 mt-xl-0 row align-items-center text-end">
-            <div class="col-0 col-sm-3 col-md-3 col-lg-3 col-xl-0 d-xl-none">
+            <div class="col-0 col-sm-3 col-md-3 col-lg-3 col-xl-0 d-none d-sm-block d-xl-none">
                 <a target="_blank" href="https://www.google.com/maps/place/{ServiceData.address}">
                     <img src="/map_icon.png" alt="map" class="btn button_image">
                 </a>
