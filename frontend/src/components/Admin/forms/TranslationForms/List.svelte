@@ -1,6 +1,5 @@
 <script lang="ts">
     export let block;
-    let currentId = 0;
     export const value = {
         ...block.original,
         data:{
@@ -13,17 +12,24 @@
             return block.to.data.items
         }
         else{
-            return block.original.data.items.map(e=>"");
+            return block.original.data.items.map(()=>"");
         }
      }
 </script>
 <style lang="sass">
+    ul, ol
+        max-height: 300px
+        overflow-y: auto
+        li
+            margin-bottom: 0.25rem
+        li:last-of-type
+            margin-bottom: 0
 </style>
 <div>
     {#if value}
     <svelte:element this={block.original.data.style[0]+'l'}>
         {#each value.data.items as item, i}
-        <li><input class="form-control" type="text" placeholder={block.original.data.items[i]} bind:value={value.data.items[i]}></li>
+        <li><textarea class="form-control" placeholder={block.original.data.items[i]} bind:value={value.data.items[i]} /></li>
         {/each}
     </svelte:element>
     {/if}

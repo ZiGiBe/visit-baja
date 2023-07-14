@@ -1,5 +1,6 @@
 <script>
         import { Routes } from "../services/ActualSite";
+    import { i18n } from "../services/i18n";
 </script>
 
 <style>
@@ -55,31 +56,31 @@ img{
             <img src="/logo.png" class="centerifsmall" alt="Szeretlek Baja">
         </div>
         <div class="col-md-6 col-lg-3 col-12">
-            <h2>Menü</h2>
+            <h2>{$i18n.t('footer.menu')}</h2>
             <ul>
                 {#each $Routes as route}
-                    <li> <a href="{route.route}">{route.name}</a></li>
+                    <li> <a href="{route.route}">{$i18n.t('menu.'+route.name)}</a></li>
                 {/each}
             </ul>
         </div>
         <div class="col-md-6 col-lg-3 col-12">
-            <h2>Elérhetőségek</h2>
+            <h2>{$i18n.t('footer.contact')}</h2>
             <ul>
                 <li class="fw-medium">
                     Bajai Turisztikai Nonprofit Kft
                 </li>
                 <li class="fw-medium">
-                    Cím: 6500 Baja, Szentháromság tér 11
+                    {$i18n.t('footer.address')}
                 </li>
                 <li class="fw-medium">
-                    Telefon:  06 79 420 792
+                    {$i18n.t('footer.phone')}
                 </li>
                 <li class="fw-medium">
-                    E-mail
+                    {$i18n.t('footer.email')}
                 </li>
                 <li>
                     <a href="/impresszum" target="_blank" >
-                        Impresszum
+                        {$i18n.t('footer.impress')}
                     </a>
                 </li>
             </ul>

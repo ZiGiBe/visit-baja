@@ -2,7 +2,7 @@
     import AOS from "aos";
     import 'aos/dist/aos.css'
     import { onMount } from "svelte";
-
+    import { i18n } from "../services/i18n";
     onMount(()=> {
         AOS.init();
     })
@@ -77,15 +77,15 @@
 <div>
     <div class="lane">
         <div class="darkness">
-            <div data-aos="slide-right" data-aos-duration="1500" data-aos-easing="ease-in-out" data-aos-once='true' id="slider">
+            <div data-aos="slide-right" data-aos-duration="1500" data-aos-easing="ease-out" data-aos-once='true' id="slider">
                 <img src="/tourinform_logo.png" alt="logó" id="icon">
             </div>
             <div class="titleBox">
                 <h1 class="title text-center">
-                    Látogasson el a Tourinform Irodába is! 
+                    {$i18n.t('index.visitTourinform')}
                 </h1>
                 <a href="/szolgaltatasok/tourinform" class="btn btn-primary m-3 link">
-                    <h3>Tovább</h3>
+                    <h3>{$i18n.t('index.next')}</h3>
                 </a>
             </div>
         </div>

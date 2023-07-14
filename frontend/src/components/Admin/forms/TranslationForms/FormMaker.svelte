@@ -3,6 +3,10 @@
     import EditorJsConverter from "../../../../services/EditorJSConverter.svelte";
     import Paragraph from "./Paragraph.svelte";
     import List from "./List.svelte";
+    import Quote from "./Quote.svelte";
+    import Header from "./Header.svelte";
+    import Warning from "./Warning.svelte";
+    import Other from "./Other.svelte";
 
     export let block;
 
@@ -11,6 +15,9 @@
             case 'paragraph': return Paragraph;
             case 'table': return Table;
             case 'list': return List;
+            case 'quote': return Quote;
+            case 'header': return Header;
+            case 'warning': return Warning;
         }
     }
 </script>

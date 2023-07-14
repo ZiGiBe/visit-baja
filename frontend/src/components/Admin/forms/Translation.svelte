@@ -1,6 +1,5 @@
 <script lang="ts">
     import { onMount } from "svelte";
-    import EditorJsConverter from "../../../services/EditorJSConverter.svelte";
     import FormMaker from "./TranslationForms/FormMaker.svelte";
     export let dataPromise: Promise<any>
     
@@ -11,6 +10,7 @@
     onMount(async()=>{
         editorData = await dataPromise;
         translations.push(
+            LangSelect(),
             Title(editorData),
             Desc(editorData),
             ...JSON.parse(editorData.fulldesc).blocks.map(e=>Block(e))
@@ -65,18 +65,26 @@
             case 'warning': return 'Figyelmeztetés'
         }
     }
+    function LangSelect(){
+        return {
+            langs: ["en"]
+        }
+    }
     function restart(){
         unique = {};
-        console.log(translations)
     }
 </script>
 <style lang="sass">
+    #hungarianedit, #edit, #editpreview
+        padding: 1rem
     #main   
         max-width: 60em
         margin: auto
         border-left: var(--bs-border-width) solid var(--bs-border-color)
         border-right: var(--bs-border-width) solid var(--bs-border-color)
         border-bottom: var(--bs-border-width) solid var(--bs-border-color)
+        .btn
+            margin-left: 1rem
         #translationnavigation
             display: flex
             flex-flow: row
@@ -120,11 +128,29 @@
     </div>
     <div id="translationeditor">
         {#if translations[translationindex].original}
-        {#key unique}
-            <FormMaker block={translations[translationindex]} />
-        {/key}
+            {#key unique}
+                <FormMaker block={translations[translationindex]} />
+            {/key}
+        {:else}
+        <div id="hungarianedit">
+            <h3>Fordítandó elem</h3>
+            <svelte:element this={translations[translationindex].type=="Név" ? 'h2' : 'p'}>{translations[translationindex].name ? translations[translationindex].name : translations[translationindex].desc ? translations[translationindex].desc : translations[translationindex].shortdesc}</svelte:element>
+        </div>
+        <hr>
+        <div id="edit">
+            <h3>Fordítás</h3>
+            <input type="text" class="form-control" bind:value={translations[translationindex].to} placeholder={translations[translationindex].name ? translations[translationindex].name : translations[translationindex].desc ? translations[translationindex].desc : translations[translationindex].shortdesc } >
+        </div>
+        <hr>
+        <div id="editpreview">
+            <h3>Előnézet</h3>
+            <svelte:element this={translations[translationindex].type=="Név" ? 'h2' : 'p'}>{translations[translationindex].to}</svelte:element>
+        </div>
         {/if}
     </div>
+    {#if translationindex == translations.length-1}
+    <button class="btn btn-primary mb-3">Fordítás feltöltése</button>
+    {/if}
     {:else}
     <p>Betöltend...</p>
     {/if}

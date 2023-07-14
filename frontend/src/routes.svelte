@@ -12,6 +12,7 @@
     import ModService from './components/Admin/Modal/Mod/ModService.svelte';
     import Translation from './components/Admin/forms/Translation.svelte';
     import db from './services/DB';
+    import TransTest from './views/TransTest.svelte';
 </script>
 
 
@@ -41,7 +42,7 @@
 {:else}
 <Route path="/admin" redirect="/admin/login"/>
 {/if}
-
+<Route path="/translationtest"><TransTest/></Route>
 <Route path="/admin/login"><Login/></Route>
 
 <!-- Default path -->

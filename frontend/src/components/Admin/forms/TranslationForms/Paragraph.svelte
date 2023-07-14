@@ -3,10 +3,10 @@
     export const value = {
         ...block.original,
         data: {
-            text: block.to.data ? block.to.data.text:""
+            text: block.to.data ? block.to.data.text : ""
         }
     }
 </script>
 <div>
-    <input class="form-control" type="text" name="blocktext" bind:value={value.data.text} placeholder={block.original.data.text}>
+    <textarea class="form-control" name="blocktext" bind:value={value.data.text} placeholder={block.original.data.text} />
 </div>

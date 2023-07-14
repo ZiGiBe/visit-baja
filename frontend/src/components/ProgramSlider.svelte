@@ -2,6 +2,7 @@
   import { register } from 'swiper/element/bundle';
   import ProgramCard from './ProgramCard.svelte';
   import db from '../services/DB';
+    import { i18n } from '../services/i18n';
   let Programs = db.GetFieldValue('Programs', 'end', new Date().toISOString(), 'gte');
   //ezt a hibát ne vedd figyelembe attól még működik
   register();
@@ -10,7 +11,7 @@
 
   <h2 class="title">
     <span class="text">
-      Nálunk mindig történik valami!
+      {$i18n.t('index.programs')}
     </span>
   </h2>
   {#await Programs}

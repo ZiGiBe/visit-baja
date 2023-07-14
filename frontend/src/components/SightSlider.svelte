@@ -1,13 +1,13 @@
 <script lang="ts">
   import { register } from 'swiper/element/bundle';
+  import { i18n } from '../services/i18n';
   register();
   import SightCard from './SightCard.svelte';
   import type { Sight } from '../interfaces/Sights';
   import type { Gallery } from '../interfaces/Gallery';
   import db from '../services/DB';
-    import Sights from '../views/Sights.svelte';
 
-let SightsPromise = Promise.all([db.Get('Sights'), db.GetFieldValue('SightsGallery', 'preview', 1)]).then((Results)=>{
+  let SightsPromise = Promise.all([db.Get('Sights'), db.GetFieldValue('SightsGallery', 'preview', 1)]).then((Results)=>{
   let sights = Results[0] as Sight[];
   let images = Results[1] as Gallery[];
   
@@ -24,7 +24,7 @@ let SightsPromise = Promise.all([db.Get('Sights'), db.GetFieldValue('SightsGalle
 
   <h2 class="text-end title">
     <span class="text">
-      Látogass el hozzánk!
+      {$i18n.t('index.visitus')}
     </span>
   </h2>
 

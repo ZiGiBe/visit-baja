@@ -13,32 +13,32 @@ export function CheckSite(){
 
 let routes = [
     {
-        name: "Kezdőlap",
+        name: "main",
         title: "",
         route: "/"
     },
     {
-        name: "Vendéglátóhelyek",
+        name: "restaurants",
         title: "Vendéglátóhelyek",
         route: "/szolgaltatasok/vendeglatohelyek"
     },
     {
-        name: "Szálláshelyek",
+        name: "accomodations",
         title: "Szálláshelyek",
         route: "/szolgaltatasok/szallasok"
     },
     {
-        name: "Látnivalók",
+        name: "sights",
         title: "Látnivalók",
         route: "/szolgaltatasok/latnivalok"
     },
     {
-        name: "Tourinform iroda",
+        name: "tourinform",
         title: "Tourinform iroda",
         route: "/szolgaltatasok/tourinform"
     },
     {
-        name: "Kiadványok",
+        name: "publications",
         title: "Tourinform iroda",
         route: "/szolgaltatasok/tourinform#kiadvanyok"
     },

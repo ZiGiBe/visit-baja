@@ -1,4 +1,6 @@
 <script>
+    import { i18n } from "../services/i18n";
+
     
 </script>
 
@@ -8,10 +10,10 @@
     </div>
     <div class="containerBox m-3">
         <h2>
-            Töltsd meg nálunk a bendőd!
+            {$i18n.t('index.eatfood')}
         </h2>
         <a href="/szolgaltatasok/vendeglatohelyek" class="btn btn-secondary m-3">
-            <h4>Éttermek</h4>
+            <h4>{$i18n.t('index.restaurants')}</h4>
         </a>
     </div>
 </div>
