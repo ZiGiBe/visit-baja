@@ -5,12 +5,13 @@
             <h4>visitbaja.hu</h4>
         </div>
         <h1>
-            Az oldal jelenleg karbantartás alatt áll.
+            {$i18n.t('maintanence.currently')}
         </h1>
+        <p class="apologize mb-0">
+            {$i18n.t('maintanence.sorry1')}
+        </p>
         <p class="apologize">
-            Elnézésüket kérjük az okozott kellemetlenségekért.
-            <br>
-            Hamarosan végzünk.
+            {$i18n.t('maintanence.sorry2')}
         </p>
     </header>
     <div class="bgc">
@@ -20,12 +21,14 @@
         <hr>
         <div>
             <span>
-                Kapcsolat:
+                {$i18n.t('maintanence.contact')}
             </span>
         </div>
     </footer>
 </main>
-
+<script lang="ts">
+    import { i18n } from "../services/i18n";
+</script>
 <style>
     .logo{
         height: 70px;

@@ -26,6 +26,12 @@ let de = {
                 'address': 'Address: 6500 Baja, Széntháromság tér 11.',
                 'menu': 'Seite',
                 'contact': 'Kontaktinformationen'
+            },
+            maintanence: {
+                'currently': 'Die Seite ist jetzt im Pflegen.',
+                'sorry1': 'Entschuldigen Sie uns für Unannehmlichkeiten.',
+                'sorry2': 'Wir würden bald schon fertig.',
+                'contact': 'Kontakt:'
             }
         }
     },

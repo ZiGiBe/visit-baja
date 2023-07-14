@@ -26,6 +26,12 @@ let hu = {
                 'address': 'Cím: 6500 Baja, Széntháromság tér 11.',
                 'menu': 'Menü',
                 'contact': 'Elérhetőségek'
+            },
+            maintanence: {
+                'currently': 'Az oldal jelenleg karbantartás alatt áll.',
+                'sorry1': 'Elnézésüket kérjük az okozott kellementlenségekért',
+                'sorry2': 'Hamarosan végzünk.',
+                'contact': 'Kapcsolat:'
             }
         }
     }
