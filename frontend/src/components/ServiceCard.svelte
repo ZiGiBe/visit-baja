@@ -41,7 +41,7 @@
         </div>
         <div class="text-center d-flex justify-content-around align-items-center">
             <div>
-                <a href="{ServiceData.href}" class="button btn">
+                <a href="{ServiceData.href}" class="button btn" target="_blank">
                     Érdekel 
                 </a>
             </div>
