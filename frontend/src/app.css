@@ -1,5 +1,10 @@
 @import "bootstrap";
 @import '../node_modules/bootstrap-icons/font/bootstrap-icons.css';
+@font-face {
+    font-family: "Viga";
+    src: url('/Viga-Regular.ttf');
+}
+
 *{
     --kek1:#00171F;
     --kek2:#003459;
