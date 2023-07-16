@@ -9,7 +9,6 @@
     import SlideEdit from "../components/Admin/forms/SlideEdit.svelte";
     let tabindex = 0;
     let sync;
-
     let categories = [
         {
             icon: "eye",

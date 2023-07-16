@@ -3,6 +3,7 @@
     import { jwt } from "../components/Admin/stores";
     import db from "../services/DB";
     import sha256 from 'crypto-js/sha256';
+    import Cookies from 'js-cookie'
     let username = "";
     let password = "";
     async function login(){
@@ -11,6 +12,7 @@
             let login = await db.Login({username: username, password: pswd});
             if (login.token){
                 await jwt.update(d=>d=login.token);
+                Cookies.set('visitbaja.hu', login.token, {expires: 5/24, sameSite:'strict', secure: 'true'});
                 router.goto('/admin');
             }
         }

@@ -4,8 +4,6 @@
         ...block.original,
         data: GetData()
     }
-    console.log(value)
-    console.log(block)
     function GetData(){
         if (!block.to.data){
             let data = {

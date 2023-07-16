@@ -23,12 +23,13 @@ let db = {
         }).then(res => res.data).catch(err => err) :
             axios.get(backendUrl + model).then(res => res.data).catch(err => err);
     },
-    GetFieldValue: (model: string, field: string, value: string | number, operator: string = "eq") => {
+    GetFieldValue: (model: string, field: string, value: string | number, operator: string = "eq", modelId?) => {
         return axios.get(backendUrl + model, {
             params: {
                 field: field,
                 value: value,
-                operator: operator
+                operator: operator,
+                modelId: modelId
             }
         }).then(res => res.data).catch(err => err);
     },

@@ -12,8 +12,8 @@ import Underline from '@editorjs/underline';
 import TextVariantTune from '@editorjs/text-variant-tune';
 import Hyperlink from 'editorjs-hyperlink';
 import AttachesTool from '@editorjs/attaches';
-
-export let jwt = writable("");
+import Cookies from 'js-cookie'; 
+export let jwt = writable(Cookies.get('visitbaja.hu')?Cookies.get('visitbaja.hu') : "");
 
 export const EditorJSTools = readable({
     header: Header,

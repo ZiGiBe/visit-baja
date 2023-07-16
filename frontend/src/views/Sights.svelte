@@ -4,15 +4,18 @@
     import type { Sight } from "../interfaces/Sights";
     import db from "../services/DB";
     import { CheckSite } from "../services/ActualSite";
+    import { i18n } from "../services/i18n";
     CheckSite();
 
     let SightsPromise = Promise.all([
         db.Get("Sights"),
         db.GetFieldValue("SightsGallery", "preview", 1),
+        db.GetFieldValue('Translations', 'model', 'Sights')
     ]).then((Results) => {
         let sights = Results[0] as Sight[];
         let images = Results[1] as Gallery[];
-
+        sights.forEach(AddTranslationFromStockRequest);
+        Results[2].forEach(AddTranslationFromTranslations)
         return sights.map((e) => {
             return {
                 ...e,
@@ -20,6 +23,24 @@
             };
         });
     });
+    function AddTranslationFromStockRequest(element){
+        let fulld = JSON.parse(element.fulldesc);
+        
+        $i18n.addResourceBundle('hu', 'Sight-'+element.id, {
+            name: element.name,
+            description: element.shortdesc,
+            fulldesc: fulld
+        })
+        
+    }
+    function AddTranslationFromTranslations(element){
+        let fulld = JSON.parse(element.fulldesc);
+        $i18n.addResourceBundle(element.lang, 'Sight-'+element.itemId, {
+            name: element.name,
+            description: element.description,
+            fulldesc: fulld
+        })
+    }
 </script>
 
 <div>

@@ -2,9 +2,10 @@
     import type { Sight } from "../interfaces/Sights";
     import { BackendUrl } from "../services/DB";
     import EditorJsConverter from "../services/EditorJSConverter.svelte";
-
     export let sightData: Sight;
+    
     import { register } from 'swiper/element/bundle';
+    import { i18n } from "../services/i18n";
     register();
     console.log(sightData);
 </script>
@@ -48,7 +49,7 @@
 </style>
 <div id="content" class="rounded-1">
     <header class="d-flex">
-        <h1>{sightData.name}</h1>
+        <h1>{$i18n.t('Sight-'+sightData.id+':name')}</h1>
     </header>
     <div id="contentcontainer">
          <!--Swipert valahova ide-->

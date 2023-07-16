@@ -6,8 +6,6 @@
     import Quote from "./Quote.svelte";
     import Header from "./Header.svelte";
     import Warning from "./Warning.svelte";
-    import Other from "./Other.svelte";
-
     export let block;
 
     function InputDetector(type:string) {
