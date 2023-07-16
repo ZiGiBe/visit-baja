@@ -44,7 +44,7 @@
           <hr class="d-lg-none" />
         {/each}
       </ul>
-      <ul class="navbar-nav ms-auto">
+      <ul class="navbar-nav ms-lg-auto">
         <li class="nav-item dropdown">
           <button
             class="nav-link dropdown-toggle"

@@ -2,6 +2,7 @@
     import type { Sight } from "../interfaces/Sights";
     export let SightData:Sight;
     import { BackendUrl } from "../services/DB";
+    import {i18n} from '../services/i18n';
 </script>
 
 <style>
@@ -88,7 +89,7 @@
             </p>
         </div>
         <a href="/latnivalok/{SightData.href}" class="btn btn-primary pl-3 pr-3">
-            Tovább
+            {$i18n.t('sights.btn')}
         </a>
       </div>
 </div>
