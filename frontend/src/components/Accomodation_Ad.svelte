@@ -32,14 +32,11 @@
     flex-direction: column;
     padding-top: 10vh;
     text-align: center;
-}
-
-.lane div:nth-child(2){
-    width: 40vw;
+    width: 40%;
 }
 
 .image{
-    width: 60vw;
+    width: 60%;
     height: 50vh;
     object-fit: cover;
     border-radius: 0 10px 10px 0;
@@ -72,16 +69,16 @@
     }
 
     .image{
-        width: 90vw;
+        width: 90%;
         height: 30vh;
         object-fit: cover;
-        margin: 0 5vw 0 5vw;
+        margin: 0 5% 0 5%;
         border-radius: 10px;
     }
 
-    .lane div:nth-child(2){
-    width: unset;
-}
+    .containerBox{
+        width: unset;
+    }
 }
 
 

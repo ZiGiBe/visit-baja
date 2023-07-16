@@ -21,7 +21,7 @@
 <style>
 
 .image{
-    width: 50vw;
+    width: 50%;
     height: 40vh;
     object-fit: cover;
     border-radius: 10px 0 0 10px;
@@ -35,7 +35,7 @@
 }
 
 .lane div:nth-child(2){
-    width: 50vw;
+    width: 50%;
 }
 
 .containerBox{
@@ -61,10 +61,10 @@
     }
 
     .image{
-        width: 90vw;
+        width: 90%;
         height: 30vh;
         object-fit: cover;
-        margin: 0 5vw 0 5vw;
+        margin: 0 5% 0 5%;
         border-radius: 10px;
     }
 

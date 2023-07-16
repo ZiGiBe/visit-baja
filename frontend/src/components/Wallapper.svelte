@@ -33,11 +33,15 @@
         z-index: 1;
         overflow: hidden;
         height: calc(100vh - 70px);
+        width: 100%;
         margin-bottom: 150px;
+        position: absolute;
+        top: 70px;
     }
     .logo{
         width: clamp(0px 30vh 60vw);
         max-width: 70vw;
+        max-height: calc(80vh - 70px);
         position: absolute;
         top: 40vh;
         left: 20%;
@@ -62,16 +66,20 @@
         z-index: 3;
     }
 
+    .margin{
+        margin-bottom: 110vh;
+    }
+
     @media screen and (max-width: 768px) {
         .wave{
            object-fit: cover;
         }
     }
 
-
 </style>
 
 <div>
+    <div class="margin"></div>
     <div class="darkness"></div>
     <img src="/logo.png" alt="Logó" class="logo">
     <img src="/wave.png" alt="wave" class="wave">

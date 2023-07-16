@@ -1,27 +1,72 @@
 <script lang="ts">
   import { Routes } from "../services/ActualSite";
   import { i18n } from "../services/i18n";
+  import { createPopper } from '@popperjs/core';
+
   function SwitchLangTo(code:string){
     $i18n.changeLanguage(code);
   }
+
+  let popperContent;
+
+  console.log(popperContent);
+  
+
 </script>
-<style lang="sass">
-  nav *
-    background-color: #C0E7F6
-    color: var(--kek1)
-  .active
-      background-color: var(--bs-dropdown-link-active-bg)
-  img
-    height: 60px
-  hr
-    border: 2px solid white
-    border-radius: 20%
-    width: 100%
+<style>
+  nav *{
+    background-color: #C0E7F6;
+    color: var(--kek1);
+  }
+
+  .active{
+      background-color: var(--bs-dropdown-link-active-bg);
+  }
+
+  img{
+    height: 60px;
+  }
+
+  hr{
+    border: 2px solid white;
+    border-radius: 20%;
+    width: 100%;
+  }
+
+  .dropdown-menu{
+    transition: 2s;  
+  }
+
+  @media only screen and (max-width: 991px) {
+    .dropdownRoutes{
+      position: fixed;
+      top: 70px;
+      left: 0;
+      width: 100%;
+      max-height: calc(100vh - 70px);
+    }
+
+    #navbarNav{
+      direction: rtl;
+      overflow-y: auto;
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;  /* Firefox */
+    }
+
+    #navbarNav::-webkit-scrollbar {
+        display: none;
+    }
+
+
+  }
+
+  
+
 </style>
 
 <nav class="navbar sticky-top p-0 navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="/"><img src="/logo.png" alt="" /></a>
+    <a class="navbar-brand" href="/"><img src="/logo.png" alt="Logo" /></a>
     <button
       class="navbar-toggler"
       type="button"
@@ -33,7 +78,7 @@
     >
       <span class="navbar-toggler-icon" />
     </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
+    <div class="collapse navbar-collapse dropdownRoutes" id="navbarNav">
       <ul class="navbar-nav">
         {#each $Routes as route}
           <li class="fs-5 text-center fw-medium nav-item">
@@ -43,9 +88,7 @@
           </li>
           <hr class="d-lg-none" />
         {/each}
-      </ul>
-      <ul class="navbar-nav ms-lg-auto">
-        <li class="nav-item dropdown">
+        <li class="fs-5 text-center fw-medium nav-item dropdown">
           <button
             class="nav-link dropdown-toggle"
             data-bs-toggle="dropdown"
@@ -53,7 +96,7 @@
           >
             <i class="bi bi-translate" />
           </button>
-          <ul class="dropdown-menu dropdown-menu-end">
+          <ul class="dropdown-menu dropdown-menu-end m-3" bind:this={popperContent}>
             <li id="en"><button on:click={()=>SwitchLangTo('en')} class:active={$i18n.language=='en'} class="dropdown-item">EN</button></li>
             <li id="hu"><button on:click={()=>SwitchLangTo('hu')} class:active={$i18n.language=='hu'} class="dropdown-item">HU</button></li>
             <li id="de"><button on:click={()=>SwitchLangTo('de')} class:active={$i18n.language=='de'} class="dropdown-item">DE</button></li>
