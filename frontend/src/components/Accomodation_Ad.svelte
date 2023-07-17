@@ -32,11 +32,11 @@
     flex-direction: column;
     padding-top: 10vh;
     text-align: center;
-    width: 40%;
+    width: 40vw;
 }
 
 .image{
-    width: 60%;
+    width: 60vw;
     height: 50vh;
     object-fit: cover;
     border-radius: 0 10px 10px 0;
