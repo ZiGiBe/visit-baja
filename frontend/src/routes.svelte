@@ -21,8 +21,6 @@
     <!-- <Maintenance /> -->
     <Index/>
 </Route>
-
-<Route path="/tourinform" ><Tourinform /></Route>
 <Route path="/szolgaltatasok/*">
     <SubRoute />
     <Route fallback redirect="/szolgaltatasok/vendeglatohelyek" />

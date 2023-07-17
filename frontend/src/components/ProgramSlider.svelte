@@ -7,7 +7,7 @@
   //ezt a hibát ne vedd figyelembe attól még működik
   register();
 </script>
-<div class="my-3">
+<div class="my-3 bg">
 
   <h2 class="title">
     <span class="text">
@@ -45,6 +45,14 @@
   {/await}
 </div>
 <style>
+
+.bg{
+    background-color: rgba(255, 255, 255, 0.8);
+    background-image: url('/party.png');
+    background-repeat: repeat;
+    background-blend-mode: overlay;
+}
+
 
 .title{
   margin: 60px 0 60px 0;  

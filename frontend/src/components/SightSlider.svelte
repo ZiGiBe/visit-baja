@@ -20,7 +20,7 @@
 
 </script>
 
-<div class="my-3">
+<div class="my-3 bg">
 
   <h2 class="text-end title">
     <span class="text">
@@ -61,7 +61,12 @@
 
 <style>
 
-
+.bg{
+    background-color: rgba(255, 255, 255, 0.8);
+    background-image: url('/latnivalo.png');
+    background-repeat: repeat;
+    background-blend-mode: overlay;
+}
 
 .title{
   margin: 0 0 40px 40px;  

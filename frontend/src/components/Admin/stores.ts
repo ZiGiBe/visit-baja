@@ -1,4 +1,4 @@
-import { readable, writable } from "svelte/store";
+import { get, readable, writable } from "svelte/store";
 import Header from "@editorjs/header";
 import List from "@editorjs/list"
 import Delimiter from '@editorjs/delimiter';
@@ -20,7 +20,11 @@ export const EditorJSTools = readable({
     attaches: {
         class: AttachesTool,
         config: {
-            endpoint: 'http://localhost:8080/file/tourinform/new'
+            endpoint: 'http://localhost:8080/file/tourinform/new',
+            types: "application/pdf",
+            additionalRequestHeaders:{
+                "Authorization":"JWT " + get(jwt)
+            }
         }
     },
     list: List,
