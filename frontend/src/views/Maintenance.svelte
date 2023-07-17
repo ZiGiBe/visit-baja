@@ -30,6 +30,10 @@
     import { i18n } from "../services/i18n";
 </script>
 <style>
+    main 
+    {
+        overflow: hidden;
+    }
     .logo{
         height: 70px;
     }
@@ -49,7 +53,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: space-between;
+        justify-content: space-around;
         text-align: center;
         position: relative;
         min-height: 100vh;

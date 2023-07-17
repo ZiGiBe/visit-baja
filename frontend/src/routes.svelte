@@ -18,8 +18,8 @@
 
 
 <Route path="/">
-    <!-- <Maintenance /> -->
-    <Index/>
+    <Maintenance />
+    <!-- <Index/> -->
 </Route>
 <Route path="/szolgaltatasok/*">
     <SubRoute />
