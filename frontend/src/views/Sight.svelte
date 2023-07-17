@@ -5,12 +5,16 @@
     import SightPlaceholder from "../components/SightPlaceholder.svelte";
     import type { Sight } from "../interfaces/Sights";
     import db, { BackendUrl } from "../services/DB";
+    import { i18n } from "../services/i18n";
 
     let sight: Promise<Sight> = db.GetFieldValue('Sights', 'href', meta().params.sighthref).then(async (res)=>{
         
         let sgt = res[0];
         let gallery = await db.GetFieldValue('SightsGallery', 'itemID', sgt.id);
-        
+        let translations = await db.GetFieldValue('Translations', 'model', 'Sights', 'eq', sgt.id);
+
+        translations.forEach(TryTranslationsfromRequest);
+        TryTranslationsfromStock(sgt);
         return {
             ...sgt,
             fulldesc: JSON.parse(sgt.fulldesc),
@@ -18,8 +22,28 @@
         }
     }
     )
-
-
+    function TryTranslationsfromStock(element){
+        if (!$i18n.getResourceBundle('hu', 'Sight-'+element.id)){
+            $i18n.addResourceBundle('hu', 'Sight-'+element.id, {
+                name: element.name,
+                description: element.shortdesc,
+                fulldesc: ConvertBlocksToTranslation(JSON.parse(element.fulldesc).blocks)
+            })
+        }
+    }
+    function ConvertBlocksToTranslation(blocks){
+        return [];
+    }
+    function TryTranslationsfromRequest(element){
+        //Avoids duplicates because they are cringe.
+        if (!$i18n.getResourceBundle(element.lang, 'Sight-'+element.itemId)){
+            $i18n.addResourceBundle(element.lang, 'Sight-'+element.itemId, {
+                name: element.name,
+                description: element.description,
+                fulldesc: JSON.parse(element.fulldesc)
+            })
+        }
+    }
 </script>
 
 <style lang="sass">

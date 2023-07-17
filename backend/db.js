@@ -18,6 +18,11 @@ let router = require('express').Router();
                         whereclause[req.query.field]= {
                             [Op[req.query.operator]]: req.query.value
                         };
+                        if (req.query.modelId) {
+                            whereclause['itemId'] = {
+                                [Op[req.query.operator]]: req.query.modelId
+                            }
+                        }
                     }
                     else{
                         whereclause[req.query.field] = req.query.value;

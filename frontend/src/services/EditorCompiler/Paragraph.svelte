@@ -1,5 +1,5 @@
 <script lang="ts">
-    import type { Block } from "../../interfaces/Editor";
+import type { Block } from "../../interfaces/Editor";
     export let block: Block;
 </script>
 <style>
