@@ -6,7 +6,7 @@
 
 <div class="mb-3 lane">
     <div>
-        <img src="/kep_wide.jfif" alt="advert_image" class="image">
+        <img src="/svedasztal.png" alt="advert_image" class="image">
     </div>
     <div class="containerBox m-3">
         <h2>
@@ -39,7 +39,7 @@
 }
 
 .containerBox{
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.6);
     background-image: url('/kaja.png');
     background-blend-mode: overlay;
     background-size:cover;

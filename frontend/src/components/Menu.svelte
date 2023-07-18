@@ -1,18 +1,13 @@
 <script lang="ts">
   import { Routes } from "../services/ActualSite";
   import { i18n } from "../services/i18n";
-  import { createPopper } from '@popperjs/core';
 
   function SwitchLangTo(code:string){
     $i18n.changeLanguage(code);
   }
 
-  let popperContent;
-
-  console.log(popperContent);
-  
-
 </script>
+
 <style>
   nav *{
     background-color: #C0E7F6;
@@ -96,7 +91,7 @@
           >
             <i class="bi bi-translate" />
           </button>
-          <ul class="dropdown-menu dropdown-menu-end m-3" bind:this={popperContent}>
+          <ul class="dropdown-menu dropdown-menu-end m-3">
             <li id="en"><button on:click={()=>SwitchLangTo('en')} class:active={$i18n.language=='en'} class="dropdown-item">EN</button></li>
             <li id="hu"><button on:click={()=>SwitchLangTo('hu')} class:active={$i18n.language=='hu'} class="dropdown-item">HU</button></li>
             <li id="de"><button on:click={()=>SwitchLangTo('de')} class:active={$i18n.language=='de'} class="dropdown-item">DE</button></li>

@@ -6,7 +6,7 @@
 
 <div class="d-flex lane">
     <div>
-        <img src="/kep_normal.jpg" alt="advert_image" class="image">
+        <img src="/Toth_K_ter.png" alt="advert_image" class="image">
     </div>
     <div class="containerBox">
         <h2>

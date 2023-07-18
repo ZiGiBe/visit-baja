@@ -27,7 +27,7 @@
     }
 
     header{
-        background-image: url('/hatter.jpg');
+        background-image: url('/varoshaza_este.png');
         background-size: cover;
         background-position: center center;
         height: 17vh;

@@ -20,7 +20,8 @@
 
 .lane{
     width: 100%;
-    background-image: url("/hatter.jpg");
+    background-image: url("/Baja.png");
+    background-position: center center;
     background-attachment: fixed;
     background-size:cover;
     border-top: 10px solid var(--kek5);
