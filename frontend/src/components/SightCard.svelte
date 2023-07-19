@@ -3,7 +3,6 @@
     export let SightData:Sight;
     import { BackendUrl } from "../services/DB";
     import {i18n} from '../services/i18n';
-    let namespace ='Sight-'+SightData.id;
 </script>
 
 <style>
@@ -82,11 +81,11 @@
 <!-- Card -->
 <div >
     <div class="card m-3 p-3 d-flex flex-column align-items-center mx-auto">
-        <h3 class="text-center mt-3 w-100">{$i18n.t(`${namespace}:name`)}</h3>
+        <h3 class="text-center mt-3 w-100">{SightData.name}</h3>
         <img src="{BackendUrl}media/{SightData.gallery.find(x=>x.preview).image}" class="card-img-top rounded mt-3" alt="kép">
         <div class="card-body d-flex flex-column align-items-center">
             <p class="text-center overflow-wrap w-100  p-2">
-                {$i18n.t(`${namespace}:description`)}
+                {SightData.shortdesc}
             </p>
         </div>
         <a href="/latnivalok/{SightData.href}" class="btn btn-primary pl-3 pr-3">
