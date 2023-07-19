@@ -79,7 +79,7 @@
           {#if route.visible}
             <li class="fs-5 text-center fw-medium nav-item">
               <a class="nav-link" href={route.route}
-                >{$i18n.t("menu." + route.name)}</a
+                ><!--{$i18n.t("menu." + route.name)}-->{route.name}</a
               >
             </li>
             <hr class="d-lg-none" />

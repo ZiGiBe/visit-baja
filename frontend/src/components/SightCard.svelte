@@ -90,7 +90,7 @@
             </p>
         </div>
         <a href="/latnivalok/{SightData.href}" class="btn btn-primary pl-3 pr-3">
-            {$i18n.t('sights.btn')}
+            <!-- {$i18n.t('sights.btn')} -->Tovább
         </a>
       </div>
 </div>

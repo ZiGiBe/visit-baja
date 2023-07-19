@@ -4,7 +4,7 @@
     import 'aos/dist/aos.css'
     import { onMount } from "svelte";
     import type { Service } from "../interfaces/Service";
-    import { i18n } from "../services/i18n";
+    // import { i18n } from "../services/i18n";
     onMount(()=> {
         AOS.init();
     })
@@ -43,7 +43,7 @@
         <div class="text-center d-flex justify-content-around align-items-center">
             <div>
                 <a href="{ServiceData.href}" class="button btn" target="_blank">
-                    {$i18n.t('services.btn')}
+                    <!-- {$i18n.t('services.btn')} -->Érdekel
                 </a>
             </div>
             <div class="d-block d-sm-none d-md-none d-lg-none d-xl-block">

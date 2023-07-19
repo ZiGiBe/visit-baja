@@ -13,43 +13,43 @@ export function CheckSite(){
 
 let routes = [
     {
-        name: "main",
+        name: "Főoldal",
         title: "",
         route: "/",
         visible: true
     },
     {
-        name: "restaurants",
+        name: "Vendéglátóhelyek",
         title: "Vendéglátóhelyek",
         route: "/szolgaltatasok/vendeglatohelyek",
         visible: true
     },
     {
-        name: "accomodations",
+        name: "Szálláshelyek",
         title: "Szálláshelyek",
         route: "/szolgaltatasok/szallasok",
         visible: true
     },
     {
-        name: "sights",
+        name: "Látnivalók",
         title: "Látnivalók",
         route: "/szolgaltatasok/latnivalok",
         visible: true
     },
     {
-        name: "tourinform",
+        name: "Tourinform iroda",
         title: "Tourinform iroda",
         route: "/szolgaltatasok/tourinform",
         visible: true
     },
     {
-        name: "publications",
+        name: "Kiadványok",
         title: "Tourinform iroda",
         route: "/szolgaltatasok/tourinform#kiadvanyok",
         visible: true
     },
     {
-        name: "impressum",
+        name: "Impresszum",
         title: "Impresszum",
         route: "/szolgaltatasok/impresszum",
         visible: false

@@ -1,6 +1,6 @@
 <script>
         import { Routes } from "../services/ActualSite";
-    import { i18n } from "../services/i18n";
+    // import { i18n } from "../services/i18n";
 </script>
 
 <style>
@@ -56,33 +56,33 @@ img{
             <img src="/logo.png" class="centerifsmall" alt="Szeretlek Baja">
         </div>
         <div class="col-md-6 col-lg-3 col-12">
-            <h2>{$i18n.t('footer.menu')}</h2>
+            <h2><!--{$i18n.t('footer.menu')}-->Menü</h2>
             <ul>
                 {#each $Routes as route}
                     {#if route.visible}
-                        <li> <a href="{route.route}">{$i18n.t('menu.'+route.name)}</a></li>
+                        <li> <a href="{route.route}"><!--{$i18n.t('menu.'+route.name)}-->{route.name}</a></li>
                     {/if}
                 {/each}
             </ul>
         </div>
         <div class="col-md-6 col-lg-3 col-12">
-            <h2>{$i18n.t('footer.contact')}</h2>
+            <h2><!--{$i18n.t('footer.contact')}-->Elérhetőségek</h2>
             <ul>
                 <li class="fw-medium">
                     Bajai Turisztikai Nonprofit Kft
                 </li>
                 <li class="fw-medium">
-                    {$i18n.t('footer.address')}
+                    <!--{$i18n.t('footer.address')}-->Cím: 6500 Baja, Széntháromság tér 11.
                 </li>
                 <li class="fw-medium">
-                    {$i18n.t('footer.phone')}
+                    <!--{$i18n.t('footer.phone')}-->Telefon: 06 79 420 792
                 </li>
                 <li class="fw-medium">
-                    {$i18n.t('footer.email')}
+                    <!--{$i18n.t('footer.email')}-->E-mail: baja@tourinform.hu
                 </li>
                 <li>
                     <a href="/szolgaltatasok/impresszum" target="_blank" >
-                        {$i18n.t('footer.impress')}
+                        <!--{$i18n.t('footer.impress')}-->Impresszum
                     </a>
                 </li>
             </ul>
