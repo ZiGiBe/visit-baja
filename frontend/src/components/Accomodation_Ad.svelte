@@ -10,10 +10,14 @@
     </div>
     <div class="containerBox">
         <h2>
-            {$i18n.t('index.sleephere')}
+            <!-- {$i18n.t('index.sleephere')} -->
+            Maradj nálunk!
         </h2>
         <a href="/szolgaltatasok/szallasok" class="btn btn-secondary">
-            <h4>{$i18n.t('index.accomodations')}</h4>
+            <h4>
+                <!-- {$i18n.t('index.accomodations')} -->
+                Szállások
+            </h4>
         </a>
     </div>
 </div>

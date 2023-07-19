@@ -11,7 +11,8 @@
 
   <h2 class="title">
     <span class="text">
-      {$i18n.t('index.programs')}
+      <!-- {$i18n.t('index.programs')} -->
+      Itt mindig történik valami!
     </span>
   </h2>
   {#await Programs}

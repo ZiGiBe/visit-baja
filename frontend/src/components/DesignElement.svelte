@@ -83,10 +83,14 @@
             </div>
             <div class="titleBox">
                 <h1 class="title text-center">
-                    {$i18n.t('index.visitTourinform')}
+                    <!-- {$i18n.t('index.visitTourinform')} -->
+                    Látogasson el a Tourinform irodába is!
                 </h1>
                 <a href="/szolgaltatasok/tourinform" class="btn btn-primary m-3 link">
-                    <h3>{$i18n.t('index.next')}</h3>
+                    <h3> 
+                        <!-- {$i18n.t('index.next')}  -->
+                        Tovább
+                    </h3>
                 </a>
             </div>
         </div>
