@@ -104,7 +104,7 @@
                 </div>
             </div>
         </div>
-        <a href="/admin/translate/Sights?id=2" class="btn btn-primary">Fordítást tesztelni</a>
+        <!-- <a href="/admin/translate/Sights?id=2" class="btn btn-primary">Fordítást tesztelni</a> -->
     </div>
     {#each categories as category}
         <Modal
