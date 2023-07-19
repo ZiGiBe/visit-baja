@@ -85,24 +85,21 @@
     <img src="/wave.png" alt="wave" class="wave">
     <div class="background">
         {#if images}
-        <swiper-container
-        loop={true}
-        effect={"fade"}
-        slides-per-view={1}
-        speed={1000}
-        autoplay= {{
-            disableOnInteraction: false,
-            pauseOnMouseEnter: false,
-            delay: 2000,
-        }}
-      >
-        {#each images as image}
-            <swiper-slide><img src={BackendUrl + 'media/' + image.filename} alt="Háttér" class="image"></swiper-slide>
-        {/each}
-        {#if images.length < 1}
-        <swiper-slide><img src="/kep_normal.jpg" alt="Háttér" class="image"></swiper-slide>
+            <swiper-container
+                loop={true}
+                effect={"fade"}
+                slides-per-view={1}
+                speed={1000}
+                autoplay= {{
+                    disableOnInteraction: false,
+                    pauseOnMouseEnter: false,
+                    delay: 2000,
+                }}
+            >
+                {#each images as image}
+                    <swiper-slide><img src={BackendUrl + 'media/' + image.filename} alt="Háttér" class="image"></swiper-slide>
+                {/each}
+            </swiper-container>
         {/if}
-      </swiper-container> 
-      {/if}
     </div>
 </div>
