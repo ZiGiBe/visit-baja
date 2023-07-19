@@ -1,10 +1,10 @@
 <script lang="ts">
   import { Routes } from "../services/ActualSite";
-  import { i18n } from "../services/i18n";
+  // import { i18n } from "../services/i18n";
 
-  function SwitchLangTo(code:string){
-    $i18n.changeLanguage(code);
-  }
+  // function SwitchLangTo(code:string){
+  //   $i18n.changeLanguage(code);
+  // }
 
 </script>
 
@@ -85,7 +85,7 @@
             <hr class="d-lg-none" />
           {/if}
         {/each}
-        <li class="fs-5 text-center fw-medium nav-item dropdown">
+        <!-- <li class="fs-5 text-center fw-medium nav-item dropdown">
           <button
             class="nav-link dropdown-toggle"
             data-bs-toggle="dropdown"
@@ -98,7 +98,7 @@
             <li id="hu"><button on:click={()=>SwitchLangTo('hu')} class:active={$i18n.language=='hu'} class="dropdown-item">HU</button></li>
             <li id="de"><button on:click={()=>SwitchLangTo('de')} class:active={$i18n.language=='de'} class="dropdown-item">DE</button></li>
           </ul>
-        </li>
+        </li> -->
       </ul>
     </div>
   </div>
