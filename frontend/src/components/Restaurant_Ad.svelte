@@ -10,10 +10,14 @@
     </div>
     <div class="containerBox m-3">
         <h2>
-            {$i18n.t('index.eatfood')}
+            <!-- {$i18n.t('index.eatfood')} -->
+            Egyél nálunk!
         </h2>
         <a href="/szolgaltatasok/vendeglatohelyek" class="btn btn-secondary m-3">
-            <h4>{$i18n.t('index.restaurants')}</h4>
+            <h4>
+                <!-- {$i18n.t('index.restaurants')} -->
+                Éttermek
+            </h4>
         </a>
     </div>
 </div>

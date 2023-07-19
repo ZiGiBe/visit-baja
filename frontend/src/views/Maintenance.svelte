@@ -5,13 +5,16 @@
             <h4>visitbaja.hu</h4>
         </div>
         <h1>
-            {$i18n.t('maintanence.currently')}
+            <!-- {$i18n.t('maintanence.currently')} -->
+            Az oldal jelenleg karbantartás alatt áll.
         </h1>
         <p class="apologize mb-0">
-            {$i18n.t('maintanence.sorry1')}
+            <!-- {$i18n.t('maintanence.sorry1')} -->
+            Elnézésüket kérjük az okozott kellementlenségekért
         </p>
         <p class="apologize">
-            {$i18n.t('maintanence.sorry2')}
+            <!-- {$i18n.t('maintanence.sorry2')} -->
+            Hamarosan végzünk.
         </p>
     </header>
     <div class="bgc">
@@ -21,7 +24,8 @@
         <hr>
         <div>
             <span>
-                {$i18n.t('maintanence.contact')}
+                <!-- {$i18n.t('maintanence.contact')} -->
+                Kapcsolat: Telefon: 06 79 420 792, Cím: 6500 Baja, Széntháromság tér 11.
             </span>
         </div>
     </footer>

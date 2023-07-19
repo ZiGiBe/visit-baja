@@ -24,7 +24,8 @@
 
   <h2 class="text-end title">
     <span class="text">
-      {$i18n.t('index.visitus')}
+      <!-- {$i18n.t('index.visitus')} -->
+      Látogass el hozzánk!
     </span>
   </h2>
 
