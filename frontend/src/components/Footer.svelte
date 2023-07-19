@@ -59,7 +59,9 @@ img{
             <h2>{$i18n.t('footer.menu')}</h2>
             <ul>
                 {#each $Routes as route}
-                    <li> <a href="{route.route}">{$i18n.t('menu.'+route.name)}</a></li>
+                    {#if route.visible}
+                        <li> <a href="{route.route}">{$i18n.t('menu.'+route.name)}</a></li>
+                    {/if}
                 {/each}
             </ul>
         </div>
@@ -79,7 +81,7 @@ img{
                     {$i18n.t('footer.email')}
                 </li>
                 <li>
-                    <a href="/impresszum" target="_blank" >
+                    <a href="/szolgaltatasok/impresszum" target="_blank" >
                         {$i18n.t('footer.impress')}
                     </a>
                 </li>

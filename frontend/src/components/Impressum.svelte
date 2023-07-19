@@ -1,7 +1,10 @@
-<main>
+<script>
+    import { CheckSite } from "../services/ActualSite";
+    CheckSite();
+</script>
 
-    <h1>Impresszum</h1>
-
+<main class="text-center">
+    
     <p>
         Cégnév: Bajai Turisztikai Nonprofit Kft.
     </p>

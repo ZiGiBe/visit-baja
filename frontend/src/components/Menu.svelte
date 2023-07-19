@@ -76,12 +76,14 @@
     <div class="collapse navbar-collapse dropdownRoutes" id="navbarNav">
       <ul class="navbar-nav">
         {#each $Routes as route}
-          <li class="fs-5 text-center fw-medium nav-item">
-            <a class="nav-link" href={route.route}
-              >{$i18n.t("menu." + route.name)}</a
-            >
-          </li>
-          <hr class="d-lg-none" />
+          {#if route.visible}
+            <li class="fs-5 text-center fw-medium nav-item">
+              <a class="nav-link" href={route.route}
+                >{$i18n.t("menu." + route.name)}</a
+              >
+            </li>
+            <hr class="d-lg-none" />
+          {/if}
         {/each}
         <li class="fs-5 text-center fw-medium nav-item dropdown">
           <button

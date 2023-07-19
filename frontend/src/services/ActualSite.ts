@@ -15,33 +15,45 @@ let routes = [
     {
         name: "main",
         title: "",
-        route: "/"
+        route: "/",
+        visible: true
     },
     {
         name: "restaurants",
         title: "Vendéglátóhelyek",
-        route: "/szolgaltatasok/vendeglatohelyek"
+        route: "/szolgaltatasok/vendeglatohelyek",
+        visible: true
     },
     {
         name: "accomodations",
         title: "Szálláshelyek",
-        route: "/szolgaltatasok/szallasok"
+        route: "/szolgaltatasok/szallasok",
+        visible: true
     },
     {
         name: "sights",
         title: "Látnivalók",
-        route: "/szolgaltatasok/latnivalok"
+        route: "/szolgaltatasok/latnivalok",
+        visible: true
     },
     {
         name: "tourinform",
         title: "Tourinform iroda",
-        route: "/szolgaltatasok/tourinform"
+        route: "/szolgaltatasok/tourinform",
+        visible: true
     },
     {
         name: "publications",
         title: "Tourinform iroda",
-        route: "/szolgaltatasok/tourinform#kiadvanyok"
+        route: "/szolgaltatasok/tourinform#kiadvanyok",
+        visible: true
     },
+    {
+        name: "impressum",
+        title: "Impresszum",
+        route: "/szolgaltatasok/impresszum",
+        visible: false
+    }
 ]
 export let Routes = writable(routes)
 

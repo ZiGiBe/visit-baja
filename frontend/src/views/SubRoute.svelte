@@ -5,6 +5,7 @@
     import Services from "./Services.svelte";
     import Sights from "./Sights.svelte";
     import Tourinform from "./Tourinform.svelte";
+    import Impressum from "../components/Impressum.svelte";
     import { Route } from 'tinro';
 </script>
 
@@ -15,4 +16,5 @@
 <Route path="/szallasok" ><Services isRestaurant={false} /></Route>
 <Route path="/latnivalok" ><Sights /></Route>
 <Route path="/tourinform" ><Tourinform /></Route>
+<Route path="/impresszum"> <Impressum /> </Route>
 <Footer />
