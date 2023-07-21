@@ -1,6 +1,7 @@
 export interface Program{
     id: number;
     title: string;
+    address:string;
     start: Date;
     end: Date;
     desc: string;

@@ -20,8 +20,10 @@
     <Wallapper/>
     <SightSlider/> 
     <DesignElement/>
+    <!-- ide fontos info sáv -->
     <Restaurant_Ad/>
     <Accomodation_Ad/>
     <ProgramSlider/> 
+
     <Footer/> 
 </main>

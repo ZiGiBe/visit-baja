@@ -8,10 +8,10 @@
     <div>
         <img src="/svedasztal.png" alt="advert_image" class="image">
     </div>
-    <div class="containerBox m-3">
+    <div class="containerBox mb-3 me-3 mt-3">
         <h2>
             <!-- {$i18n.t('index.eatfood')} -->
-            Egyél nálunk!
+            Gasztroélmények Baján!
         </h2>
         <a href="/szolgaltatasok/vendeglatohelyek" class="btn btn-secondary m-3">
             <h4>
@@ -33,9 +33,17 @@
 }
 
 .lane{
+    margin-left: 30px;
+    background-color: rgba(255, 255, 255, 0.6);
+    background-image: url('/kaja.png');
+    background-blend-mode: overlay;
+    background-size:80vh;
+    background-repeat: repeat;
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
+    border-left: 9px solid var(--kek7);
+    border-radius: 40px;
 }
 
 .lane div:nth-child(2){
@@ -43,18 +51,12 @@
 }
 
 .containerBox{
-    background-color: rgba(255, 255, 255, 0.6);
-    background-image: url('/kaja.png');
-    background-blend-mode: overlay;
-    background-size:cover;
-    background-position: bottom;
-    background-repeat: no-repeat;
+   
     display: flex;
     align-items: center;
     flex-direction: column;
     padding-top: 10vh;
-    border-left: 9px solid var(--kek7);
-    border-radius: 40px;
+    
     text-align: center;
 }
 
@@ -62,6 +64,9 @@
 @media only screen and (max-width: 768px){
     .lane{
         flex-direction: column;
+        background-image: unset;
+        border: 0;
+        margin:auto;
     }
 
     .image{
@@ -75,7 +80,7 @@
     .containerBox{
         border: unset;
         padding-top: unset;
-        background-image: unset;
+       
     }
 
     .lane div:nth-child(2){

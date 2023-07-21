@@ -37,14 +37,14 @@ let routes = [
         visible: true
     },
     {
-        name: "Tourinform iroda",
-        title: "Tourinform iroda",
+        name: "Tourinform Iroda",
+        title: "Tourinform Iroda",
         route: "/szolgaltatasok/tourinform",
         visible: true
     },
     {
         name: "Kiadványok",
-        title: "Tourinform iroda",
+        title: "Tourinform Iroda",
         route: "/szolgaltatasok/tourinform#kiadvanyok",
         visible: true
     },

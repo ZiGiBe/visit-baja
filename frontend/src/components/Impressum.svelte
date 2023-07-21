@@ -15,19 +15,19 @@
         Ügyvezető: Schäfer Andrea
     </p>
     <p>
-        Telefon:  <a href="tel:0679420792">06 79 420 792</a>
+        Telefon:  <a href="tel:+3679420792">+36-79-420-792</a>
     </p>
     <p>
-        E-mail: <a href="mailto:baja@tourinform.hu">baja@tourinform.hu</a>
+        E-mail: <a href="mailto:iroda@bajaiturizmus.hu">iroda@bajaiturizmus.hu</a>
     </p>
     <p>
-        A céget bejegyző hatóság: 
+        A céget bejegyző hatóság: Kecskeméti Törvényszék Cégbíróság
     </p>
     <p>
-        Cégjegyzékszám:
+        Cégjegyzékszám: 03-09-125234
     </p>
     <p>
-        Adószám:
+        Adószám: 24119566-2-03
     </p>
     <p>
         Tárhely szolgáltató: <a href="www.elin.hu">elin.hu</a>

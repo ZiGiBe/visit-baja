@@ -6,12 +6,12 @@
 
 <div class="d-flex lane">
     <div>
-        <img src="/Toth_K_ter.png" alt="advert_image" class="image">
+        <img src="/Szálláshelyek.jpg" alt="advert_image" class="image">
     </div>
     <div class="containerBox">
         <h2>
             <!-- {$i18n.t('index.sleephere')} -->
-            Maradj nálunk!
+            Maradj nálunk éjszakára!
         </h2>
         <a href="/szolgaltatasok/szallasok" class="btn btn-secondary">
             <h4>
@@ -25,12 +25,7 @@
 <style>
 
 .containerBox{
-    background-color: rgba(0, 147, 200, 0.7);
-    background-image: url('/szallas.png');
-    background-blend-mode: overlay;
-    background-size:cover;
-    background-position: bottom;
-    background-repeat: no-repeat;
+   
     display: flex;
     align-items:center;
     flex-direction: column;
@@ -47,6 +42,12 @@
 }
 
 .lane{
+    background-color: rgba(0, 147, 200, 0.7);
+    background-image: url('/szallas.png');
+    background-blend-mode: overlay;
+    background-size:80vh;
+    background-position: bottom;
+    background-repeat: repeat;
     padding: 20px 0 20px 0;
     background-color: var(--kek6);
     border-top: 8px solid var(--kek2);
@@ -65,11 +66,12 @@
 @media only screen and (max-width: 768px){
     .lane{
         flex-direction: column;
+        background-image: unset;
     }
 
     .containerBox{
         padding-top: unset;
-        background-image: unset;
+        
     }
 
     .image{

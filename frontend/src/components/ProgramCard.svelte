@@ -126,16 +126,16 @@
         <img src="{BackendUrl}media/{ProgramData.image}" class="card-img-top" alt="...">
         <div class="d-flex align-items-center justify-content-center" id="darkness">
            {#if dates.length==3}
-                <p>
-                    {dates[0]}<br>{dates[1]} - {dates[2]}
+                <p class="text-center">
+                    {dates[0]}<br>{dates[1]} - {dates[2]}<br>{ProgramData.address}
                 </p>
             {:else if dates.length==2}
-                <p>
-                    {dates[0]} - {dates[1]}
+                <p class="text-center">
+                    {dates[0]} - {dates[1]}<br>{ProgramData.address}
                 </p>
             {:else}
-                <p>
-                    {dates[0]}
+                <p class="text-center">
+                    {dates[0]}<br>{ProgramData.address}
                 </p>
            {/if}
         </div>
@@ -145,7 +145,7 @@
             <p class="card-text text-center">
                 {ProgramData.desc}
             </p>
-            <a href="{ProgramData.href}" class="btn btn-primary pl-3 pr-3">
+            <a href="{ProgramData.href}" target="_blank" class="btn btn-primary pl-3 pr-3">
                 Tovább
             </a>
         </div>

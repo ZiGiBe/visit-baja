@@ -75,10 +75,10 @@ img{
                     <!--{$i18n.t('footer.address')}-->Cím: 6500 Baja, Széntháromság tér 11.
                 </li>
                 <li class="fw-medium">
-                    <!--{$i18n.t('footer.phone')}-->Telefon: 06 79 420 792
+                    <!--{$i18n.t('footer.phone')}-->Telefon: <a href="tel:+3679420792">+36-79-420-792</a> 
                 </li>
                 <li class="fw-medium">
-                    <!--{$i18n.t('footer.email')}-->E-mail: baja@tourinform.hu
+                    <!--{$i18n.t('footer.email')}-->E-mail: <a href="mailto:baja@tourinform.hu">baja@tourinform.hu</a> 
                 </li>
                 <li>
                     <a href="/szolgaltatasok/impresszum" target="_blank" >

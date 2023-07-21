@@ -38,7 +38,7 @@
       space-between=30
       grab-cursor="true"
       autoplay={{
-              disableOnInteraction:true,
+              disableOnInteraction:false,
               pauseOnMouseEnter: true,
               delay: 5000,
             }}
