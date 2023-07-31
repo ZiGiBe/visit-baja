@@ -1,5 +1,5 @@
 <script lang="ts">
-    import SightCard from "../components/SightCard.svelte";
+    import SightCard from "../components/Cards/SightCard.svelte";
     import type { Gallery } from "../interfaces/Gallery";
     import type { Sight } from "../interfaces/Sights";
     import db from "../services/DB";

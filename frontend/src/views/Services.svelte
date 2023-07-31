@@ -1,6 +1,6 @@
 <script lang="ts">
     export let isRestaurant:boolean;
-    import ServiceCard from "../components/ServiceCard.svelte";
+    import ServiceCard from "../components/Cards/ServiceCard.svelte";
     import type { Service } from "../interfaces/Service";
     import db from "../services/DB";
     import { CheckSite } from "../services/ActualSite";
