@@ -1,8 +1,8 @@
 <script lang="ts">
-    import type { Sight } from "../interfaces/Sights";
+    import type { Sight } from "../../interfaces/Sights";
     export let SightData:Sight;
-    import { BackendUrl } from "../services/DB";
-    import {i18n} from '../services/i18n';
+    import { BackendUrl } from "../../services/DB";
+    import {i18n} from '../../services/i18n';
 </script>
 
 <style>

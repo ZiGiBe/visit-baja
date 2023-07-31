@@ -1,7 +1,7 @@
 <script lang="ts">
-    import { BackendUrl } from "../services/DB";
-    import type { Program } from "../interfaces/Programs";
-    import { ProgramTime } from "../services/DateFormatter";
+    import { BackendUrl } from "../../services/DB";
+    import type { Program } from "../../interfaces/Programs";
+    import { ProgramTime } from "../../services/DateFormatter";
     export let ProgramData:Program;
 
     let dates = ProgramTime(ProgramData.start,ProgramData.end)  

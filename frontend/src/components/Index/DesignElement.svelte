@@ -2,7 +2,7 @@
     import AOS from "aos";
     import 'aos/dist/aos.css'
     import { onMount } from "svelte";
-    import { i18n } from "../services/i18n";
+    import { i18n } from "../../services/i18n";
     onMount(()=> {
         AOS.init();
     })

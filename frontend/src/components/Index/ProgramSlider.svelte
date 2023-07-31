@@ -1,8 +1,8 @@
 <script lang="ts">
   import { register } from 'swiper/element/bundle';
-  import ProgramCard from './ProgramCard.svelte';
-  import db from '../services/DB';
-    import { i18n } from '../services/i18n';
+  import ProgramCard from '../Cards/ProgramCard.svelte';
+  import db from '../../services/DB';
+    import { i18n } from '../../services/i18n';
   let Programs = db.GetFieldValue('Programs', 'end', new Date().toISOString(), 'gte');
   //ezt a hibát ne vedd figyelembe attól még működik
   register();

@@ -1,7 +1,7 @@
 <script lang="ts">
     import { onMount } from 'svelte';
     import { register } from 'swiper/element/bundle';
-    import db, { BackendUrl } from '../services/DB';
+    import db, { BackendUrl } from '../../services/DB';
     //ezt a hibát ne vedd figyelembe attól még működik
     register();
     let images

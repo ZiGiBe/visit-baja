@@ -1,9 +1,9 @@
 <script lang="ts">
-    import { BackendUrl } from "../services/DB";
+    import { BackendUrl } from "../../services/DB";
     import AOS from "aos";
     import 'aos/dist/aos.css'
     import { onMount } from "svelte";
-    import type { Service } from "../interfaces/Service";
+    import type { Service } from "../../interfaces/Service";
     // import { i18n } from "../services/i18n";
     onMount(()=> {
         AOS.init();
