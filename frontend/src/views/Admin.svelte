@@ -2,6 +2,7 @@
     import MainCard from "../components/Admin/MainCard.svelte";
     import Modal from "../components/Admin/Modal/Modal.svelte";
     import db from "../services/DB";
+    import NewInfo from "../components/Admin/forms/NewInfo.svelte";
     import NewProgram from "../components/Admin/forms/NewProgram.svelte";
     import NewSight from "../components/Admin/forms/NewSight.svelte";
     import NewService from "../components/Admin/forms/NewService.svelte";
@@ -19,7 +20,7 @@
         },
         {
             icon: "wallet2",
-            name: "Szolgáltatások/Éttermek",
+            name: "Szálláshelyek/Éttermek",
             target: "services",
             promise: db.Get("Services"),
             type: "Services"
@@ -28,6 +29,13 @@
             icon: "calendar",
             name: "Programok",
             target: "programs",
+            promise: db.Get("Programs"),
+            type: ""
+        },
+        {
+            icon: "info-square",
+            name: "Fontos tudnivalók",
+            target: "infos",
             promise: db.Get("Programs"),
             type: "Programs"
         }
@@ -87,6 +95,9 @@
                         </div>
                         <div class="tab-pane p-3 fade" id="programstab">
                             <NewProgram />
+                        </div>
+                        <div class="tab-pane p-3 fade" id="infostab">
+                            <NewInfo />
                         </div>
                     </div>
                 </div>

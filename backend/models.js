@@ -36,6 +36,17 @@ const Services = sequelize.define('Services', {
         type: DataTypes.TEXT
     }
 })
+const Infos = sequelize.define("Infos",{
+    title: {
+        type: DataTypes.STRING
+    },
+    href: {
+        type: DataTypes.TEXT
+    },
+    image: {
+        type: DataTypes.TEXT
+    }
+})
 const Sights = sequelize.define('Sights', {
     name: {
         type: DataTypes.STRING,
@@ -117,4 +128,4 @@ const Translations = sequelize.define('Translations', {
 //Foreign Keys
 SightsGallery.belongsTo(Sights, {foreignKey: "itemID"});
 
-module.exports = {sequelize, Users, Sights, Services, Programs, SightsGallery, IndexSlideshow, Translations};
+module.exports = {sequelize, Users, Sights, Services, Programs, SightsGallery, IndexSlideshow, Infos, Translations};
