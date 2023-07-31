@@ -24,6 +24,11 @@
 
 <style>
 
+h2{
+    backdrop-filter: blur(5px);
+    padding: 10px;
+    border-radius: 10px;
+}   
 .containerBox{
    
     display: flex;
