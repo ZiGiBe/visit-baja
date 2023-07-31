@@ -1,6 +1,6 @@
 <script lang="ts">
-    import type { Sight } from "../../interfaces/Sights";
-    export let SightData:Sight;
+    import type { Info } from "../../interfaces/Info";
+    export let InfoData:Info;
     import { BackendUrl } from "../../services/DB";
 </script>
 
@@ -82,7 +82,7 @@
     <div class="card m-3 p-3 d-flex flex-column align-items-center mx-auto">
         <h3 class="text-center mt-3 w-100">Cím</h3>
         <img src="/svedasztal.png" class="card-img-top rounded mt-3" alt="kép">
-        <a href="/latnivalok/{SightData.href}" class="btn btn-primary pl-3 pr-3">
+        <a href="/latnivalok/{InfoData.href}" class="btn btn-primary pl-3 pr-3">
             Tovább
         </a>
       </div>
