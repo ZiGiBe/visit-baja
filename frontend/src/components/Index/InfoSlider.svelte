@@ -27,6 +27,7 @@
                 disableOnInteraction:true,
                 pauseOnMouseEnter: true,
                 delay: 5000,
+                reverseDirection: true
               }}
         breakpoints={{
           768: {
