@@ -1,7 +1,8 @@
 export interface Info{
     id?:number;
-    name:string;
+    title:string;
     href:string;
+    image:string;
     createdAt?:string;
     updatedAt?:string;
 }

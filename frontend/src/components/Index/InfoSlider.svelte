@@ -4,7 +4,7 @@
     register();
     import db from '../../services/DB';
 
-    let Infos = []
+    let Infos = db.Get('infos');
 
 </script>
 
@@ -41,7 +41,7 @@
         }}
       >
         {#each Infos as Info}
-          <swiper-slide><Info InfoData={Info}/></swiper-slide>
+          <swiper-slide><InfoCard InfoData={Info}/></swiper-slide>
         {/each}
       </swiper-container>
     {/await}
