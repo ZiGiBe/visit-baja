@@ -4,7 +4,7 @@
     register();
     import db from '../../services/DB';
 
-    let Infos = db.Get('infos');
+    let Infos = db.Get('Infos');
 
 </script>
 
