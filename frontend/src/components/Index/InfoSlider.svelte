@@ -17,7 +17,7 @@
     </h2>
     {#await Infos}
       <div class="spinner-border"></div>
-    {:then Infos} 
+    {:then Infos}
       <swiper-container
         loop={true}
         slides-per-view={1}

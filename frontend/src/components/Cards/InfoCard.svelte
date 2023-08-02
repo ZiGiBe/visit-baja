@@ -80,8 +80,8 @@
 <!-- Card -->
 <div >
     <div class="card m-3 p-3 d-flex flex-column align-items-center mx-auto">
-        <h3 class="text-center mt-3 w-100">Cím</h3>
-        <img src="/svedasztal.png" class="card-img-top rounded mt-3" alt="kép">
+        <h3 class="text-center mt-3 w-100">{InfoData.title}</h3>
+        <img src="{BackendUrl}media/{InfoData.image}" class="card-img-top rounded mt-3" alt="kép">
         <a href="/latnivalok/{InfoData.href}" class="btn btn-primary pl-3 pr-3">
             Tovább
         </a>
