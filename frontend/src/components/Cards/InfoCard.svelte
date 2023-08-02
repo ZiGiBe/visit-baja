@@ -9,7 +9,7 @@
     @media only screen and (max-width: 577px) {
         *{
             --cardwidth: 85vw;
-            --cardheight: 480px;
+            --cardheight: 420px;
             --fontsize: 18px;
         }
     }
@@ -17,7 +17,7 @@
     @media only screen and (min-width: 577px) and (max-width: 769px){
         *{
             --cardwidth: 320px;
-            --cardheight: 500px;
+            --cardheight: 440px;
             --fontsize: 20px;
         }
     }
@@ -25,7 +25,7 @@
     @media only screen and (min-width: 769px) {
         *{
             --cardwidth: 330px;
-            --cardheight: 500px;
+            --cardheight: 440px;
             --fontsize: 22px;
         }
     }
@@ -48,16 +48,11 @@
         object-fit: cover;
         width: calc(var(--cardwidth) - 50px);
         height: calc(var(--cardheight) / 2);
+        margin-bottom: 40px;
     }
 
     .card h3{
         font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    }
-
-    .card p{
-        color: var(--kek1);
-        font-size: var(--fontsize);
-        font-family: 'Times New Roman', Times, serif;
     }
 
     .card a{
@@ -82,7 +77,7 @@
     <div class="card m-3 p-3 d-flex flex-column align-items-center mx-auto">
         <h3 class="text-center mt-3 w-100">{InfoData.title}</h3>
         <img src="{BackendUrl}media/{InfoData.image}" class="card-img-top rounded mt-3" alt="kép">
-        <a href="/latnivalok/{InfoData.href}" class="btn btn-primary pl-3 pr-3">
+        <a href="/latnivalok/{InfoData.href}" class="btn btn-primary">
             Tovább
         </a>
       </div>

@@ -8,7 +8,7 @@
 
 </script>
 
-<div class="my-3">
+<div class="my-3 bg">
 
     <h2 class="title">
       <span class="text">
@@ -49,6 +49,15 @@
 
 
   <style>
+
+  .bg{
+      background-color: rgba(255, 255, 255, 0.8);
+      background-image: url('/info.png');
+      background-repeat: repeat;
+      background-blend-mode:color-burn;
+      background-size: 40%;
+      padding-bottom: 50px;
+  }
     
     .title{
       margin: 60px 0 60px 0;  
