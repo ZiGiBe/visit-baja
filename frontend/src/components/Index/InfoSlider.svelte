@@ -5,7 +5,6 @@
     import db from '../../services/DB';
 
     let Infos = db.Get('infos');
-
 </script>
 
 <div class="my-3">
@@ -17,7 +16,7 @@
     </h2>
     {#await Infos}
       <div class="spinner-border"></div>
-    {:then Infos} 
+    {:then Infos}
       <swiper-container
         loop={true}
         slides-per-view={1}
