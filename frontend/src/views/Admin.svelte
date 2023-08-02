@@ -30,14 +30,14 @@
             name: "Programok",
             target: "programs",
             promise: db.Get("Programs"),
-            type: ""
+            type: "Programs"
         },
         {
             icon: "info-square",
             name: "Fontos tudnivalók",
             target: "infos",
-            promise: db.Get("Programs"),
-            type: "Programs"
+            promise: db.Get("Inofs"),
+            type: "Infos"
         }
     ];
 </script>
