@@ -1,6 +1,7 @@
 <script lang="ts">
     import { createEventDispatcher } from "svelte";
     import db from "../../../services/DB";
+    import {Delete as fileDelete} from '../../../services/File';
     export let i = 0;
     export let item;
     export let type;
@@ -8,6 +9,14 @@
     let event = createEventDispatcher();
     let maindeletePressed = false;
     async function Delete(itemID){
+        console.log(item);
+        if (item.image){
+            await fileDelete(item.image);
+        }
+        if (!item.image){
+            let gallery = await db.GetFieldValue('SightsGallery', 'itemID', item.id)
+            await Promise.all(gallery.map(e=>fileDelete(e.image)));
+        }
         await db.Delete(type, itemID);
         event('deletion', {promise: db.Get(type)});
         DeleteToggler();
