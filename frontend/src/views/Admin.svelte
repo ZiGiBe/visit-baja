@@ -36,7 +36,7 @@
             icon: "info-square",
             name: "Fontos tudnivalók",
             target: "infos",
-            promise: db.Get("Inofs"),
+            promise: db.Get("Infos"),
             type: "Infos"
         }
     ];

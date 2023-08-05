@@ -10,6 +10,7 @@
     import ModSight from './components/Admin/Modal/Mod/ModSight.svelte';
     import ModProgram from './components/Admin/Modal/Mod/ModProgram.svelte';
     import ModService from './components/Admin/Modal/Mod/ModService.svelte';
+    import ModInfo from './components/Admin/Modal/Mod/ModInfo.svelte';
     import Translation from './components/Admin/forms/Translation.svelte';
     import db from './services/DB';
     import Maintenance from './views/Maintenance.svelte';
@@ -34,6 +35,8 @@
     <ModSight />
     {:else if meta.params.type == "Services"}
     <ModService/>
+    {:else if meta.params.type == "Infos"}
+    <ModInfo/>
     {:else}
     <ModProgram/>
     {/if}

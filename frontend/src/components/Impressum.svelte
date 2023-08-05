@@ -39,5 +39,7 @@
     <p>
         Az oldal szerkesztője: <a href="https://github.com/ZiGiBe">ZiGiBe csapat</a>
     </p>
-
+    <p>
+        Az oldalon felhazsnált háttérképek forrása: <a href="https://www.freepik.com">freepik.com</a> 
+    </p>
 </main>
