@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { jwt } from '../components/Admin/stores';
 import { get } from 'svelte/store';
+export const FileURL = 'http://185.75.194.239/file/';
 async function Upload(files:FileList){
     let formdata = new FormData();
 
@@ -8,7 +9,7 @@ async function Upload(files:FileList){
         formdata.append('images', files[i]);
     }
 
-    return await axios.post('http://localhost:8080/file/new', formdata, {
+    return await axios.post(FileURL+'new', formdata, {
         headers:{
             Authorization: `JWT ${await get(jwt)}`
         }
@@ -16,7 +17,7 @@ async function Upload(files:FileList){
 }
 
 async function Delete(name){
-    return await axios.delete('http://localhost:8080/file/delete', {
+    return await axios.delete(FileURL+'delete', {
         headers: {
             Authorization: `JWT ${await get(jwt)}`
         },

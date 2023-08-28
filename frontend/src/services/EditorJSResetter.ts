@@ -1,7 +1,7 @@
 import axios from "axios";
 import { get } from "svelte/store";
 import { jwt } from "../components/Admin/stores";
-let backendUrl = 'http://localhost:8080/editor/'
+let backendUrl = 'http://185.75.194.239:8080/editor/'
 
 export async function GetLatestVersion(){
     return await axios.get(backendUrl+'latest').then(res=>res.data).catch(err=>err.response.data);
