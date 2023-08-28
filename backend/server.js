@@ -16,4 +16,6 @@ app.use('/file', require('./files'));
 app.use('/api', require('./db'));
 app.use('/media', express.static(path.join(__dirname, '/uploads')))
 
+app.get('/', (req,res)=>res.send('Hello'))
+
 app.listen(process.env.PORT);
