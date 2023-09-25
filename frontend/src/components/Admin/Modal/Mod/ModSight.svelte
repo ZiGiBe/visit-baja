@@ -58,7 +58,6 @@
     }
 
     function PutOnDeleteQueue(image, i){
-        console.log(deletionIDs);
         if (deletionIDs[i]==1){
             deletionIDs[i] = 0;
         }
@@ -66,13 +65,23 @@
             deletionIDs[i] = 1;
             if (existingpreviewID == image.id){
                 let index = deletionIDs.findIndex(e=>e==0)
-                existingpreviewID = index == -1 ? -1 : existingImages[index].id;
+                if (index == -1)
+                {
+                    existingpreviewID -1;
+                    if (newImages.length>0) newIndex = 0;
+                }
+                else {
+                    existingpreviewID = existingImages[index].id;
+                    newIndex = -1;
+                }
             }
         }
+        console.log(existingpreviewID, newIndex);
     }
 
     async function Errors(){
         let errors = [];
+        if (newIndex == -1 && existingpreviewID == -1) errors.push('Nincs kiválasztva indexkép!');
         if (!ValidForm(modData)) errors.push('Nincs minden mező kitöltve!');
         else {
             if (!EditorHasBlocks(editor)) errors.push('A szerkesztő üres!');
@@ -126,6 +135,11 @@
             })
         }
     }
+    function PreventErrors(){
+        if (existingpreviewID==-1) {
+            if (newImages.length>0) newIndex = 0;
+        }
+    }
 </script>
 <main>
 {#if modData}
@@ -142,7 +156,7 @@
 {@const load = setTimeout(() => {
     loadData(JSON.parse(modData.fulldesc))
 }, 2000)}
-<Input name="images" type="file" title="Képek feltöltése" bind:files={newImages} />
+<Input name="images" type="file" title="Képek feltöltése" bind:files={newImages} on:clicked={PreventErrors} />
 
 {#if newImages && newImages.length>0}
     <h3>Új képek</h3>

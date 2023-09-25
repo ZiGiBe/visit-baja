@@ -23,6 +23,7 @@
         slides-per-view={1}
         space-between={30}
         grab-cursor="true"
+        navigation="true"
         autoplay={{
                 disableOnInteraction:true,
                 pauseOnMouseEnter: true,

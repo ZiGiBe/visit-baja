@@ -17,6 +17,7 @@
                 let upload = await Upload(image);
                 newInfo.image = upload.data[0].filename;
                 let newItem = await db.Post("Infos", newInfo);
+                newInfo = {};
             } catch (err) {
                 console.log(err);
                 errors.push("Fájlhiba!");

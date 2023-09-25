@@ -17,6 +17,7 @@
                 newService.image = image.filename;
                 try{
                     await db.Post('Services', newService);
+                    newService = {};
                 }
                 catch (err){
                     errors.push('Hiba történt a feltöltésben, kérem szóljon a fejlesztőknek!')

@@ -21,6 +21,7 @@ Router.post('/login',async (req, res) => {
                 token: token
             });
         }
+        else res.status(401).send({"message": 'bad login'})
     }
     catch (err) {
         res.status(500).send(err);

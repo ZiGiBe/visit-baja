@@ -48,7 +48,8 @@
             preview: i == primaryIndex
         }
         try{
-            return await db.Post('SightsGallery', data)
+            await db.Post('SightsGallery', data)
+            newSight = {};
         }
         catch (err){
             return false;
@@ -93,6 +94,11 @@
         );
         return duplicates.length > 0;
     }
+    function PreventIndexErrors(){
+        primaryIndex = 0;
+        console.log(primaryIndex);
+    }
+
 </script>
 
 <Alert bind:SetAlert={alert} />
@@ -132,7 +138,7 @@
     </div>
 </div>
 
-<Input type="file" name="images" bind:files={images} title="Kép(ek)" />
+<Input type="file" name="images" bind:files={images} on:clicked={PreventIndexErrors} title="Kép(ek)" />
 
 {#if images && images.length > 0}
     <div class="previews">
@@ -143,11 +149,10 @@
                     src={URL.createObjectURL(image)}
                     alt=""
                 />
-                <span
-                    on:click={() => (primaryIndex = i)}
-                    class:active={i == primaryIndex}
-                    ><i class="bi bi-card-image" /></span
-                >
+                <span on:click={() => (primaryIndex = i)}
+                    class:active={i == primaryIndex}>
+                    <i class="bi bi-card-image" />
+                </span>
             </div>
         {/each}
     </div>

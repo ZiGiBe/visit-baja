@@ -21,6 +21,7 @@
                     newProgram.end = newProgram.start;
                 }
                 let newItem = await db.Post("Programs", newProgram);
+                newProgram = {};
             } catch (err) {
                 console.log(err);
                 errors.push("Fájlhiba!");
