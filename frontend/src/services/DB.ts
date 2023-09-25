@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { jwt } from '../components/Admin/stores';
 import { get } from 'svelte/store';
-export const BackendUrl = "http://localhost:8080/"
+export const BackendUrl = "http://185.75.194.239:8080/"
 let backendUrl = BackendUrl + 'api/';
 
 interface ExecAnswer {
