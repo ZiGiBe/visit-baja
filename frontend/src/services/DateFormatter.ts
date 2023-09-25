@@ -1,10 +1,11 @@
 
 function FormatMedium(date){
-    return new Intl.DateTimeFormat('hu-HU',{dateStyle:"medium"}).format(new Date(date))
+    return new Intl.DateTimeFormat('hu-HU',{dateStyle:"medium", timeZone:"UTC"}).format(new Date(date))
+    
 }
 
 function FormatTime(date){
-    return new Intl.DateTimeFormat('hu-HU',{timeStyle:"short"}).format(new Date(date)) 
+    return new Intl.DateTimeFormat('hu-HU',{timeStyle:"short", timeZone:"UTC"}).format(new Date(date))
 }
 
 

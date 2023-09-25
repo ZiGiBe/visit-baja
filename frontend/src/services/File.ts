@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { jwt } from '../components/Admin/stores';
 import { get } from 'svelte/store';
-export const FileURL = 'http://localhost:8080/file/';
+export const FileURL = 'http://185.75.194.239:8080/file/';
 async function Upload(files:FileList){
     let formdata = new FormData();
 
