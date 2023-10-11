@@ -17,16 +17,6 @@ export let jwt = writable(Cookies.get('visitbaja.hu')?Cookies.get('visitbaja.hu'
 
 export const EditorJSTools = readable({
     header: Header,
-    attaches: {
-        class: AttachesTool,
-        config: {
-            endpoint: 'http://185.75.194.239:8080/file/tourinform/new',
-            types: "application/pdf",
-            additionalRequestHeaders:{
-                "Authorization":"JWT " + await get(jwt)
-            }
-        }
-    },
     list: List,
     delimiter: Delimiter,
     quote:{
