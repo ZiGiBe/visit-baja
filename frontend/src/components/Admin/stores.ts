@@ -23,7 +23,7 @@ export const EditorJSTools = readable({
             endpoint: 'http://185.75.194.239:8080/file/tourinform/new',
             types: "application/pdf",
             additionalRequestHeaders:{
-                "Authorization":"JWT " + get(jwt)
+                "Authorization":"JWT " + await get(jwt)
             }
         }
     },

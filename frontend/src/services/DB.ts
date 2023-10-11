@@ -13,6 +13,7 @@ interface ExecAnswer {
 }
 
 async function tokenGetter() {
+    console.log(await jwt)
     return await get(jwt);
 }
 
