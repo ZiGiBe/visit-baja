@@ -20,7 +20,7 @@ export const EditorJSTools = readable({
     attaches: {
         class: AttachesTool,
         config: {
-            endpoint: 'http://localhost:8080/file/tourinform/new',
+            endpoint: 'http://185.75.194.239:8080/file/tourinform/new',
             types: "application/pdf",
             additionalRequestHeaders:{
                 "Authorization":"JWT " + get(jwt)
