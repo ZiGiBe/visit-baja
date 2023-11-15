@@ -4,7 +4,7 @@
     import { Route } from 'tinro';
     import Login from './views/Login.svelte';
     import SubRoute from './views/SubRoute.svelte';
-    import Tourinform from './views/Tourinform.svelte';
+   
     import Sight from './views/Sight.svelte';
     import { jwt } from './components/Admin/stores';
     import ModSight from './components/Admin/Modal/Mod/ModSight.svelte';

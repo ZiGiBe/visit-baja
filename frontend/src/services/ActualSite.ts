@@ -43,9 +43,9 @@ let routes = [
         visible: true
     },
     {
-        name: "Kiadványok",
-        title: "Tourinform Iroda",
-        route: "/szolgaltatasok/tourinform#kiadvanyok",
+        name: "Programok",
+        title: "Programok",
+        route: "/szolgaltatasok/programok",
         visible: true
     },
     {
