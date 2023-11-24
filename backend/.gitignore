@@ -1,4 +1,4 @@
 node_modules/
-# uploads/    Ideiglenes a működéshez
+uploads/
 blacklist.json
 editorLatest.json
