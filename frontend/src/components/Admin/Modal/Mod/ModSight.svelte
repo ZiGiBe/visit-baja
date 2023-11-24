@@ -178,7 +178,7 @@
     <h3>Már feltöltött képek</h3>
     <div class="previews">
         {#each existingImages as image, i}
-            <div>
+            <div class="minwidth200">
                 <img
                     class="img-fluid"
                     src={BackendUrl+'media/'+image.image}
@@ -201,6 +201,10 @@
 {/if}
 </main>
 <style>
+.minwidth200{
+    min-width:200px;
+    min-height: 100px;
+}
 main{
     max-width: 60em;
     margin: 0 auto;
