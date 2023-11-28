@@ -6,6 +6,9 @@
     border-bottom: 1px solid black
     border-top: 1px solid black
     .imageedit
+        min-width: 200px
+        min-height: 200px
+        border: 1px solid gray
         margin: 1rem
         position: relative
         height: 150px
