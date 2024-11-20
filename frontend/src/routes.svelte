@@ -14,6 +14,7 @@
     import Translation from './components/Admin/forms/Translation.svelte';
     import db from './services/DB';
     import Maintenance from './views/Maintenance.svelte';
+    import Palyazatok from './views/Palyazatok.svelte';
 </script>
 
 
@@ -27,7 +28,9 @@
     <Route fallback redirect="/szolgaltatasok/vendeglatohelyek" />
 </Route>
 <Route path="/latnivalok/:sighthref"><Sight/></Route>
-
+<Route path="/palyazatok">
+    <Palyazatok/>
+</Route>
 {#if $jwt != ""}
 <Route path="/admin"><Admin/></Route>
 <Route path="/admin/mod/:type" let:meta>

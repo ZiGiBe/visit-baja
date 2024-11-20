@@ -53,6 +53,12 @@ let routes = [
         title: "Impresszum",
         route: "/szolgaltatasok/impresszum",
         visible: false
+    },
+    {
+        name: "Pályázatok",
+        title: "Pályázatok",
+        route: "/palyazatok",
+        visible: true
     }
 ]
 export let Routes = writable(routes)
